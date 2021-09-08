@@ -1,0 +1,15 @@
+.logo{
+    padding: 5px, 5px;
+}
+.login{
+    width: 36px;
+    height: 36px;
+}
+.prato{
+    width: 120px;
+    height: 90px;
+}
+.lupa, .zap, .insta{
+    width: 40px;
+    height: 40px;
+}

@@ -8,28 +8,84 @@
     <title>Cardápio</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-        <a class="navbar-brand" href="./index.html">Logo</a>
-        
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="./carrinho.html">Carrinho</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./historico.html">Histórico</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./pedidos.html">Pedidos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./cadPedidos.html">cadastrar rango</a>
-          </li>
-        </ul>
-      </nav>
-      
-    <h1>Cardápio</h1>
-    <form action="./login.html">
-    <center><input type="submit" value="Login"></center>
-    </form>
+  <!-- Navegação -->
+    <div id="cima">
+      <div class="navegacao">
+        <a href="login.html">
+          <img src="./assets/login.png" alt="Login/Cadastro" class="login">
+        </a>
+        <a href="index.html">
+          <img src="./assets/Le_Chef-removebg-preview 1.png" alt="Logo" class="logo">
+        </a>
+      </div>
+    </div>
+  <!-- /Navegação -->
+  <!-- Pesquisa -->
+  <div id="filtro">
+    <div class="row">
+      <h2 class="col-10 titulo">Filtrar Cardápio</h2>
+      <a href="#" class="col-2">
+        <img src="./assets/lupa.png" alt="Pesquisar" class="lupa">
+      </a>
+    </div>
+  </div>
+  <!-- /Pesquisa -->
+  <!-- Cardápio -->
+  <div id="cardapio">
+    <div class="fil">
+      <h2 tag="carnes">
+        Carnes
+      </h2>
+      <a href="#">
+      <div class="card row">
+        <div class="textos col-8">
+          <h3 class="titulo">Picanha</h3>
+          <p class="descricao">Acompanha arroz e batata frita.</p>
+          <p class="valor">R$ 59,99</p>
+        </div>
+        <div class="imagem col-4">
+          <img src="./assets/Imagem Prato.png" alt="Prato" class="prato">
+        </div>
+      </div>
+      </a>
+      <a href="#">
+        <div class="card row">
+          <div class="textos col-8">
+            <h3 class="titulo">Picanha</h3>
+            <p class="descricao">Acompanha arroz e batata frita.</p>
+            <p class="valor">R$ 59,99</p>
+          </div>
+          <div class="imagem col-4">
+            <img src="./assets/Imagem Prato.png" alt="Prato" class="prato">
+          </div>
+        </div>
+        </a>
+    </div>
+  </div>
+  <!-- /cardápio -->
+  <!-- carrinho -->
+  <div id="carrinho">
+    <div class="row">
+      <h2 class="titulo col-7">Meu carrinho</h2>
+      <h2 class="preco col-5">R$ 0,00</h2>
+    </div>
+  </div>
+  <!-- /carrinho -->
+  <!-- baixo -->
+  <div id="baixo">
+    <div class="fimpag">
+      <h2 class="titulo">Le chef</h2>
+      <h2 class="titulo">Rua fulano de tal, 100, Aldeota</h2>
+      <div class="contato">
+        <a href="#">
+          <img src="./assets/zap.png" alt="Whatsapp" class="zap">
+        </a>
+        <a href="#">
+          <img src="./assets/insta.png" alt="Instagram" class="insta">
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- /baixo -->
 </body>
 </html>

@@ -1,0 +1,65 @@
+/*@media (min-width: 992px){
+
+}
+@media (max-width: 991.98px){
+
+}
+@media (max-width: 767.98px){
+
+}*/
+@media (max-width: 539.98px){
+    .logo{
+        margin-top: 10px;
+        width: 250px;
+        height: 200px;
+    }
+    .login{
+        width: 25px;
+        height: 25px;
+    }
+    .prato{
+        margin-top: 12px;
+        width: 110%;
+        height: 90%;
+    }
+    .lupa, .zap, .insta{
+        width: 30px;
+        height: 30px;
+    }
+    #filtro div h2{
+        margin-top: 14px;
+    }
+    #filtro div a img.lupa{
+        margin-top: 8px;
+    }
+    #filtro div h2, 
+    #cardapio .fil h2, 
+    #baixo .fimpag h2.titulo{
+        font-size: 13pt;
+    }
+    #cardapio .fil .card{
+        width: 90%;
+        left: 8%;
+    }
+    #cardapio .fil h2{
+        font-size: 12pt;
+    }
+    #cardapio .fil a div .textos{
+        margin-top: 5%;
+    }
+    #cardapio .fil a div .textos h3{
+        font-size: 12pt;
+    }
+    #cardapio .fil a div .textos p{
+        font-size: 8pt;
+    }
+    #carrinho div h2{
+        margin-top: 3%;
+        font-size: 13pt;
+    }
+    #baixo{
+        height: 100px;
+        margin-bottom: 51px;
+        padding-top: 8px;
+    }
+}

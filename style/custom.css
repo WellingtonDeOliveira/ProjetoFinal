@@ -1,18 +1,99 @@
 body{
-    background-color: rgb(61, 58, 58);
+    background-color: var(--quarta);
 }
-h1{
+#cima{
+    display: block;
+    width: 100%;
+    height: 189px;
+    background-color: var(--primeira);
     text-align: center;
-    padding-top: 200px;
-    font-weight: bold;
-    color: white;
 }
-form{
-    background-color: aqua;
+#cima .navegacao a img.login{
+    position: absolute;
+    left: 10px;
+    top: 10px;
 }
-input{
-    padding: 20px 30px;
-    text-transform: uppercase;
-    background-color: white;
-    font-weight: bold;
+#filtro{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 50px;
+    background-color: var(--primeira);
+    border-top: 1px solid var(--quarta);
+    color: var(--quarta);
+    padding-left: 20px;
+    padding-right: 20px;
+}
+#filtro div a{
+    margin-top: 2px;
+    text-align: end;
+}
+#cardapio{
+    display: block;
+    width: 100%;
+}
+#cardapio .fil h2{
+    color: var(--segunda);
+    margin-left: 10%;
+    margin-top: 20px;
+}
+#cardapio .fil a{
+    text-decoration: none;
+}
+#cardapio .fil .card{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--primeira);
+    color: var(--quarta);
+    margin-top: 20px;
+    left: 10%;
+    width: 80%;
+    height: 120px;
+}
+#cardapio .fil .card .textos{
+    padding-left: 20px;
+    text-align: start;
+    padding-top: 5px;
+}
+#cardapio .fil .card .imagem{
+    text-align: start;
+    padding: 15px;
+}
+#cardapio .fil .card .imagem img{
+    border: 2px solid var(--quarta);
+}
+#carrinho{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    bottom: 0;
+    background-color: var(--primeira);
+    color: var(--quarta);
+    width: 100%;
+    height: 50px;    
+    line-height: 100px;
+    text-align: end;
+}
+#carrinho div .preco{
+    text-align: end;
+    padding-right: 10%;
+}
+#baixo{
+    display: block;
+    background-color: var(--primeira);
+    width: 100%;
+    height: 150px;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    color: var(--quarta);
+    text-align: center;
+}
+#baixo .fimpag .contato a {
+    text-decoration: none;
+}
+#baixo .fimpag .contato a img.zap{
+    margin-right: 15px;
+}
+#baixo .fimpag .contato a img.insta{
+    margin-left: 15px;
 }
