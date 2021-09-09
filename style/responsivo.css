@@ -18,42 +18,59 @@
         height: 25px;
     }
     .prato{
-        margin-top: 12px;
-        width: 110%;
+        margin-top: 8%;
+        margin-left: -25%;
+        width: 140%;
         height: 90%;
     }
     .lupa, .zap, .insta{
         width: 30px;
         height: 30px;
     }
-    #filtro div h2{
-        margin-top: 14px;
+    #cima{
+        width: 100%;
+        margin-left: 0;
+    }
+    #cima.active .navegacao a img.login{
+        left: 86%;
+    }
+    #cima.active .navegacao a img.logo{
+        margin-top: 0;
+    }
+    #filtro{
+        width: 90%;
+        margin-left: 5%;
+        height: 80px;
+    }
+    #filtro div form select{
+        margin-top: 0;
+        width: 80%;
     }
     #filtro div a img.lupa{
         margin-top: 8px;
     }
-    #filtro div h2, 
+    #filtro div form label.titulo, 
     #cardapio .fil h2, 
     #baixo .fimpag h2.titulo{
         font-size: 13pt;
     }
     #cardapio .fil .card{
         width: 90%;
-        left: 8%;
+        left: 5%;
     }
     #cardapio .fil h2{
         font-size: 12pt;
     }
-    #cardapio .fil a div .textos{
+    #cardapio .fil .card a div .textos{
         margin-top: 5%;
     }
-    #cardapio .fil a div .textos h3{
+    #cardapio .fil .card a div .textos h3{
         font-size: 12pt;
     }
-    #cardapio .fil a div .textos p{
+    #cardapio .fil .card a div .textos p{
         font-size: 8pt;
     }
-    #carrinho div h2{
+    #carrinho a div h2{
         margin-top: 3%;
         font-size: 13pt;
     }

@@ -15,7 +15,7 @@
           <img src="./assets/login.png" alt="Login/Cadastro" class="login">
         </a>
         <a href="index.html">
-          <img src="./assets/Le_Chef-removebg-preview 1.png" alt="Logo" class="logo">
+          <img src="./assets/logoG.png" alt="Logo" class="logo" id="logo">
         </a>
       </div>
     </div>
@@ -23,7 +23,16 @@
   <!-- Pesquisa -->
   <div id="filtro">
     <div class="row">
-      <h2 class="col-10 titulo">Filtrar Cardápio</h2>
+      <form action="#" class="col-10">
+      <label class="titulo">Filtrar Cardápio: </label>
+      <select id="comidas" name="comidas">
+        <option value=""></option>
+        <option value="carnes">Carnes</option>
+        <option value="massas">Massas</option>
+        <option value="sobremesa">Sobremesas</option>
+        <option value="bebidas">Bebidas</option>
+      </select>
+    </form>
       <a href="#" class="col-2">
         <img src="./assets/lupa.png" alt="Pesquisar" class="lupa">
       </a>
@@ -36,20 +45,23 @@
       <h2 tag="carnes">
         Carnes
       </h2>
-      <a href="#">
-      <div class="card row">
-        <div class="textos col-8">
-          <h3 class="titulo">Picanha</h3>
-          <p class="descricao">Acompanha arroz e batata frita.</p>
-          <p class="valor">R$ 59,99</p>
-        </div>
-        <div class="imagem col-4">
-          <img src="./assets/Imagem Prato.png" alt="Prato" class="prato">
-        </div>
+      <div class="card">
+        <a href="./detalhePedido.html">
+          <div class="row">
+            <div class="textos col-8">
+              <h3 class="titulo">Picanha</h3>
+              <p class="descricao">Acompanha arroz e batata frita.</p>
+              <p class="valor">R$ 59,99</p>
+            </div>
+            <div class="imagem col-4">
+              <img src="./assets/Imagem Prato.png" alt="Prato" class="prato">
+            </div>
+          </div>
+        </a>
       </div>
-      </a>
-      <a href="#">
-        <div class="card row">
+      <div class="card">
+        <a href="./detalhePedido.html">
+          <div class="row">
           <div class="textos col-8">
             <h3 class="titulo">Picanha</h3>
             <p class="descricao">Acompanha arroz e batata frita.</p>
@@ -58,17 +70,20 @@
           <div class="imagem col-4">
             <img src="./assets/Imagem Prato.png" alt="Prato" class="prato">
           </div>
-        </div>
+          </div>
         </a>
+        </div>
     </div>
   </div>
   <!-- /cardápio -->
   <!-- carrinho -->
   <div id="carrinho">
+    <a href="./carrinho.html">
     <div class="row">
       <h2 class="titulo col-7">Meu carrinho</h2>
       <h2 class="preco col-5">R$ 0,00</h2>
     </div>
+    </a>
   </div>
   <!-- /carrinho -->
   <!-- baixo -->
@@ -87,5 +102,7 @@
     </div>
   </div>
   <!-- /baixo -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="./script/main.js"></script>
 </body>
 </html>

@@ -3,30 +3,69 @@ body{
 }
 #cima{
     display: block;
-    width: 100%;
+    width: 90%;
+    margin-left: 5%;
     height: 189px;
+    border-radius: 0px 0px 20px 20px;
     background-color: var(--primeira);
     text-align: center;
 }
 #cima .navegacao a img.login{
     position: absolute;
-    left: 10px;
+    left: 90%;
     top: 10px;
+}
+#cima.active{
+    position: fixed;
+    height: 60px;
+    z-index: 9999;
+    text-align: start;
+    margin-top: -280px;
+}
+#cima.active .navegacao a img.logo{
+    width: 172px;
+    height: 60px;
+}
+#cima.active .navegacao a img.login{
+    width: 30px;
+    height: 30px;
+    left: 96%;
+    top: 5px;
+    margin-top: 8px;
 }
 #filtro{
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 84%;
+    margin-left: 8%;
+    border-radius: 0px 0px 20px 20px;
     height: 50px;
     background-color: var(--primeira);
-    border-top: 1px solid var(--quarta);
+    border-top: 3px solid var(--quarta);
+    border-bottom: 2px solid var(--quarta);
     color: var(--quarta);
     padding-left: 20px;
     padding-right: 20px;
 }
+#filtro div form{
+    font-size: 18pt;
+    font-weight: bold;
+}
+#filtro div form select{
+    border: 0;
+    border-radius: 4px;
+    margin-top: 4px;
+    background-color: var(--primeira);
+    color: var(--quarta);
+}
 #filtro div a{
     margin-top: 2px;
     text-align: end;
+}
+#filtro.active{
+    position: fixed;
+    z-index: 9999;
+    margin-top: -220px;
 }
 #cardapio{
     display: block;
@@ -37,30 +76,34 @@ body{
     margin-left: 10%;
     margin-top: 20px;
 }
-#cardapio .fil a{
-    text-decoration: none;
-}
 #cardapio .fil .card{
     display: flex;
     flex-direction: column;
+    border-radius: 20px;
     background-color: var(--primeira);
-    color: var(--quarta);
     margin-top: 20px;
-    left: 10%;
-    width: 80%;
+    left: 18%;
+    width: 60%;
     height: 120px;
 }
-#cardapio .fil .card .textos{
-    padding-left: 20px;
-    text-align: start;
+#cardapio .fil .card a{
+    text-decoration: none;
+}
+#cardapio .fil .card a div .textos{
+    color: var(--quarta);
+    padding-left: 35px;
     padding-top: 5px;
 }
-#cardapio .fil .card .imagem{
-    text-align: start;
+#cardapio .fil .card a div .imagem{
+    text-align: end;
     padding: 15px;
+    padding-right: 35px;
 }
-#cardapio .fil .card .imagem img{
+#cardapio .fil .card a div .imagem img{
     border: 2px solid var(--quarta);
+}
+#cardapio.active{
+    margin-top: 280px;
 }
 #carrinho{
     display: flex;
@@ -68,22 +111,34 @@ body{
     position: fixed;
     bottom: 0;
     background-color: var(--primeira);
-    color: var(--quarta);
-    width: 100%;
+    width: 90%;
+    margin-left: 5%;
+    border-top: 2px solid var(--quarta);
+    border-radius: 20px 20px 0 0;
     height: 50px;    
     line-height: 100px;
     text-align: end;
 }
-#carrinho div .preco{
+#carrinho a{
+    text-decoration: none;
+    color: var(--quarta);
+}
+#carrinho a div .preco{
     text-align: end;
     padding-right: 10%;
+}
+#carrinho.active{
+    position: relative;
+    margin-top: 150px;
+    border-bottom: 2px solid var(--quarta);
 }
 #baixo{
     display: block;
     background-color: var(--primeira);
-    width: 100%;
+    width: 90%;
+    margin-left: 5%;
     height: 150px;
-    margin-top: 100px;
+    margin-top: 250px;
     margin-bottom: 50px;
     color: var(--quarta);
     text-align: center;
@@ -96,4 +151,8 @@ body{
 }
 #baixo .fimpag .contato a img.insta{
     margin-left: 15px;
+}
+#baixo.active{
+    margin-top: 0;
+    margin-bottom: 0;
 }
