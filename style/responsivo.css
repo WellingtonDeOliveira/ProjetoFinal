@@ -27,9 +27,19 @@
         width: 30px;
         height: 30px;
     }
+    .pratoPedido{
+        margin-top: 10%;
+        width: 100%;
+        height: 45%;
+        border: 2px solid var(--quarta);
+    }
+    /* layout */
     #cima{
         width: 100%;
         margin-left: 0;
+    }
+    #cima.active{
+        margin-top: -290px;
     }
     #cima.active .navegacao a img.login{
         left: 86%;
@@ -54,9 +64,29 @@
     #baixo .fimpag h2.titulo{
         font-size: 13pt;
     }
+    #carrinho a div h2{
+        margin-top: 3%;
+        font-size: 13pt;
+    }
+    #carrinho.active{
+        margin-top: 40px;
+    }
+    #baixo{
+        height: 100px;
+        margin-bottom: 51px;
+        padding-top: 8px;
+    }
+    /* /layout */
+    /* Index */
     #cardapio .fil .card{
         width: 90%;
         left: 5%;
+    }
+    #filtro.active{
+        margin-top: -230px;
+    }
+    #cardapio.active{
+        margin-top: 290px;
     }
     #cardapio .fil h2{
         font-size: 12pt;
@@ -70,13 +100,55 @@
     #cardapio .fil .card a div .textos p{
         font-size: 8pt;
     }
-    #carrinho a div h2{
-        margin-top: 3%;
-        font-size: 13pt;
+    /* /Index */
+    /* DetalhePedido */
+    #cima.activeDif{
+        margin-top: -190px;
     }
-    #baixo{
+    #detalhes{
+        height: 600px;
+    }
+    #detalhes .voltar{
+        margin-top: 10px;
+        margin-bottom: -20px;
+    }
+    #detalhes .detalhes .imagem{
+        width: 60%;
+        height: 40%;
+        margin-left: 20%;
+        margin-top: 5%;
+    }
+    #detalhes .detalhes .textos{
+        margin-top: -40%;
+    }
+    #detalhes .detalhes .textos h1{
+        font-size: 15pt;
+    }
+    #detalhes .detalhes .textos h2{
+        font-size: 10pt;
+    }
+    #detalhes .detalhes .observacao form label{
+        font-weight: bold;
+        font-size: 10pt;
+    }
+    #detalhes .detalhes .observacao form textarea{
+        width: 90%;
         height: 100px;
-        margin-bottom: 51px;
-        padding-top: 8px;
+        background-color: var(--quarta);
     }
+    #detalhes .detalhes .observacao form input{
+        margin-top: 4%;
+        width: 30px;
+        background-color: var(--quarta);
+    }
+    #detalhes .detalhes .observacao form button{
+        margin-top: 15%;
+        border-radius: 20px;
+        background-color: var(--segunda);
+        font-size: 10pt;
+        width: 90%;
+        text-transform: uppercase;
+        color: var(--quarta);
+    }
+    /* /DetalhePedido */
 }
