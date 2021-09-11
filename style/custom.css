@@ -23,10 +23,6 @@ body{
     text-align: start;
     margin-top: -260px;
 }
-#cima.activeDif{
-    margin-top: -190px;
-    border-bottom: 2px solid var(--quarta);
-}
 #cima.active .navegacao a img.logo{
     width: 172px;
     height: 60px;
@@ -116,6 +112,10 @@ body{
 }
 /* /Index */
 /* Detalhe Pedidos */
+#cima.activeDif{
+    margin-top: -200px;
+    border-bottom: 2px solid var(--quarta);
+}
 #detalhes{
     display: flex;
     flex-direction: column;
@@ -130,10 +130,11 @@ body{
     border-radius: 20px;
     text-align: center;
 }
-#detalhes .voltar{
+#voltar{
     text-decoration: none;
     margin-left: 10%;
-    margin-top: 20px;
+    margin-top: 10px;
+    margin-bottom: -30px;
 }
 #detalhes .detalhes .imagem{
     width: 60%;
@@ -174,10 +175,66 @@ body{
     text-transform: uppercase;
     color: var(--quarta);
 }
+#voltar.activeDif{
+    position: fixed;
+    margin-top: -130px;
+    z-index: 9999;
+}
 #detalhes.active{
-    margin-top: 190px;
+    margin-top: 200px;
 }
 /* /Detalhe Pedidos */
+/* Tela Login */
+#cima.activeLog{
+    margin-top: -280px;
+    border-bottom: 2px solid var(--quarta);
+}
+#baixo.activeLog{
+    border-radius: 20px 20px 0 0;
+    margin-top: 200px;
+    margin-bottom: 0;
+}
+#login{
+    height: 700px;
+    width: 60%;
+    margin-left: 20%;
+    border-radius: 20px;
+    margin-top: 5%;
+    background-color: var(--primeira);
+    text-align: center;
+}
+#login div h1, #login div form{
+    padding-top: 10px;
+    color: var(--quarta);
+}
+#login div form label{
+    position: relative;
+    left: -20%;
+    font-size: 14pt;
+    width: 50%;
+    font-weight: bold;
+}
+#login div form input{
+    background-color: var(--quarta);
+    border-radius: 5px;
+    width: 50%;
+}
+#login div form button{
+    background-color: var(--quarta);
+    margin-left: 30%;
+    width: 20%;
+    color: var(--primeira);
+    border-radius: 5px;
+}
+#voltar.active{
+    position: fixed;
+    margin-top: -210px;
+    z-index: 9999;
+}
+#login.active{
+    margin-top: 280px;
+}
+/* /Tela Login */
 #carrinho{
     display: flex;
     flex-direction: column;
