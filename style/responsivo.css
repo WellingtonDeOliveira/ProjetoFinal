@@ -13,6 +13,10 @@
         width: 250px;
         height: 200px;
     }
+    .perfil{
+        width: 24px;
+        height: 25px;
+    }
     .login{
         width: 25px;
         height: 25px;
@@ -23,9 +27,13 @@
         width: 140%;
         height: 90%;
     }
-    .lupa, .zap, .insta{
+    .lupa, .zap, .insta, .voltar{
         width: 30px;
         height: 30px;
+    }
+    .btnMe, .btnMa{
+        width: 18px;
+        height: 15px;
     }
     .pratoPedido{
         margin-top: 10%;
@@ -40,6 +48,9 @@
     }
     #cima.active{
         margin-top: -290px;
+    }
+    #cima.active .navegacao a img.perfil{
+        margin-left: 70%;
     }
     #cima.active .navegacao a img.login{
         left: 86%;
@@ -103,10 +114,16 @@
     /* /Index */
     /* DetalhePedido */
     #cima.activeDif{
-        margin-top: -190px;
+        margin-top: -200px;
     }
-    #detalhes{
-        height: 600px;
+    #voltar.activeDif{
+        margin-left: 4%;
+        margin-top: -130px;
+    }
+    #detalhes .detalhes{
+        height: 450px;
+        width: 70%;
+        margin-left: 15%;
     }
     #detalhes .voltar{
         margin-top: 10px;
@@ -119,7 +136,7 @@
         margin-top: 5%;
     }
     #detalhes .detalhes .textos{
-        margin-top: -40%;
+        margin-top: -30%;
     }
     #detalhes .detalhes .textos h1{
         font-size: 15pt;
@@ -144,11 +161,120 @@
     #detalhes .detalhes .observacao form button{
         margin-top: 15%;
         border-radius: 20px;
-        background-color: var(--segunda);
         font-size: 10pt;
         width: 90%;
         text-transform: uppercase;
-        color: var(--quarta);
     }
     /* /DetalhePedido */
+    /* Tela Login */
+    #cima.activeLog{
+        margin-top: -250px;
+    }
+    #voltar.active{
+        margin-left: 4%;
+        margin-top: -190px;
+    }
+    #baixo.activeLog{
+        margin-top: 100px;
+    }
+    #login.active{
+        margin-top: 250px;
+    }
+    #login{
+        width: 70%;
+        margin-top: 50px;
+        margin-left: 15%;
+        height: 650px;
+    }
+    #login div h1{
+        font-size: 15pt;
+        padding-top: 20px;
+    }
+    #login div form label{
+        width: 100%;
+        font-size: 12pt;
+        margin-left: 10%;
+        text-align: start;
+    }
+    #login div form input{
+        width: 80%;
+    }
+    #login div form button{
+        width: 40%;
+        font-size: 10pt;
+        font-weight: bold;
+    }
+    /* /Tela Login */
+    /* Tela Carrinho */
+    #telaCarrinho{
+        width: 70%;
+        margin-left: 15%;
+    }
+    #telaCarrinho table{
+        font-size: 11pt;
+    }
+    #telaCarrinho .tabela div.row{
+        margin-left: 0%;
+    }
+    #telaCarrinho .tabela p.meio{
+        margin-top: -5px;
+    }
+    #telaCarrinho .tabela a.btnAd{
+        width: 20%;
+        height: 30px;
+        font-size: 10pt;
+    }
+    #telaCarrinho .valorTotal{
+        font-size: 12pt;
+    }
+    #telaCarrinho .valorTotal div p.valor{
+        text-align: start;
+    }
+    #telaCarrinho.active{
+        margin-top: 240px;
+    }
+    #voltar.activeCar{
+        margin-top: -170px;
+        margin-left: 5%;
+    }
+    #cima.activeCar{
+        margin-top: -240px;
+    }
+    /* /Tela Carrinho */
+    /* Tela endereço */
+    #endereco{
+        width: 75%;
+        margin-top: 20px;
+        margin-left: 12.5%;
+    }
+    #endereco .endereco h1{
+        font-size: 16pt;
+        font-weight: bold;
+    }
+    #endereco .endereco form{
+        font-size: 10pt;
+    }
+    #endereco .endereco form label{
+        margin-left: 10%;
+    }
+    #endereco .endereco form input{
+        width: 80%;
+    }
+    #endereco .endereco form button{
+        width: 80%;
+    }
+    #cima.activeEnd{
+        margin-top: 0px;
+    }
+    #voltar.activeEnd{
+        margin-top: 70px;
+        margin-left: 2%;
+    }
+    #endereco.active{
+        margin-top: 220px;
+    }
+    #baixo.activeEnd{
+        margin-top: 120px;
+    }
+    /* /Tela endereço */
 }

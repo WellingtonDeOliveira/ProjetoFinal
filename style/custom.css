@@ -16,12 +16,23 @@ body{
     left: 90%;
     top: 10px;
 }
+#cima .navegacao a img.perfil{
+    position: absolute;
+    left: 8%;
+    top: 10px;
+}
 #cima.active{
     position: fixed;
     height: 60px;
     z-index: 9999;
     text-align: start;
     margin-top: -260px;
+}
+#cima.active .navegacao a img.perfil{
+    width: 29px;
+    height: 30px;
+    margin-top: 5px;
+    margin-left: 85%;
 }
 #cima.active .navegacao a img.logo{
     width: 172px;
@@ -110,6 +121,33 @@ body{
 #cardapio.active{
     margin-top: 260px;
 }
+#carrinho{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    bottom: 0;
+    background-color: var(--primeira);
+    width: 90%;
+    margin-left: 5%;
+    border-top: 2px solid var(--quarta);
+    border-radius: 20px 20px 0 0;
+    height: 50px;    
+    line-height: 100px;
+    text-align: end;
+}
+#carrinho a{
+    text-decoration: none;
+    color: var(--quarta);
+}
+#carrinho a div .preco{
+    text-align: end;
+    padding-right: 10%;
+}
+#carrinho.active{
+    position: relative;
+    margin-top: 180px;
+    border-bottom: 2px solid var(--quarta);
+}
 /* /Index */
 /* Detalhe Pedidos */
 #cima.activeDif{
@@ -131,10 +169,12 @@ body{
     text-align: center;
 }
 #voltar{
-    text-decoration: none;
     margin-left: 10%;
     margin-top: 10px;
     margin-bottom: -30px;
+}
+#voltar a{
+    text-decoration: none;
 }
 #detalhes .detalhes .imagem{
     width: 60%;
@@ -170,10 +210,10 @@ body{
 #detalhes .detalhes .observacao form button{
     margin-top: 2%;
     border-radius: 20px;
-    background-color: var(--segunda);
+    background-color: var(--quarta);
     width: 60%;
     text-transform: uppercase;
-    color: var(--quarta);
+    color: var(--segunda);
 }
 #voltar.activeDif{
     position: fixed;
@@ -209,9 +249,10 @@ body{
 }
 #login div form label{
     position: relative;
-    left: -20%;
     font-size: 14pt;
-    width: 50%;
+    width: 100%;
+    margin-left: 25%;
+    text-align: start;
     font-weight: bold;
 }
 #login div form input{
@@ -235,33 +276,139 @@ body{
     margin-top: 280px;
 }
 /* /Tela Login */
-#carrinho{
+/* Tela Carrinho */
+#telaCarrinho{
     display: flex;
     flex-direction: column;
-    position: fixed;
-    bottom: 0;
+    width: 60%;
+    height: auto;
+    margin-top: 40px;
+    margin-left: 20%;
     background-color: var(--primeira);
-    width: 90%;
-    margin-left: 5%;
-    border-top: 2px solid var(--quarta);
-    border-radius: 20px 20px 0 0;
-    height: 50px;    
-    line-height: 100px;
-    text-align: end;
+    border-radius: 20px;
+    text-align: center;
 }
-#carrinho a{
-    text-decoration: none;
+#telaCarrinho table{
+    margin-top: 20px;
+    font-size: 14pt;
+    border-bottom: 2px solid var(--quarta);
     color: var(--quarta);
 }
-#carrinho a div .preco{
-    text-align: end;
-    padding-right: 10%;
+#telaCarrinho .tabela div.row{
+    margin-left: 20%;
 }
-#carrinho.active{
+#telaCarrinho .tabela a.btnAd{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    font-size: 14pt;
+    font-weight: bold;
+    border: 2px solid var(--quarta);
+    margin-top: -10px;
+}
+#telaCarrinho .tabela a:active{
+    transform: scale(0.8);
+    opacity: 0.6;
+}
+#telaCarrinho .tabela a.btnAd img{
     position: relative;
-    margin-top: 180px;
+    left: -8px;
+    top: 2px;
+}
+#telaCarrinho .valorTotal{
+    margin-top: 50px;
+    color: var(--quarta);
+    font-size: 14pt;
+    font-weight: bold;
+}
+#telaCarrinho .valorTotal div p.txt{
+    text-align: end;
+}
+#telaCarrinho .button{
+    margin-top: 20px;
+}
+#telaCarrinho .button button{
+    font-weight: bold;
+    font-size: 12pt;
+    background-color: var(--quarta);
+    border-radius: 20px;
+    height: 40px;
+    width: 60%;
+    margin-bottom: 20px;
+}
+#cima.activeCar{
+    margin-top: -245px;
     border-bottom: 2px solid var(--quarta);
 }
+#voltar.activeCar{
+    position: fixed;
+    margin-top: -175px;
+    z-index: 9999;
+}
+#telaCarrinho.active{
+    margin-top: 245px;
+}
+#baixo.activeEnd{
+    margin-top: 150px;
+    margin-bottom: 0;
+}
+/* /Tela Carrinho */
+/* TelaEndereço */
+#cima.activeEnd{
+    margin-top: 0px;
+    border-bottom: 2px solid var(--quarta);
+}
+#voltar.activeEnd{
+    position: fixed;
+    margin-top: 70px;
+    z-index: 9999;
+}
+#baixo.activeEnd{
+    margin-top: 200px;
+    margin-bottom: 0;
+}
+#endereco{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    height: auto;
+    margin-left: 20%;
+    margin-top: 80px;
+    text-align: center;
+    border: 5px solid var(--primeira);
+    border-radius: 20px;
+    padding: 20px;
+}
+#endereco .endereco h1{
+    color: var(--primeira);
+    margin-bottom: 20px;
+}
+#endereco .endereco form{
+    color: var(--primeira);
+    font-size: 14pt;
+    font-weight: bold;
+}
+#endereco .endereco form label{
+    width: 100%;
+    text-align: start;
+    margin-left: 20%;
+}
+#endereco .endereco form input{
+    border-radius: 10px;
+    width: 60%;
+    background-color: var(--primeira);
+}
+#endereco .endereco form button{
+    width: 50%;
+    background-color: var(--primeira);
+    color: var(--quarta);
+    margin-top: 30px;
+    border-radius: 20px;
+}
+#endereco.active{
+    margin-top: 290px;
+}
+/* /TelaEndereço */
 #baixo{
     display: block;
     background-color: var(--primeira);

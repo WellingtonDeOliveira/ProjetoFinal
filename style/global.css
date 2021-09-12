@@ -1,6 +1,10 @@
 .logo{
     padding: 5px, 5px;
 }
+.perfil{
+    width: 34px;
+    height: 36px;
+}
 .login{
     width: 36px;
     height: 36px;
@@ -12,6 +16,10 @@
 .lupa, .zap, .insta, .voltar{
     width: 40px;
     height: 40px;
+}
+.btnMe, .btnMa{
+    width: 30px;
+    height: 20px;
 }
 .pratoPedido{
     width: 200px;
