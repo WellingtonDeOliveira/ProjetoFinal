@@ -409,6 +409,174 @@ body{
     margin-top: 290px;
 }
 /* /TelaEndereço */
+/* Tela Pagamento */
+#pagamento{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    height: auto;
+    margin-left: 20%;
+    text-align: center;
+    color: var(--segunda);
+}
+#pagamento .pagamento div{
+    margin-top: 4%;
+}
+#pagamento .pagamento div h3{
+    font-size: 14pt;
+    text-align: end;
+}
+#pagamento .pagamento div label{
+    font-size: 14pt;
+    text-align: end;
+}
+#pagamento .pagamento div input{
+    margin-top: 5px;
+    height: 20px;
+    margin-left: -8%;
+}
+#pagamento .pagamento form{
+    display: none;
+    margin-top: 30px;
+    padding-bottom: 30px;
+    border-radius: 20px;
+    border: 2px solid var(--primeira);
+}
+#pagamento .pagamento form.cartao{
+    display: block;
+}
+#pagamento .pagamento form h2{
+    font-size: 20pt;
+    margin-top: 10px;
+    font-weight: bold;
+}
+#pagamento .pagamento form label{
+    font-size: 14pt;
+    font-weight: bold;
+    width: 100%;
+    text-align: start;
+    margin-left: 20%;
+}
+#pagamento .pagamento form input{
+    width: 60%;
+    background-color: var(--primeira);
+    color: var(--quarta);
+}
+#pagamento .pagamento form.cartao label.mod{
+    margin-left: 25%;
+}
+#pagamento .pagamento form.cartao label.mod2{
+    position: relative;
+    margin-left: 25%;
+    top: -57px;
+    padding-left: 30%;
+}
+#pagamento .pagamento form.cartao input.mod{
+    width: 20%;
+    margin-left: -30%;
+}
+#pagamento .pagamento form.cartao input.mod2{
+    position: relative;
+    left: 46%;
+    top: -57px;
+    width: 20%;
+}
+#pagamento .pagamento form.cartao label.mod8{
+    width: 40%;
+    margin-left: 5%;
+    font-size: 16pt;
+}
+#pagamento .pagamento form.cartao label.mod9{
+    width: 40%;
+    margin-left: -24%;
+    font-size: 16pt;
+}
+#pagamento .pagamento form.cartao input.mod10{
+    width: 60%;
+    margin: 0;
+    margin-top: 20px;
+    margin-left: 0%;
+    border-radius: 20px;
+    color: var(--quarta);
+}
+#pagamento .pagamento form.dinheiro{
+    text-align: start;
+    position: relative;
+}
+#pagamento .pagamento form.dinheiro h2{
+    text-align: center;
+    margin-bottom: 20px;
+}
+#pagamento .pagamento form.dinheiro label.mod1{
+    width: 15%;
+    margin-left: 35%;
+}
+#pagamento .pagamento form.dinheiro label.mod2{
+    width: 20%;
+    text-align: start;
+    margin-left: -20px;
+}
+#pagamento .pagamento form.dinheiro input.mod3{
+    height: 25px;
+    width: 15px;
+    margin-left: -15%;
+}
+#pagamento .pagamento form.dinheiro label.mod4{
+    width: 20%;
+    text-align: start;
+    margin-left: 2%;
+}
+#pagamento .pagamento form.dinheiro input.mod5{
+    height: 25px;
+    width: 15px;
+    margin-left: -15%;
+}
+#pagamento .pagamento form.dinheiro label.mod6{
+    width: 15%;
+    margin-left: 35%;
+}
+#pagamento .pagamento form.dinheiro input.mod7{
+    width: 18%;
+    margin-left: -2%;
+}
+#pagamento .pagamento form.dinheiro label.mod8{
+    width: 50%;
+    text-align: end;
+    margin: 0;
+    margin-left: -4%;
+    margin-top: 20px;
+}
+#pagamento .pagamento form.dinheiro label.mod9{
+    width: 40%;
+    margin: 0;
+    margin-left: 4%;
+    margin-top: 20px;
+}
+#pagamento .pagamento form.dinheiro input.mod10{
+    width: 60%;
+    margin: 0;
+    margin-top: 20px;
+    margin-left: 20%;
+    border-radius: 20px;
+    color: var(--quarta);
+}
+#cima.activePag{
+    margin-top: -210px;
+    border-bottom: 2px solid var(--quarta);
+}
+#voltar.activePag{
+    position: fixed;
+    margin-top: -140px;
+    z-index: 9999;
+}
+#pagamento.active{
+    margin-top: 210px;
+}
+#baixo.activePag{
+    margin-top: 150px;
+    margin-bottom: 0;
+}
+/* /Tela Pagamento */
 #baixo{
     display: block;
     background-color: var(--primeira);

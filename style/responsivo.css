@@ -277,4 +277,114 @@
         margin-top: 120px;
     }
     /* /Tela endereço */
+    /* Tela Pagamento */
+    #pagamento .pagamento{
+        margin-top: 40px;
+        width: 100%;
+    }
+    #pagamento .pagamento h1{
+        font-size: 16pt;
+    }
+    #pagamento .pagamento div h3{
+        font-size: 12pt;
+        text-align: start;
+        margin-left: 17%;
+        width: 100%;
+    }
+    #pagamento .pagamento div label{
+        font-size: 12pt;
+        text-align: start;
+        margin-left: 10%;
+    }
+    #pagamento .pagamento div input{
+        margin-left: -2%;
+    }
+    #pagamento .pagamento form.cartao h2{
+        font-size: 16pt;
+    }
+    #pagamento .pagamento form.cartao label{
+        font-size: 12pt;
+        margin-left: 10%;
+    }
+    #pagamento .pagamento form.cartao input{
+        height: 25px;
+        width: 80%;
+    }
+    #pagamento .pagamento form.cartao label.mod{
+        margin-left: 15%;
+    }
+    #pagamento .pagamento form.cartao label.mod2{
+        margin-left: 25%;
+        top: -48px;
+    }
+    #pagamento .pagamento form.cartao input.mod{
+        width: 30%;
+        margin-left: -40%;
+    }
+    #pagamento .pagamento form.cartao input.mod2{
+        left: 50%;
+        top: -50px;
+        /*top: -54px;*/
+        width: 30%;
+    }
+    #pagamento .pagamento form.cartao label.mod8{
+        width: 45%;
+        margin-left: -25%;
+        font-size: 14pt;
+    }
+    #pagamento .pagamento form.cartao label.mod9{
+        width: 40%;
+        margin-left: -0%;
+        font-size: 14pt;
+    }
+    #pagamento .pagamento form.cartao input.mod10{
+        width: 60%;
+        height: 40px;
+        margin-top: 20px;
+        margin-left: 0%;
+    }
+    #pagamento .pagamento form.dinheiro h2{
+        font-size: 16pt;
+    }
+    #pagamento .pagamento form.dinheiro label.mod1{
+        margin-left: 15%;
+    }
+    #pagamento .pagamento form.dinheiro label.mod2{
+        text-align: start;
+        margin-left: 10%;
+    }
+    #pagamento .pagamento form.dinheiro input.mod3{
+        margin-left: -10%;
+    }
+    #pagamento .pagamento form.dinheiro label.mod4{
+        text-align: start;
+        margin-left: 4%;
+    }
+    #pagamento .pagamento form.dinheiro input.mod5{
+        margin-left: -8%;
+    }
+    #pagamento .pagamento form.dinheiro label.mod6{
+        width: 15%;
+        margin-left: 15%;
+    }
+    #pagamento .pagamento form.dinheiro input.mod7{
+        width: 35%;
+        margin-left: 16%;
+    }
+    #pagamento .pagamento form.dinheiro label.mod8{
+        margin-left: 0%;
+    }
+    #cima.activePag{
+        position: fixed;
+        margin-top: -210px;
+    }
+    #voltar.activePag{
+        margin-top: -140px;
+        margin-left: 4%;
+    }
+    #pagamento.active{
+        display: block;
+        margin-top: 210px;
+    }
+    /* /Tela Pagamento */
 }
