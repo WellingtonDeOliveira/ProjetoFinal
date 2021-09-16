@@ -7,40 +7,41 @@ jQuery(document).ready(function ($) {
             $("#filtro").addClass("active");
             $("#cardapio").addClass("active");
             var img = document.querySelector("#logo");
-            img.setAttribute('src', '../assets/logoS.png');
-            if(window.location.pathname == "/C:/xampp/htdocs/projetofinal/esboco/index.html"){
+            if(window.location.pathname == "/projetofinal/esboco/index.html"){
                 img.setAttribute('src', './assets/logoS.png');
+            }else{
+                img.setAttribute('src', '../assets/logoS.png');
             }
-            if(window.location.pathname == "/C:/xampp/htdocs/projetofinal/esboco/view/detalhePedido.html"){
+            if(window.location.pathname == "/projetofinal/esboco/view/detalhePedido.html"){
                 $("#cima").addClass("activeDif");
                 $("#detalhes").addClass("active");
                 $("#voltar").addClass("activeDif");
             }
-            if(window.location.pathname == "/C:/xampp/htdocs/projetofinal/esboco/view/login.html"){
+            if(window.location.pathname == "/projetofinal/esboco/view/login.html"){
                 $("#cima").addClass("activeLog");
                 $("#baixo").addClass("activeLog");
                 $("#login").addClass("active");
                 $("#voltar").addClass("active");
             }
-            if(window.location.pathname == "/C:/xampp/htdocs/projetofinal/esboco/view/carrinho.html"){
+            if(window.location.pathname == "/projetofinal/esboco/view/carrinho.html"){
                 $("#cima").addClass("activeCar");
+                $("#baixo").addClass("activeCar");
                 $("#telaCarrinho").addClass("active");
                 $("#voltar").addClass("activeCar");
-                $("#baixo").addClass("activeCar");
             }
-            if(window.location.pathname == "/C:/xampp/htdocs/projetofinal/esboco/view/perfilCli.html"){
+            if(window.location.pathname == "/projetofinal/esboco/view/perfilCli.html"){
                 $("#cima").addClass("activeEnd");
                 $("#endereco").addClass("active");
                 $("#voltar").addClass("activeEnd");
                 $("#baixo").addClass("activeEnd");
             }
-            if(window.location.pathname == "/C:/xampp/htdocs/projetofinal/esboco/view/pagamento.html"){
+            if(window.location.pathname == "/projetofinal/esboco/view/pagamento.html"){
                 $("#cima").addClass("activePag");
                 $("#pagamento").addClass("active");
                 $("#voltar").addClass("activePag");
                 $("#baixo").addClass("activePag");
             }
-            //alert(x);
+            //alert(window.location.pathname);
         } else {
             $("#cima").removeClass("active");
             $("#cima").removeClass("activeDif");
@@ -62,15 +63,15 @@ jQuery(document).ready(function ($) {
             $("#pagamento").removeClass("active");
             var img = document.querySelector("#logo");
             img.setAttribute('src', '../assets/logoG.png');
-            if(window.location.pathname == "/C:/xampp/htdocs/projetofinal/esboco/index.html"){
+            if(window.location.pathname == "/projetofinal/esboco/index.html"){
                 img.setAttribute('src', './assets/logoG.png');
             }
         }
         if (window.pageYOffset > x-940) {
-            if((window.location.pathname != "/C:/xampp/htdocs/projetofinal/esboco/view/login.html") &&
-                (window.location.pathname != "/C:/xampp/htdocs/projetofinal/esboco/view/carrinho.html") &&
-                (window.location.pathname != "/C:/xampp/htdocs/projetofinal/esboco/view/perfilCli.html") &&
-                (window.location.pathname != "/C:/xampp/htdocs/projetofinal/esboco/view/pagamento.html")){
+            if((window.location.pathname != "/projetofinal/esboco/view/login.html") &&
+                (window.location.pathname != "/projetofinal/esboco/view/carrinho.html") &&
+                (window.location.pathname != "/projetofinal/esboco/view/perfilCli.html") &&
+                (window.location.pathname != "/projetofinal/esboco/view/pagamento.html")){
                 $("#carrinho").addClass("active");
                 $("#baixo").addClass("active");
             }
