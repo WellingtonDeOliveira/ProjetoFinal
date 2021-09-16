@@ -28,17 +28,18 @@ class LoginDAO{
         }else{
             echo "Insert realizado com sucesso";
         }
-
         $this->connection->closeConnection();
     }
 
-    /*public function atualizar(Login $login){
+    public function atualizar(Login $login){
         $conn = $this->getConnection()->connectToDatabase();
-        $id = $login->getId();
+        $cpf = $login->getCpf();
         $nome = $login->getNome();
-        $telefone = $login->getTelefone();
+        $email = $login->getEmail();
+        $senha = $login->getSenha();
+        $perfil = $login->getPerfil();
 
-        $query = "UPDATE login SET nome = '$nome', telefone = '$telefone' WHERE id = '$id'";
+        $query = "UPDATE login SET nome = '$nome', email = '$email', senha = '$senha', perfil = '$perfil' WHERE cpf = '$cpf'";
         $r = mysqli_query($conn, $query);
         if(!$r){
             die("Erro ao atualizar");
@@ -51,9 +52,9 @@ class LoginDAO{
 
     public function excluir(Login $login){
         $conn = $this->getConnection()->connectToDatabase();
-        $id = $login->getId();
+        $cpf = $login->getCpf();
 
-        $query = "DELETE FROM login WHERE id = $id";
+        $query = "DELETE FROM login WHERE cpf = $cpf";
         $r = mysqli_query($conn, $query);
         if(!$r){
             die("Erro ao excluir");
@@ -75,14 +76,15 @@ class LoginDAO{
             $Logins = array();
             while($row = mysqli_fetch_array($r)){
                 $login = new Login();
-                $login->setId($row["id"]);
+                $login->setCpf($row["cpf"]);
                 $login->setNome($row["nome"]);
-                $login->setTelefone($row["telefone"]);
+                $login->setEmail($row["email"]);
+                $login->setSenha($row["senha"]);
+                $login->setPerfil($row["perfil"]);
                 array_push($Logins, $login);
             }
             return $Logins;
         }
-
         $this->connection->closeConnection();
     }
 
@@ -96,9 +98,11 @@ class LoginDAO{
             $Logins = array();
             while ($row = mysqli_fetch_array($r)){
                 $login = new Login();
-                $login->setId($row["id"]);
+                $login->setCpf($row["cpf"]);
                 $login->setNome($row["nome"]);
-                $login->setTelefone($row["telefone"]);
+                $login->setEmail($row["email"]);
+                $login->setSenha($row["senha"]);
+                $login->setPerfil($row["perfil"]);
                 array_push($Logins, $login);
             }
             return $Logins;
@@ -107,23 +111,25 @@ class LoginDAO{
         return null;
     }
     
-     public function recuperarPorId($id){
+     public function recuperarPorCpf($cpf){
         $conn = $this->getConnection()->connectToDatabase();
-        $query = "SELECT * FROM login WHERE id = $id";
+        $query = "SELECT * FROM login WHERE cpf = $cpf";
         $r = mysqli_query($conn, $query);
         if (!$r){
             die("Erro ao efetuar select");
         }else{
             while ($row = mysqli_fetch_array($r)){
                 $login = new Login();
-                $login->setId($row["id"]);
+                $login->setCpf($row["cpf"]);
                 $login->setNome($row["nome"]);
-                $login->setTelefone($row["telefone"]);
+                $login->setEmail($row["email"]);
+                $login->setSenha($row["senha"]);
+                $login->setPerfil($row["perfil"]);
                 return $login;
             }
         }
         $this->getConnection()->closeConnection();
         return null;
-    }*/
+    }
 }
 ?>

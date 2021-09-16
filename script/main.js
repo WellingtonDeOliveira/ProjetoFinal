@@ -80,5 +80,4 @@ jQuery(document).ready(function ($) {
             $("#baixo").removeClass("active");
         }
     }
-
 });

@@ -22,33 +22,37 @@ if($acao == "cadastrar"){
     $login->setPerfil($perfil);
     $loginDAO->inserir($login);
     header('Location: ../index.html');
-}else{
-    echo 'Não deu certo';
-}
-    /*else if($acao == "listar"){
-    $_SESSION["contatos"] = $contatoDAO->recuperarTodos();
-    header('Location: ../view/listarTodos.php');
-}else if($acao == "excluir"){
-    $id = $_GET["id"];
-    $contato = new Contato();
-    $contato->setId($id);
-    $contatoDAO->excluir($contato);
-    header('Location: ../controller/controle.php?acao=listar');
-}else if($acao == "recuperar"){
-    $id = $_GET["id"];
-    $contato = $contatoDAO->recuperarPorId($id);
-    $_SESSION["contato"] = $contato;
-    header('Location: ../view/formEdicaoContato.php');
-}else if($acao == "c"){
-    $id = $_POST["id"];
-    $nome = $_POST["nome"];
-    $telefone = $_POST["telefone"];
-    $contato = new Contato();
-    $contato->setId($id);
-    $contato->setNome($nome);
-    $contato->setTelefone($telefone);
-    $contatoDAO->atualizar($contato);
-    header('Location: ../controller/controle.php?acao=listar');
-}*/
+}else if($acao == "listar"){
+    $_SESSION["logins"] = $loginDAO->recuperarTodos();
 
+    /* FUTURA PAGINA */
+    header('Location: ../view/.php');
+}else if($acao == "excluir"){
+    $cpf = $_GET["cpf"];
+    $login = new Login();
+    $login->setCpf($cpf);
+    $loginDAO->excluir($login);
+    header('Location: ../controller/controleLogin.php?acao=listar');
+}else if($acao == "recuperar"){
+    $cpf = $_GET["cpf"];
+    $login = $loginDAO->recuperarPorCpf($cpf);
+    $_SESSION["login"] = $login;
+
+    /* FUTURA PAGINA */
+    header('Location: ../view/.php');
+}else if($acao == "atualizar"){
+    $cpf = $_POST["cpf"];
+    $nome = $_POST["nome"];
+    $email = $_POST["email"];
+    $senha = $_POST["senha"];
+    $perfil = $_POST["perfil"];
+    $login = new Login();
+    $login->setCpf($cpf);
+    $login->setNome($nome);
+    $login->setEmail($email);
+    $login->setSenha($senha);
+    $login->setPerfil($perfil);
+    $loginDAO->atualizar($login);
+    header('Location: ../controller/controleLogin.php?acao=listar');
+}
 ?>
