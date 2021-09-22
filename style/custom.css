@@ -162,7 +162,7 @@ body{
     margin-left: 20%;
     margin-top: 50px;
     width: 60%;
-    height: 600px;
+    height: auto;
     background-color: var(--primeira);
     color: var(--quarta);
     border-radius: 20px;
@@ -183,7 +183,7 @@ body{
     margin-top: 5%;
 }
 #detalhes .detalhes .textos{
-    margin-top: -20%;
+    margin-top: 2%;
 }
 #detalhes .detalhes .textos h1{
     font-size: 20pt;
@@ -193,11 +193,6 @@ body{
 }
 #detalhes .detalhes .observacao form label{
     font-size: 15pt;
-}
-#detalhes .detalhes .observacao form textarea{
-    width: 90%;
-    height: 80px;
-    background-color: var(--quarta);
 }
 #detalhes .detalhes .observacao form input{
     margin-top: 2%;
@@ -209,6 +204,7 @@ body{
 }
 #detalhes .detalhes .observacao form button{
     margin-top: 2%;
+    margin-bottom: 20px;
     border-radius: 20px;
     background-color: var(--quarta);
     width: 60%;
@@ -288,16 +284,17 @@ body{
     border-radius: 20px;
     text-align: center;
 }
-#telaCarrinho table{
+#telaCarrinho form table{
     margin-top: 20px;
     font-size: 14pt;
+    width: 100%;
     border-bottom: 2px solid var(--quarta);
     color: var(--quarta);
 }
-#telaCarrinho .tabela div.row{
-    margin-left: 20%;
+#telaCarrinho form .tabela div.row{
+    margin-left: 40%;
 }
-#telaCarrinho .tabela a.btnAd{
+#telaCarrinho form .tabela a.btnAd{
     width: 40px;
     height: 40px;
     border-radius: 20px;
@@ -306,28 +303,42 @@ body{
     border: 2px solid var(--quarta);
     margin-top: -10px;
 }
-#telaCarrinho .tabela a:active{
+#telaCarrinho form .tabela a:active{
     transform: scale(0.8);
     opacity: 0.6;
 }
-#telaCarrinho .tabela a.btnAd img{
+#telaCarrinho form .tabela a.btnAd img{
     position: relative;
     left: -8px;
     top: 2px;
 }
-#telaCarrinho .valorTotal{
+#telaCarrinho form .observacao label{
+    color: var(--quarta);
+    font-weight: bold;
+    font-size: 14pt;
+    width: 100%;
+    margin-top: 10px;
+}
+#telaCarrinho form .observacao textarea{
+    margin-top: 15px;
+    width: 60%;
+    height: 100px;
+    background-color: var(--quarta);
+    color: var(--segunda);
+}
+#telaCarrinho form .valorTotal{
     margin-top: 50px;
     color: var(--quarta);
     font-size: 14pt;
     font-weight: bold;
 }
-#telaCarrinho .valorTotal div p.txt{
+#telaCarrinho form .valorTotal div p.txt{
     text-align: end;
 }
-#telaCarrinho .button{
+#telaCarrinho form .button{
     margin-top: 20px;
 }
-#telaCarrinho .button button{
+#telaCarrinho form .button button{
     font-weight: bold;
     font-size: 12pt;
     background-color: var(--quarta);
@@ -348,9 +359,9 @@ body{
 #telaCarrinho.active{
     margin-top: 245px;
 }
-#baixo.activeEnd{
-    margin-top: 150px;
-    margin-bottom: 0;
+#baixo.activeCar{
+    margin-top: 100px;
+    margin-bottom: 0px;
 }
 /* /Tela Carrinho */
 /* TelaEndereço */

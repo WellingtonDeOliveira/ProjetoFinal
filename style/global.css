@@ -17,8 +17,9 @@
     width: 40px;
     height: 40px;
 }
-.btnMe, .btnMa{
-    width: 30px;
+img.btnMe, img.btnMa{
+    padding-left: 40%;
+    width: 25px;
     height: 20px;
 }
 .pratoPedido{

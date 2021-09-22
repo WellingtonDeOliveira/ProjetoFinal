@@ -31,8 +31,9 @@
         width: 30px;
         height: 30px;
     }
-    .btnMe, .btnMa{
-        width: 18px;
+    img.btnMe, img.btnMa{
+        padding-left: 10%;
+        width: 15px;
         height: 15px;
     }
     .pratoPedido{
@@ -210,24 +211,27 @@
         width: 70%;
         margin-left: 15%;
     }
-    #telaCarrinho table{
+    #telaCarrinho form table{
         font-size: 11pt;
     }
-    #telaCarrinho .tabela div.row{
-        margin-left: 0%;
+    #telaCarrinho form .tabela div.row{
+        margin-left: 10%;
     }
-    #telaCarrinho .tabela p.meio{
+    #telaCarrinho form .tabela p.meio{
         margin-top: -5px;
     }
-    #telaCarrinho .tabela a.btnAd{
+    #telaCarrinho form .tabela a.btnAd{
         width: 20%;
-        height: 30px;
+        height: 28px;
         font-size: 10pt;
     }
-    #telaCarrinho .valorTotal{
+    #telaCarrinho form .observacao label{
         font-size: 12pt;
     }
-    #telaCarrinho .valorTotal div p.valor{
+    #telaCarrinho form .valorTotal{
+        font-size: 12pt;
+    }
+    #telaCarrinho form .valorTotal div p.valor{
         text-align: start;
     }
     #telaCarrinho.active{
