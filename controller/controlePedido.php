@@ -50,7 +50,6 @@ if($acao == "cadastrar"){
     $pedido->setFormaPagamento($forma_pagamento);
     $pedido->setValor($valor);
     $pedido->setStatus($status);
-    $pedidoDAO->inserir($pedido);
     $pedidoDAO->atualizar($pedido);
     header('Location: ../controller/controleLogin.php?acao=listar');
 }
