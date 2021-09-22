@@ -32,7 +32,7 @@ if($acao == "cadastrar"){
     $endereco = new Endereco();
     $endereco->setId($id);
     $enderecoDAO->excluir($endereco);
-    header('Location: ../controller/controleComida.php?acao=listar');
+    header('Location: ../controller/controleEndereco.php?acao=listar');
 }else if($acao == "atualizar"){
     $cep = $_POST["cep"];
     $rua = $_POST["rua"];
