@@ -440,7 +440,7 @@ body{
     margin-top: 30px;
     padding-bottom: 30px;
     border-radius: 20px;
-    border: 2px solid var(--primeira);
+    background-color: var(--primeira);
 }
 #pagamento .pagamento form.cartao{
     display: block;
@@ -449,6 +449,7 @@ body{
     font-size: 20pt;
     margin-top: 10px;
     font-weight: bold;
+    color: var(--quarta);
 }
 #pagamento .pagamento form label{
     font-size: 14pt;
@@ -456,11 +457,12 @@ body{
     width: 100%;
     text-align: start;
     margin-left: 20%;
+    color: var(--quarta);
 }
 #pagamento .pagamento form input{
     width: 60%;
-    background-color: var(--primeira);
-    color: var(--quarta);
+    background-color: var(--quarta);
+    color: var(--primeira);
 }
 #pagamento .pagamento form.cartao label.mod{
     margin-left: 25%;
@@ -497,7 +499,7 @@ body{
     margin-top: 20px;
     margin-left: 0%;
     border-radius: 20px;
-    color: var(--quarta);
+    color: var(--primeira);
 }
 #pagamento .pagamento form.dinheiro{
     text-align: start;
