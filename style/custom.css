@@ -100,7 +100,7 @@ body{
     margin-top: 20px;
     left: 18%;
     width: 60%;
-    height: 120px;
+    height: auto;
 }
 #cardapio .fil .card a{
     text-decoration: none;
@@ -145,7 +145,7 @@ body{
 }
 #carrinho.active{
     position: relative;
-    margin-top: 180px;
+    margin-top: 90px;
     border-bottom: 2px solid var(--quarta);
 }
 /* /Index */
@@ -218,6 +218,10 @@ body{
 }
 #detalhes.active{
     margin-top: 200px;
+}
+#baixo.activeDel{
+    margin-top: 120px;
+    margin-bottom: 0px;
 }
 /* /Detalhe Pedidos */
 /* Tela Login */
@@ -451,7 +455,7 @@ body{
     margin-top: 30px;
     padding-bottom: 30px;
     border-radius: 20px;
-    border: 2px solid var(--primeira);
+    background-color: var(--primeira);
 }
 #pagamento .pagamento form.cartao{
     display: block;
@@ -460,6 +464,7 @@ body{
     font-size: 20pt;
     margin-top: 10px;
     font-weight: bold;
+    color: var(--quarta);
 }
 #pagamento .pagamento form label{
     font-size: 14pt;
@@ -467,11 +472,12 @@ body{
     width: 100%;
     text-align: start;
     margin-left: 20%;
+    color: var(--quarta);
 }
 #pagamento .pagamento form input{
     width: 60%;
-    background-color: var(--primeira);
-    color: var(--quarta);
+    background-color: var(--quarta);
+    color: var(--primeira);
 }
 #pagamento .pagamento form.cartao label.mod{
     margin-left: 25%;
@@ -508,7 +514,7 @@ body{
     margin-top: 20px;
     margin-left: 0%;
     border-radius: 20px;
-    color: var(--quarta);
+    color: var(--primeira);
 }
 #pagamento .pagamento form.dinheiro{
     text-align: start;

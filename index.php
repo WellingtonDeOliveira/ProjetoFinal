@@ -1,3 +1,8 @@
+<?php
+require_once './model/comida.php';
+session_start();
+$comidas = $_SESSION["comidas"];
+?>
 <!DOCTYPE html>
 <html lang="pt br">
 <head>
@@ -48,90 +53,89 @@
       <h2 tag="carnes">
         Carnes
       </h2>
+      <?php foreach($comidas as $comida){?>
+        <?php if($comida->getCategoria() == "carne"){ ?>
       <div class="card">
-        <a href="./view/detalhePedido.html">
-          <div class="row">
-            <div class="textos col-8">
-              <h3 class="titulo">Picanha</h3>
-              <p class="descricao">Acompanha arroz e batata frita.</p>
-              <p class="valor">R$ 59,99</p>
-            </div>
-            <div class="imagem col-4">
-              <img src="./assets/Imagem Prato.png" alt="Prato" class="prato">
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="card">
-        <a href="./view/detalhePedido.html">
-          <div class="row">
-            <div class="textos col-8">
-              <h3 class="titulo">Picanha</h3>
-              <p class="descricao">Acompanha arroz e batata frita.</p>
-              <p class="valor">R$ 59,99</p>
-            </div>
-            <div class="imagem col-4">
-              <img src="./assets/Imagem Prato.png" alt="Prato" class="prato">
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="card">
-        <a href="./view/detalhePedido.html">
-          <div class="row">
-            <div class="textos col-8">
-              <h3 class="titulo">Picanha</h3>
-              <p class="descricao">Acompanha arroz e batata frita.</p>
-              <p class="valor">R$ 59,99</p>
-            </div>
-            <div class="imagem col-4">
-              <img src="./assets/Imagem Prato.png" alt="Prato" class="prato">
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="card">
-        <a href="./view/detalhePedido.html">
-          <div class="row">
-            <div class="textos col-8">
-              <h3 class="titulo">Picanha</h3>
-              <p class="descricao">Acompanha arroz e batata frita.</p>
-              <p class="valor">R$ 59,99</p>
-            </div>
-            <div class="imagem col-4">
-              <img src="./assets/Imagem Prato.png" alt="Prato" class="prato">
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="card">
-        <a href="./view/detalhePedido.html">
-          <div class="row">
-            <div class="textos col-8">
-              <h3 class="titulo">Picanha</h3>
-              <p class="descricao">Acompanha arroz e batata frita.</p>
-              <p class="valor">R$ 59,99</p>
-            </div>
-            <div class="imagem col-4">
-              <img src="./assets/Imagem Prato.png" alt="Prato" class="prato">
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="card">
-        <a href="./view/detalhePedido.html">
-          <div class="row">
+        <a href="./controller/controleComida.php?acao=recuperarPorId&id_comida=<?php echo $comida->getIdComida();?>">
+        <div class="row">
           <div class="textos col-8">
-            <h3 class="titulo">Picanha</h3>
-            <p class="descricao">Acompanha arroz e batata frita.</p>
-            <p class="valor">R$ 59,99</p>
-          </div>
-          <div class="imagem col-4">
-            <img src="./assets/Imagem Prato.png" alt="Prato" class="prato">
-          </div>
+            <h3 class="titulo"><?php echo $comida->getNome();?></h3>
+            <p class="descricao"><?php echo $comida->getDescricao();?></p>
+              <p class="valor">R$ <?php echo $comida->getValor();?></p>
+            </div>
+            <div class="imagem col-4">
+              <img src="<?php echo $comida->getImagem();?>" alt="Prato" class="prato">
+            </div>
           </div>
         </a>
-        </div>
+      </div>
+      <?php }} ?>
+    </div>
+    <div class="fil">
+      <h2 tag="massas">
+        Massas
+      </h2>
+      <?php foreach($comidas as $comida){?>
+        <?php if($comida->getCategoria() == "massa"){ ?>
+      <div class="card">
+        <a href="./controller/controleComida.php?acao=recuperarPorId&id_comida=<?php echo $comida->getIdComida();?>">
+          <div class="row">
+            <div class="textos col-8">
+              <h3 class="titulo"><?php echo $comida->getNome();?></h3>
+              <p class="descricao"><?php echo $comida->getDescricao();?></p>
+              <p class="valor">R$ <?php echo $comida->getValor();?></p>
+            </div>
+            <div class="imagem col-4">
+              <img src="<?php echo $comida->getImagem();?>" alt="Prato" class="prato">
+            </div>
+          </div>
+        </a>
+      </div>
+      <?php }} ?>
+    </div>
+    <div class="fil">
+      <h2 tag="sobremesas">
+        Sobremesas
+      </h2>
+      <?php foreach($comidas as $comida){?>
+        <?php if($comida->getCategoria() == "sobremesa"){ ?>
+      <div class="card">
+        <a href="./controller/controleComida.php?acao=recuperarPorId&id_comida=<?php echo $comida->getIdComida();?>">
+          <div class="row">
+            <div class="textos col-8">
+              <h3 class="titulo"><?php echo $comida->getNome();?></h3>
+              <p class="descricao"><?php echo $comida->getDescricao();?></p>
+              <p class="valor">R$ <?php echo $comida->getValor();?></p>
+            </div>
+            <div class="imagem col-4">
+              <img src="<?php echo $comida->getImagem();?>" alt="Prato" class="prato">
+            </div>
+          </div>
+        </a>
+      </div>
+      <?php }} ?>
+    </div>
+    <div class="fil">
+      <h2 tag="bebidas">
+        Bebidas
+      </h2>
+      <?php foreach($comidas as $comida){?>
+        <?php if($comida->getCategoria() == "bebida"){ ?>
+      <div class="card">
+        <a href="./controller/controleComida.php?acao=recuperarPorId&id_comida=<?php echo $comida->getIdComida();?>">
+          <div class="row">
+            <div class="textos col-8">
+              <h3 class="titulo"><?php echo $comida->getNome();?></h3>
+              <p class="descricao"><?php echo $comida->getDescricao();?></p>
+              <p class="valor">R$ <?php echo $comida->getValor();?></p>
+            </div>
+            <div class="imagem col-4">
+              <img src="<?php echo $comida->getImagem();?>" alt="Prato" class="prato">
+            </div>
+          </div>
+        </a>
+      </div>
+      <?php }} ?>
     </div>
   </div>
   <!-- /cardápio -->

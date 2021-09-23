@@ -1,6 +1,6 @@
 <?php
 class Comida{
-    private $id;
+    private $id_comida;
     private $imagem;
     private $descricao;
     private $valor;
@@ -8,11 +8,11 @@ class Comida{
     private $nome;
 
 
-    public function getId(){
-        return $this->id;
+    public function getIdComida(){
+        return $this->id_comida;
     }
-    public function setId($id): self{
-        $this->id = $id;
+    public function setIdComida($id_comida): self{
+        $this->id_comida = $id_comida;
         return $this;
     }
     public function getImagem(){

@@ -34,7 +34,7 @@ class ComidaDAO{
 
     public function atualizar(Comida $comida){
         $conn = $this->getConnection()->connectToDatabase();
-        $id = $comida->getId();
+        $id = $comida->getIdComida();
         $imagem = $comida->getImagem();
         $descricao = $comida->getDescricao();
         $valor = $comida->getValor();
@@ -55,7 +55,7 @@ class ComidaDAO{
 
     public function excluir(Comida $comida){
         $conn = $this->getConnection()->connectToDatabase();
-        $id = $comida->getId();
+        $id = $comida->getIdComida();
 
         $query = "DELETE FROM comida WHERE id_comida = $id";
         $r = mysqli_query($conn, $query);
@@ -70,7 +70,6 @@ class ComidaDAO{
 
     public function recuperarTodos(){
         $conn = $this->getConnection()->connectToDatabase();
-        
         $query = "SELECT * FROM comida";
         $r = mysqli_query($conn, $query);
         if(!$r){
@@ -79,7 +78,7 @@ class ComidaDAO{
             $Comidas = array();
             while($row = mysqli_fetch_array($r)){
                 $comida = new Comida();
-                $comida->setId($row["id"]);
+                $comida->setIdComida($row["id_comida"]);
                 $comida->setImagem($row["imagem"]);
                 $comida->setDescricao($row["descricao"]);
                 $comida->setValor($row["valor"]);
@@ -102,7 +101,7 @@ class ComidaDAO{
             $Comidas = array();
             while ($row = mysqli_fetch_array($r)){
                 $comida = new Comida();
-                $comida->setId($row["id"]);
+                $comida->setIdComida($row["id"]);
                 $comida->setImagem($row["imagem"]);
                 $comida->setDescricao($row["descricao"]);
                 $comida->setValor($row["valor"]);
@@ -111,6 +110,28 @@ class ComidaDAO{
                 array_push($Comidas, $comida);
             }
             return $Comidas;
+        }
+        $this->getConnection()->closeConnection();
+        return null;
+    }
+
+    public function recuperarPorId($id_comida){
+        $conn = $this->getConnection()->connectToDatabase();
+        $query = "SELECT * FROM comida WHERE id_comida = '$id_comida'";
+        $r = mysqli_query($conn, $query);
+        if (!$r){
+            die("Erro ao efetuar select");
+        }else{
+            while ($row = mysqli_fetch_array($r)){
+                $comida = new Comida();
+                $comida->setIdComida($row["id"]);
+                $comida->setImagem($row["imagem"]);
+                $comida->setDescricao($row["descricao"]);
+                $comida->setValor($row["valor"]);
+                $comida->setCategoria($row["categoria"]);
+                $comida->setNome($row["nome"]);
+                return $comida;
+            }
         }
         $this->getConnection()->closeConnection();
         return null;

@@ -7,15 +7,16 @@ jQuery(document).ready(function ($) {
             $("#filtro").addClass("active");
             $("#cardapio").addClass("active");
             var img = document.querySelector("#logo");
-            if(window.location.pathname == "/projetofinal/esboco/index.html"){
+            if(window.location.pathname == "/projetofinal/esboco/index.php"){
                 img.setAttribute('src', './assets/logoS.png');
             }else{
                 img.setAttribute('src', '../assets/logoS.png');
             }
-            if(window.location.pathname == "/projetofinal/esboco/view/detalhePedido.html"){
+            if(window.location.pathname == "/projetofinal/esboco/view/detalhePedido.php"){
                 $("#cima").addClass("activeDif");
                 $("#detalhes").addClass("active");
                 $("#voltar").addClass("activeDif");
+                $("#baixo").addClass("activeDel");
             }
             if(window.location.pathname == "/projetofinal/esboco/view/login.html"){
                 $("#cima").addClass("activeLog");
@@ -63,7 +64,7 @@ jQuery(document).ready(function ($) {
             $("#pagamento").removeClass("active");
             var img = document.querySelector("#logo");
             img.setAttribute('src', '../assets/logoG.png');
-            if(window.location.pathname == "/projetofinal/esboco/index.html"){
+            if(window.location.pathname == "/projetofinal/esboco/index.php"){
                 img.setAttribute('src', './assets/logoG.png');
             }
         }

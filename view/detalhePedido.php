@@ -1,3 +1,8 @@
+<?php
+require_once '../model/comida.php';
+session_start();
+$comida = $_SESSION["comidad"];
+?>
 <!DOCTYPE html>
 <html lang="pt br">
 
@@ -16,13 +21,13 @@
       <a href="login.html">
         <img src="../assets/login.png" alt="Login/Cadastro" class="login">
       </a>
-      <a href="../index.html">
+      <a href="../index.php">
         <img src="../assets/logoG.png" alt="Logo" class="logo" id="logo">
       </a>
     </div>
   </div>
       <div class="voltar" id="voltar">
-        <a href="../index.html">
+        <a href="../index.php">
           <img src="../assets/voltar.png" alt="voltar" class="voltar">
         </a>
       </div>
@@ -31,15 +36,15 @@
     <div id="detalhes">
       <div class="detalhes container">
         <div class="imagem">
-          <img src="../assets/Imagem Prato.png" alt="Prato" class="pratoPedido">
+          <img src=".<?php echo $comida->getImagem();?>" alt="Prato" class="pratoPedido">
         </div>
         <div class="textos">
-          <h1 class="titulo">Picanha</h1>
-          <h2 class="subtitulo">Acompanha arroz e batata frita.</h2>
+          <h1 class="titulo"><?php echo $comida->getNome();?></h1>
+          <h2 class="subtitulo"><?php echo $comida->getDescricao();?></h2>
           <h2 class="valor">R$ 59,99</h2>
         </div>
         <div class="observacao">
-          <form action="index.html">
+          <form action="index.php">
             <label for="quantidade">Quantidade: </label>
             <input type="text" name="quantidade" id="quantidade">
             <div>

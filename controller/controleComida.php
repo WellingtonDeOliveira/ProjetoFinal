@@ -21,16 +21,14 @@ if($acao == "cadastrar"){
     $comida->setCategoria($categoria);
     $comida->setNome($nome);
     $comidaDAO->inserir($comida);
-    header('Location: ../index.html');
+    header('Location: ../index.php');
 }else if($acao == "listar"){
     $_SESSION["comidas"] = $comidaDAO->recuperarTodos();
-
-    /* FUTURA PAGINA */
-    header('Location: ../view/.php');
+    header('Location: ../index.php');
 }else if($acao == "excluir"){
-    $id = $_GET["id"];
+    $id_comida = $_GET["id_comida"];
     $comida = new Comida();
-    $comida->setId($id);
+    $comida->setIdComida($id_comida);
     $comidaDAO->excluir($comida);
     header('Location: ../controller/controleComida.php?acao=listar');
 }else if($acao == "recuperar"){
@@ -40,6 +38,11 @@ if($acao == "cadastrar"){
 
     /* FUTURA PAGINA */
     header('Location: ../view/.php');
+}else if($acao == "recuperarPorId"){
+    $id_comida = $_GET["id_comida"];
+    $comida = $comidaDAO->recuperarPorId($id_comida);
+    $_SESSION["comidad"] = $comida;
+    header('Location: ../view/detalhePedido.php');
 }else if($acao == "atualizar"){
     $imagem = $_POST["imagem"];
     $descricao = $_POST["descricao"];
