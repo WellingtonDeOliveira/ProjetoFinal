@@ -162,6 +162,7 @@ body{
     margin-left: 20%;
     margin-top: 50px;
     width: 60%;
+    padding-bottom: 20px;
     height: auto;
     background-color: var(--primeira);
     color: var(--quarta);
@@ -184,6 +185,17 @@ body{
 }
 #detalhes .detalhes .textos{
     margin-top: 2%;
+    margin-bottom: 20px;
+}
+#detalhes .detalhes a{
+    text-decoration: none;
+    width: 60%;
+    border-radius: 20px;
+    font-size: 14pt;
+    font-weight: bold;
+    padding: 5px 10px 5px 10px;
+    background-color: var(--quarta);
+    color: var(--primeira);
 }
 #detalhes .detalhes .textos h1{
     font-size: 20pt;

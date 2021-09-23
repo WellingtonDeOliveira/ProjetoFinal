@@ -24,7 +24,7 @@ jQuery(document).ready(function ($) {
                 $("#login").addClass("active");
                 $("#voltar").addClass("active");
             }
-            if(window.location.pathname == "/projetofinal/esboco/view/carrinho.html"){
+            if(window.location.pathname == "/projetofinal/esboco/view/carrinho.php"){
                 $("#cima").addClass("activeCar");
                 $("#baixo").addClass("activeCar");
                 $("#telaCarrinho").addClass("active");
@@ -70,7 +70,7 @@ jQuery(document).ready(function ($) {
         }
         if (window.pageYOffset > x-940) {
             if((window.location.pathname != "/projetofinal/esboco/view/login.html") &&
-                (window.location.pathname != "/projetofinal/esboco/view/carrinho.html") &&
+                (window.location.pathname != "/projetofinal/esboco/view/carrinho.php") &&
                 (window.location.pathname != "/projetofinal/esboco/view/perfilCli.html") &&
                 (window.location.pathname != "/projetofinal/esboco/view/pagamento.html")){
                 $("#carrinho").addClass("active");

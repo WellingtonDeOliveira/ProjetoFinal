@@ -141,10 +141,14 @@ $comidas = $_SESSION["comidas"];
   <!-- /cardápio -->
   <!-- carrinho -->
   <div id="carrinho">
-    <a href="./view/carrinho.html">
+    <a href="./view/carrinho.php">
     <div class="row">
       <h2 class="titulo col-7">Meu carrinho</h2>
-      <h2 class="preco col-5">R$ 0,00</h2>
+      <h2 class="preco col-5">R$ 
+        <?php $valorTotal = 0;if(isset($_SESSION['carrinho'])){foreach($_SESSION['carrinho'] as $key => $value){
+          $valorTotal += ($value['quantidade']*$value['valor']); } echo $valorTotal;}else{echo $valorTotal;}
+        ?>
+      </h2>
     </div>
     </a>
   </div>

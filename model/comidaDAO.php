@@ -101,7 +101,7 @@ class ComidaDAO{
             $Comidas = array();
             while ($row = mysqli_fetch_array($r)){
                 $comida = new Comida();
-                $comida->setIdComida($row["id"]);
+                $comida->setIdComida($row["id_comida"]);
                 $comida->setImagem($row["imagem"]);
                 $comida->setDescricao($row["descricao"]);
                 $comida->setValor($row["valor"]);
@@ -124,7 +124,7 @@ class ComidaDAO{
         }else{
             while ($row = mysqli_fetch_array($r)){
                 $comida = new Comida();
-                $comida->setIdComida($row["id"]);
+                $comida->setIdComida($row["id_comida"]);
                 $comida->setImagem($row["imagem"]);
                 $comida->setDescricao($row["descricao"]);
                 $comida->setValor($row["valor"]);
