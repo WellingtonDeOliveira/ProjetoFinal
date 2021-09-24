@@ -5,6 +5,7 @@ class Pedido{
     private $forma_pagamento;
     private $valor;
     private $status;
+    private $observacao;
 
     // Getter and Setter
     public function getStatus(){
@@ -49,6 +50,15 @@ class Pedido{
 
     public function setIdPedido($id_pedido): self{
         $this->id_pedido = $id_pedido;
+        return $this;
+    }
+
+    public function getObservacao(){
+        return $this->observacao;
+    }
+
+    public function setObservacao($observacao): self{
+        $this->observacao = $observacao;
         return $this;
     }
 }

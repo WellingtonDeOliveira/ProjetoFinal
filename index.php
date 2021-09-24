@@ -2,6 +2,9 @@
 require_once './model/comida.php';
 session_start();
 $comidas = $_SESSION["comidas"];
+$_SESSION["carrinho"];
+//Verifica Login 
+require_once('./script/logado.php');
 ?>
 <!DOCTYPE html>
 <html lang="pt br">
@@ -16,13 +19,13 @@ $comidas = $_SESSION["comidas"];
   <!-- Navegação -->
     <div id="cima">
       <div class="navegacao">
-        <a href="./view/perfilCli.html">
-          <img src="./assets/perfil.png" alt="perfil" class="perfil" id="perfil">
+        <a href="./view/perfilCli.html" id="perfil">
+          <img src="./assets/perfil.png" alt="perfil" class="perfil">
         </a>
-        <a href="./view/login.html">
+        <a href="./view/login.php" id="login">
           <img src="./assets/login.png" alt="Login/Cadastro" class="login">
         </a>
-        <a href="index.html">
+        <a href="index.php">
           <img src="./assets/logoG.png" alt="Logo" class="logo" id="logo">
         </a>
       </div>
@@ -169,7 +172,20 @@ $comidas = $_SESSION["comidas"];
     </div>
   </div>
   <!-- /baixo -->
+  <?php
+    //Verifica Login 
+    if(isset($_SESSION['logado'])){
+      echo '<script>
+      document.getElementById("login").style.display = "none";
+      </script>';
+    }else{
+      echo '<script>
+      document.getElementById("perfil").style.display = "none";
+      </script>'; 
+    }
+  ?>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript" src="./script/eventos.js"></script>
   <script type="text/javascript" src="script/main.js"></script>
 </body>
 </html>

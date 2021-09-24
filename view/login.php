@@ -13,13 +13,13 @@
   <!-- Navegação -->
   <div id="cima">
     <div class="navegacao">
-      <a href="../index.html">
+      <a href="../index.php">
         <img src="../assets/logoG.png" alt="Logo" class="logo" id="logo">
       </a>
     </div>
   </div>
   <div class="voltar" id="voltar">
-    <a href="../index.html">
+    <a href="../index.php">
       <img src="../assets/voltar.png" alt="voltar" class="voltar">
     </a>
   </div>
@@ -28,15 +28,15 @@
   <div id="login">
     <div class="container">
       <h1>ENTRAR</h1>
-      <form action="../index.html" method="post" class="">
-        <label for="login">Login </label>
-        <input type="text">
+      <form action="../controller/controleLogin.php?acao=logar" method="post" class="">
+        <label for="email">Login </label>
+        <input type="text" id="email" name="email">
         <label for="senha">Senha </label>
-        <input type="password">
+        <input type="password" id="senha" name="senha">
         <label></label>
         <button type="submit">Entrar</button>
       </form>
-      <h1>REGISTRE-SE</h1>
+      <h1 class="registro">REGISTRE-SE</h1>
       <form action="../controller/controleLogin.php?acao=cadastrar"  method="post" onsubmit = "return validaCampo()">
         <label for="nome">Nome </label>
         <input type="text" id="nome" name="nome">

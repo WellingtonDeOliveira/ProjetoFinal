@@ -17,15 +17,18 @@ $comida = $_SESSION["comidad"];
 <body>
   <!-- Navegação -->
   <div id="cima">
-    <div class="navegacao">
-      <a href="login.html">
+      <div class="navegacao">
+        <a href="./perfilCli.html" id="perfil">
+        <img src="../assets/perfil.png" alt="perfil" class="perfil">
+      </a>
+        <a href="./login.php" id="login">
         <img src="../assets/login.png" alt="Login/Cadastro" class="login">
       </a>
-      <a href="../index.php">
+        <a href="../index.php">
         <img src="../assets/logoG.png" alt="Logo" class="logo" id="logo">
       </a>
     </div>
-  </div>
+  </div>  
   <div class="voltar" id="voltar">
     <a href="../index.php">
       <img src="../assets/voltar.png" alt="voltar" class="voltar">
@@ -85,19 +88,30 @@ $comida = $_SESSION["comidad"];
       if($idComida == $comida->getIdComida()){
         if(isset($_SESSION['carrinho'][$idComida])){
           $_SESSION['carrinho'][$idComida]['quantidade']++;
-          header('location: http://localhost/projetofinal/esboco/controller/controleComida.php?acao=listar');
+          header('location: http://192.168.15.105/projetofinal/esboco/controller/controleComida.php?acao=listar');
         }else{
           $_SESSION['carrinho'][$idComida] = array('quantidade'=>1,'nome'=>$comida->getNome(),
            'valor'=>$comida->getValor(), 'id'=>$comida->getIdComida());
-           header('location: http://localhost/projetofinal/esboco/controller/controleComida.php?acao=listar');
+           header('location: http://192.168.15.105/projetofinal/esboco/controller/controleComida.php?acao=listar');
         }
       }else{
         die('Você não pode adicionar uma comida que não existe dentro desta página');
       }
     }
+    //Verifica Login 
+    if(isset($_SESSION['logado'])){
+      echo '<script>
+      document.getElementById("login").style.display = "none";
+      </script>';
+    }else{
+      echo '<script>
+      document.getElementById("perfil").style.display = "none";
+      </script>'; 
+    }
   ?>
   <!-- /Logica Carrinho -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="../script/eventos.js"></script>
   <script src="../script/main.js"></script>
 </body>
 

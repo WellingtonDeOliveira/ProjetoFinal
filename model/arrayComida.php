@@ -4,18 +4,8 @@ class ArrayComida{
     private $id_comida;
     private $quantidade;
     private $id_pedido;
-    private $observacao;
 
     // Getters and Setters
-    public function getObservacao(){
-        return $this->observacao;
-    }
-
-    public function setObservacao($observacao): self{
-        $this->observacao = $observacao;
-        return $this;
-    }
-
     public function getIdPedido(){
         return $this->id_pedido;
     }

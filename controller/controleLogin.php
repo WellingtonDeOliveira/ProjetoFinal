@@ -22,6 +22,15 @@ if($acao == "cadastrar"){
     $login->setPerfil($perfil);
     $loginDAO->inserir($login);
     header('Location: ../index.html');
+}else if($acao == "logar"){
+    $email = $_POST["email"];
+    $senha = $_POST["senha"];
+    $login = new Login();
+    $login->setEmail($email);
+    $login->setSenha($senha);
+    $loginDAO->verificar($login);
+    $_SESSION["logado"] = $login;
+    header('Location: ../index.php');
 }else if($acao == "listar"){
     $_SESSION["logins"] = $loginDAO->recuperarTodos();
 

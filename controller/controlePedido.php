@@ -9,15 +9,17 @@ $pedidoDAO = new PedidoDAO();
 
 if($acao == "cadastrar"){
     $id_cliente = $_POST["id_cliente"];
-    $forma_pagamento = $_POST["forma_pagamento"];
+    $forma_pagamento = "Não Decidido";
     $valor = $_POST["valor"];
-    $status = $_POST["status"];
+    $status = "pendente";
+    $observacao = $_POST["observacao"];
     $res = true;
     $pedido = new Pedido();
     $pedido->setIdCliente($id_cliente);
     $pedido->setFormaPagamento($forma_pagamento);
     $pedido->setValor($valor);
     $pedido->setStatus($status);
+    $pedido->setObservacao($observacao);
     $pedidoDAO->inserir($pedido);
     header('Location: ../index.html');
 }else if($acao == "listar"){
@@ -44,12 +46,14 @@ if($acao == "cadastrar"){
     $forma_pagamento = $_POST["forma_pagamento"];
     $valor = $_POST["valor"];
     $status = $_POST["status"];
+    $observacao = $_POST["observacao"];
     $pedido = new Pedido();
     $pedido->setIdPedido($id_pedido);
     $pedido->setIdCliente($id_cliente);
     $pedido->setFormaPagamento($forma_pagamento);
     $pedido->setValor($valor);
     $pedido->setStatus($status);
+    $pedido->setObservacao($observacao);
     $pedidoDAO->atualizar($pedido);
     header('Location: ../controller/controleLogin.php?acao=listar');
 }

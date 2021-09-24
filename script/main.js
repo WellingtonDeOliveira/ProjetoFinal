@@ -18,7 +18,7 @@ jQuery(document).ready(function ($) {
                 $("#voltar").addClass("activeDif");
                 $("#baixo").addClass("activeDel");
             }
-            if(window.location.pathname == "/projetofinal/esboco/view/login.html"){
+            if(window.location.pathname == "/projetofinal/esboco/view/login.php"){
                 $("#cima").addClass("activeLog");
                 $("#baixo").addClass("activeLog");
                 $("#login").addClass("active");
@@ -69,7 +69,7 @@ jQuery(document).ready(function ($) {
             }
         }
         if (window.pageYOffset > x-940) {
-            if((window.location.pathname != "/projetofinal/esboco/view/login.html") &&
+            if((window.location.pathname != "/projetofinal/esboco/view/login.php") &&
                 (window.location.pathname != "/projetofinal/esboco/view/carrinho.php") &&
                 (window.location.pathname != "/projetofinal/esboco/view/perfilCli.html") &&
                 (window.location.pathname != "/projetofinal/esboco/view/pagamento.html")){

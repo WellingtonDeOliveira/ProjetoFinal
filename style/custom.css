@@ -11,6 +11,9 @@ body{
     background-color: var(--primeira);
     text-align: center;
 }
+#cima .navegacao a img#logo.active{
+    margin-left: -20%;
+}
 #cima .navegacao a img.login{
     position: absolute;
     left: 90%;
@@ -18,7 +21,7 @@ body{
 }
 #cima .navegacao a img.perfil{
     position: absolute;
-    left: 8%;
+    left: 90%;
     top: 10px;
 }
 #cima.active{
@@ -28,17 +31,18 @@ body{
     text-align: start;
     margin-top: -260px;
 }
-#cima.active .navegacao a img.perfil{
-    width: 29px;
-    height: 30px;
-    margin-top: 5px;
-    margin-left: 85%;
-}
 #cima.active .navegacao a img.logo{
     width: 172px;
     height: 60px;
 }
 #cima.active .navegacao a img.login{
+    width: 30px;
+    height: 30px;
+    left: 96%;
+    top: 5px;
+    margin-top: 8px;
+}
+#cima.active .navegacao a img.perfil{
     width: 30px;
     height: 30px;
     left: 96%;
@@ -247,7 +251,7 @@ body{
     margin-bottom: 0;
 }
 #login{
-    height: 700px;
+    height: auto;
     width: 60%;
     margin-left: 20%;
     border-radius: 20px;
@@ -258,6 +262,12 @@ body{
 #login div h1, #login div form{
     padding-top: 10px;
     color: var(--quarta);
+}
+#login div h1.registro{
+    margin-top: 10px;
+    border-top: 20px solid var(--quarta);
+    width: 120%;
+    margin-left: -10%;
 }
 #login div form label{
     position: relative;
@@ -276,6 +286,7 @@ body{
     background-color: var(--quarta);
     margin-left: 30%;
     width: 20%;
+    margin-bottom: 40px;
     color: var(--primeira);
     border-radius: 5px;
 }

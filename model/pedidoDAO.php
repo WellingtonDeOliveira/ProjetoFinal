@@ -19,9 +19,10 @@ class PedidoDAO{
         $forma_pagamento = $pedido->getFormaPagamento();
         $valor = $pedido->getValor();
         $status = $pedido->getStatus();
+        $observacao = $pedido->getObservacao();
 
-        $query = "INSERT INTO pedido(id_cliente, forma_pagamento, valor, status) 
-        VALUES('$id_cliente', '$forma_pagamento', '$valor', '$status')";
+        $query = "INSERT INTO pedido(id_cliente, forma_pagamento, valor, status, observacao) 
+        VALUES('$id_cliente', '$forma_pagamento', '$valor', '$status', '$observacao')";
         $r = mysqli_query($conn, $query);
         if(!$r){
             die("Erro ao inserir");
@@ -38,9 +39,10 @@ class PedidoDAO{
         $forma_pagamento = $pedido->getFormaPagamento();
         $valor = $pedido->getValor();
         $status = $pedido->getStatus();
+        $observacao = $pedido->getObservacao();
         
         $query = "UPDATE pedido SET id_cliente = '$id_cliente', forma_pagamento = '$forma_pagamento',
-        valor = '$valor', status = '$status' WHERE id_pedido = '$id_pedido'";
+        valor = '$valor', status = '$status', observacao = '$observacao' WHERE id_pedido = '$id_pedido'";
         $r = mysqli_query($conn, $query);
         if(!$r){
             die("Erro ao atualizar");
@@ -82,6 +84,7 @@ class PedidoDAO{
                 $pedido->setFormaPagamento($row["forma_pagamento"]);
                 $pedido->setValor($row["valor"]);
                 $pedido->setStatus($row["status"]);
+                $pedido->setObservacao($row["observacao"]);
                 array_push($Pedidos, $pedido);
             }
             return $Pedidos;
@@ -105,6 +108,7 @@ class PedidoDAO{
                 $pedido->setFormaPagamento($row["forma_pagamento"]);
                 $pedido->setValor($row["valor"]);
                 $pedido->setStatus($row["status"]);
+                $pedido->setObservacao($row["observacao"]);
                 array_push($Pedidos, $pedido);
             }
             return $Pedidos;

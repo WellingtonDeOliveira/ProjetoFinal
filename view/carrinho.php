@@ -16,12 +16,18 @@ session_start();
 <body>
   <!-- Navegação -->
   <div id="cima">
-    <div class="navegacao">
-      <a href="../index.php">
+      <div class="navegacao">
+        <a href="./perfilCli.html" id="perfil">
+        <img src="../assets/perfil.png" alt="perfil" class="perfil">
+      </a>
+        <a href="./login.php" id="login">
+        <img src="../assets/login.png" alt="Login/Cadastro" class="login">
+      </a>
+        <a href="../index.php">
         <img src="../assets/logoG.png" alt="Logo" class="logo" id="logo">
       </a>
     </div>
-  </div>
+  </div>  
   <div class="voltar" id="voltar">
     <a href="../index.php">
       <img src="../assets/voltar.png" alt="voltar" class="voltar">
@@ -30,7 +36,7 @@ session_start();
   <!-- /Navegação -->
   <!-- Carrinho -->
   <div id="telaCarrinho">
-    <form action="./pagamento.html" method="post">
+    <form  id="myForm"  action="../controller/controlePedido.php?acao=cadastrar" method="post">
     <?php $valorTotal = 0;?>
     <?php foreach($_SESSION['carrinho'] as $key => $value){?>
       <table class="tabela">
@@ -68,11 +74,11 @@ session_start();
         <div class="row">
           <p class="col-3 space"></p>
           <p class="col-4 txt">Total: </p>
-          <p class="col-5 valor">R$ <?php echo $valorTotal ?></p>
+          <p class="col-5 valor"> <label for="valor"> R$ <?php echo $valorTotal ?></label></p>
         </div>
       </div>
       <div class="button">
-        <button type="submit">Comfirmar Pedido</button>
+        <button type="button" onclick="verificaLogin()" >Comfirmar Pedido</button>
       </div>
     </form>
   </div>
@@ -115,9 +121,32 @@ session_start();
           }
         }
       }
+       //Verifica Login 
+       if(isset($_SESSION['logado'])){
+        echo '<script>
+        document.getElementById("login").style.display = "none";
+        </script>';
+      }else{
+        echo '<script>
+        document.getElementById("perfil").style.display = "none";
+        </script>'; 
+      }
+      $log = isset($_SESSION['logado']) ? 'S' : 'N';
     ?>
   <!-- /PHP -->
+  <script>
+    function verificaLogin(){
+      var logado = "<?php echo $log; ?>";
+      if(logado == 'N'){
+        window.location.replace("./login.php");
+        alert("Efetue o login antes de prosseguir!!");
+      }else{
+        document.getElementById("myForm").submit();
+      }
+    }
+  </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="../script/eventos.js"></script>
   <script src="../script/main.js"></script>
 </body>
 

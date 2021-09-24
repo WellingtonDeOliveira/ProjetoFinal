@@ -31,6 +31,29 @@ class LoginDAO{
         $this->connection->closeConnection();
     }
 
+    public function verificar(Login $login){
+        $conn = $this->getConnection()->connectToDatabase();
+        $email = $login->getEmail();
+        $senha = $login->getSenha();
+
+        $query = "SELECT * FROM login WHERE email='$email' AND senha='$senha'";
+        $r = mysqli_query($conn, $query);
+        if(!$r){
+            die("Usuario Não Cadastrado");
+        }else{
+            while($row = mysqli_fetch_array($r)){
+                $login = new Login();
+                $login->setCpf($row["cpf"]);
+                $login->setNome($row["nome"]);
+                $login->setEmail($row["email"]);
+                $login->setSenha($row["senha"]);
+                $login->setPerfil($row["perfil"]);
+            }
+            return $login;
+        }
+        $this->connection->closeConnection();
+    }
+
     public function atualizar(Login $login){
         $conn = $this->getConnection()->connectToDatabase();
         $cpf = $login->getCpf();
@@ -54,7 +77,7 @@ class LoginDAO{
         $conn = $this->getConnection()->connectToDatabase();
         $cpf = $login->getCpf();
 
-        $query = "DELETE FROM login WHERE cpf = $cpf";
+        $query = "DELETE FROM login WHERE cpf = '$cpf'";
         $r = mysqli_query($conn, $query);
         if(!$r){
             die("Erro ao excluir");
@@ -113,7 +136,7 @@ class LoginDAO{
     
      public function recuperarPorCpf($cpf){
         $conn = $this->getConnection()->connectToDatabase();
-        $query = "SELECT * FROM login WHERE cpf = $cpf";
+        $query = "SELECT * FROM login WHERE cpf = '$cpf'";
         $r = mysqli_query($conn, $query);
         if (!$r){
             die("Erro ao efetuar select");

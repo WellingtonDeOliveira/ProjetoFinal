@@ -12,4 +12,7 @@ jQuery(document).ready(function ($) {
             $('.cartao').hide();
         }
     });
+    if($("#login").is(":visible")){
+        $("#logo").addClass("active");
+    }
 });
