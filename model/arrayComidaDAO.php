@@ -18,10 +18,9 @@ class ArrayComidaDAO{
         $id_comida = $arrayComida->getIdComida();
         $quantidade = $arrayComida->getQuantidade();
         $id_pedido = $arrayComida->getIdPedido();
-        $observacao = $arrayComida->getObservacao();
 
-        $query = "INSERT INTO array_comida(id_comida, quantidade, id_pedido, observacao) 
-        VALUES('$id_comida', '$quantidade', '$id_pedido', '$observacao')";
+        $query = "INSERT INTO array_comida(id_comida, quantidade, id_pedido) 
+        VALUES('$id_comida', '$quantidade', '$id_pedido')";
         $r = mysqli_query($conn, $query);
         if(!$r){
             die("Erro ao inserir");
@@ -37,10 +36,9 @@ class ArrayComidaDAO{
         $id_comida = $arrayComida->getIdComida();
         $quantidade = $arrayComida->getQuantidade();
         $id_pedido = $arrayComida->getIdPedido();
-        $observacao = $arrayComida->getObservacao();
         
-        $query = "UPDATE array_comida SET id_comida = '$id_comida', quantidade = '$quantidade',
-        obervacao = '$observacao', id_pedido = '$id_pedido' WHERE id_array = '$id_array'";
+        $query = "UPDATE array_comida SET id_comida = '$id_comida', quantidade = '$quantidade', 
+        id_pedido = '$id_pedido' WHERE id_array = '$id_array'";
         $r = mysqli_query($conn, $query);
         if(!$r){
             die("Erro ao atualizar");
@@ -76,11 +74,10 @@ class ArrayComidaDAO{
             $arrayComidas = array();
             while ($row = mysqli_fetch_array($r)){
                 $arrayComida = new ArrayComida();
-                $arrayComida->setIdArray($row["id_pedido"]);
-                $arrayComida->setIdComida($row["id_pedido"]);
-                $arrayComida->setQuantidade($row["forma_pagamento"]);
-                $arrayComida->setIdPedido($row["valor"]);
-                $arrayComida->setObservacao($row["status"]);
+                $arrayComida->setIdArray($row["id_array"]);
+                $arrayComida->setIdComida($row["id_comida"]);
+                $arrayComida->setQuantidade($row["quantidade"]);
+                $arrayComida->setIdPedido($row["id_pedido"]);
                 array_push($arrayComidas, $arrayComida);
             }
             return $arrayComidas;

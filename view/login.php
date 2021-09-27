@@ -28,7 +28,7 @@
   <div id="login">
     <div class="container">
       <h1>ENTRAR</h1>
-      <form action="../controller/controleLogin.php?acao=logar" method="post" class="">
+      <form action="../controller/controleLogin.php?acao=logar" method="post">
         <label for="email">Login </label>
         <input type="text" id="email" name="email">
         <label for="senha">Senha </label>

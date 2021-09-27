@@ -28,9 +28,16 @@ if($acao == "cadastrar"){
     $login = new Login();
     $login->setEmail($email);
     $login->setSenha($senha);
-    $loginDAO->verificar($login);
-    $_SESSION["logado"] = $login;
-    header('Location: ../index.php');
+    $resposta = $loginDAO->verificar($login);
+    if($resposta->getCpf() == null){
+        echo '<script>
+                window.location.replace("../view/login.php");
+                alert("Usuario não cadastrado!!");
+            </script>';
+    }else{
+        $_SESSION["logado"] = $loginDAO->verificar($login);
+        header('Location: ../index.php');
+    }
 }else if($acao == "listar"){
     $_SESSION["logins"] = $loginDAO->recuperarTodos();
 

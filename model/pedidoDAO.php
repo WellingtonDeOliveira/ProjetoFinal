@@ -31,6 +31,23 @@ class PedidoDAO{
         }
         $this->connection->closeConnection();
     }
+    public function recuperarParaArray($id_cliente){
+        $conn = $this->getConnection()->connectToDatabase();
+        $query = "SELECT * FROM pedido WHERE id_cliente = '$id_cliente'";
+        $r = mysqli_query($conn, $query);
+        if (!$r){
+            die("Erro ao efetuar select");
+        }else{
+            $Pedidos = array();
+            while ($row = mysqli_fetch_array($r)){
+                $pedido = new Pedido();
+                $pedido->setIdPedido($row["id_pedido"]);
+                array_push($Pedidos, $pedido);
+            }
+            return $Pedidos;
+        }
+        $this->getConnection()->closeConnection();
+    }
 
     public function atualizar(Pedido $pedido){
         $conn = $this->getConnection()->connectToDatabase();
@@ -91,11 +108,10 @@ class PedidoDAO{
         }
         $this->connection->closeConnection();
     }
-
     
      public function recuperarPorIdCliente($id_cliente){
         $conn = $this->getConnection()->connectToDatabase();
-        $query = "SELECT * FROM pedido WHERE id_cliente = $id_cliente";
+        $query = "SELECT * FROM pedido WHERE id_cliente = '$id_cliente'";
         $r = mysqli_query($conn, $query);
         if (!$r){
             die("Erro ao efetuar select");
@@ -114,7 +130,6 @@ class PedidoDAO{
             return $Pedidos;
         }
         $this->getConnection()->closeConnection();
-        return null;
     }
 }
 ?>

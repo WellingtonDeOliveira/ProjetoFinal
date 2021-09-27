@@ -36,7 +36,7 @@ jQuery(document).ready(function ($) {
                 $("#voltar").addClass("activeEnd");
                 $("#baixo").addClass("activeEnd");
             }
-            if(window.location.pathname == "/projetofinal/esboco/view/pagamento.html"){
+            if(window.location.pathname == "/projetofinal/esboco/view/pagamento.php"){
                 $("#cima").addClass("activePag");
                 $("#pagamento").addClass("active");
                 $("#voltar").addClass("activePag");
@@ -72,7 +72,7 @@ jQuery(document).ready(function ($) {
             if((window.location.pathname != "/projetofinal/esboco/view/login.php") &&
                 (window.location.pathname != "/projetofinal/esboco/view/carrinho.php") &&
                 (window.location.pathname != "/projetofinal/esboco/view/perfilCli.html") &&
-                (window.location.pathname != "/projetofinal/esboco/view/pagamento.html")){
+                (window.location.pathname != "/projetofinal/esboco/view/pagamento.php")){
                 $("#carrinho").addClass("active");
                 $("#baixo").addClass("active");
             }

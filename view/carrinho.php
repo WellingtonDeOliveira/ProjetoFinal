@@ -1,5 +1,6 @@
 <?php
 require_once '../model/comida.php';
+require_once '../model/login.php';
 session_start();
 ?>
 <!DOCTYPE html>
@@ -38,7 +39,7 @@ session_start();
   <div id="telaCarrinho">
     <form  id="myForm"  action="../controller/controlePedido.php?acao=cadastrar" method="post">
     <?php $valorTotal = 0;?>
-    <?php foreach($_SESSION['carrinho'] as $key => $value){?>
+    <?php if(isset($_SESSION['carrinho'] )){ foreach($_SESSION['carrinho'] as $key => $value){?>
       <table class="tabela">
         <div class="row">
           <tr>
@@ -64,7 +65,7 @@ session_start();
           </tr>
         </div>
       </table>
-      <?php }?>
+      <?php }}?>
       <!-- Limite -->
       <div class="observacao">
         <label for="observacao">Observações:</label>
@@ -80,6 +81,8 @@ session_start();
       <div class="button">
         <button type="button" onclick="verificaLogin()" >Comfirmar Pedido</button>
       </div>
+      <input type="text" id="cliente_cpf" name="cliente_cpf" value="<?php echo $_SESSION['logado']->getCpf();?>" hidden>
+      <input type="text" id="valor" name="valor" value="<?php echo $valorTotal?>" hidden>
     </form>
   </div>
   <!-- /Carrinho -->

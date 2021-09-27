@@ -39,7 +39,7 @@ class LoginDAO{
         $query = "SELECT * FROM login WHERE email='$email' AND senha='$senha'";
         $r = mysqli_query($conn, $query);
         if(!$r){
-            die("Usuario Não Cadastrado");
+            return "F";
         }else{
             while($row = mysqli_fetch_array($r)){
                 $login = new Login();
