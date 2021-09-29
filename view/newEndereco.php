@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style/main.css">
-    <title>Perfil</title>
+    <title>Document</title>
 </head>
 
 <body>
@@ -24,15 +24,24 @@
         </a>
       </div>
     <!-- /Navegação -->
-    <!-- PerfilCliente -->
-    <div id="cliente">
-        <button onclick="window.location.replace('./newEndereco.php')">Cadastrar novo Endereço</button>
-        <button onclick="window.location.replace('../controller/controleEndereco.php?acao=listarClientePerfil')">Meus Endereços</button>
-        <button>Historico de Pedidos</button>
-        <div class="cores">
+    <!-- Endereço -->]
+    <div id="endereco">
+        <div class="endereco">
+            <h1>Cadastrar Endereço</h1>
+        <form action="../controller/controleEndereco.php?acao=cadastrar" method="post">
+                <label for="cep">CEP</label>
+                <input type="text" id="cep" name="cep">
+                <label for="rua">Rua</label>
+                <input type="text" id="rua" name="rua">
+                <label for="numero">Número</label>
+                <input type="text" id="numero" name="numero">
+                <label for="bairro">Bairro</label>
+                <input type="text" id="bairro" name="bairro">
+                <button type="submit">Confirmar Endereço</button>
+            </form>
         </div>
     </div>
-    <!-- /PerfilCliente -->
+    <!-- /Endereço -->
     <!-- baixo -->
     <div id="baixo">
         <div class="fimpag">

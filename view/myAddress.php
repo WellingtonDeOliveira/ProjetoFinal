@@ -1,38 +1,48 @@
+<?php
+require_once '../model/endereco.php';
+session_start();
+$enderecos = $_SESSION["enderecosCliente"];
+?>
 <!DOCTYPE html>
-<html lang="pt br">
+<html lang="pt">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style/main.css">
-    <title>Perfil</title>
+    <title>Meus Endereços</title>
 </head>
 
 <body>
     <!-- Navegação -->
     <div id="cima">
         <div class="navegacao">
-          <a href="../index.php">
-            <img src="../assets/logoG.png" alt="Logo" class="logo" id="logo">
-          </a>
-        </div>
-      </div>
-      <div class="voltar" id="voltar">
-        <a href="../index.php">
-          <img src="../assets/voltar.png" alt="voltar" class="voltar">
-        </a>
-      </div>
-    <!-- /Navegação -->
-    <!-- PerfilCliente -->
-    <div id="cliente">
-        <button onclick="window.location.replace('./newEndereco.php')">Cadastrar novo Endereço</button>
-        <button onclick="window.location.replace('../controller/controleEndereco.php?acao=listarClientePerfil')">Meus Endereços</button>
-        <button>Historico de Pedidos</button>
-        <div class="cores">
+            <a href="../index.php">
+                <img src="../assets/logoG.png" alt="Logo" class="logo" id="logo">
+            </a>
         </div>
     </div>
-    <!-- /PerfilCliente -->
+    <div class="voltar" id="voltar">
+        <a href="../index.php">
+            <img src="../assets/voltar.png" alt="voltar" class="voltar">
+        </a>
+    </div>
+    <!-- /Navegação -->
+    <!-- Address -->
+    <div id="address">
+        <?php if (isset($_SESSION["enderecosCliente"])) {
+            foreach ($enderecos as $endereco) { ?>
+                <div class="row">
+                    <h4 class="col-3 first">Rua: <?php echo $endereco->getRua(); ?></h4>
+                    <h4 class="col-3">N°: <?php echo $endereco->getNumero(); ?></h4>
+                    <h4 class="col-3">Bairro: <?php echo $endereco->getBairro(); ?></h4>
+                    <h4 class="col-3">CEP: <?php echo $endereco->getCep(); ?></h4>
+                </div>
+        <?php }
+        } ?>
+    </div>
+    <!-- /Address -->
     <!-- baixo -->
     <div id="baixo">
         <div class="fimpag">

@@ -19,7 +19,7 @@ if($acao == "cadastrar"){
         $arrayComida->setIdPedido($id_pedido);
         $arrayComidaDAO->inserir($arrayComida);
     }
-    header('Location: ../view/pagamento.php');
+    header('Location: ../controller/controleEndereco.php?acao=listarCliente');
 }else if($acao == "excluir"){
     $id_array = $_GET["id_array"];
     $arrayComida = new ArrayComida();

@@ -15,4 +15,16 @@ jQuery(document).ready(function ($) {
     if($("#login").is(":visible")){
         $("#logo").addClass("active");
     }
+    $('input[name="btnEnd"]').change(function () {
+        if ($('input[name="btnEnd"]:checked').val() === "Nao") {
+            $('.residencia').show();
+        } else {
+            $('.residencia').hide();
+        }
+        if ($('input[name="btnEnd"]:checked').val() === "Sim") {
+            $('.estabelecimento').show();
+        } else {
+            $('.estabelecimento').hide();
+        }
+    });
 });

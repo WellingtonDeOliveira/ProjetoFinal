@@ -422,7 +422,6 @@ body{
     margin-bottom: 20px;
 }
 #endereco .endereco form{
-    color: var(--primeira);
     font-size: 14pt;
     font-weight: bold;
 }
@@ -435,6 +434,7 @@ body{
     border-radius: 10px;
     width: 60%;
     background-color: var(--primeira);
+    color: var(--quarta);
 }
 #endereco .endereco form button{
     width: 50%;
@@ -598,7 +598,7 @@ body{
     margin-top: 20px;
     margin-left: 20%;
     border-radius: 20px;
-    color: var(--quarta);
+    color: var(--primeira);
 }
 #cima.activePag{
     margin-top: -210px;
@@ -617,6 +617,143 @@ body{
     margin-bottom: 0;
 }
 /* /Tela Pagamento */
+/* Tela retirada */
+#retirada{
+    width: 60%;
+    height: auto;
+    margin-left: 20%;
+    margin-top: 50px;
+    text-align: center;
+}
+#retirada h1{
+    margin-bottom: 30px;
+}
+#retirada div.row{
+    width: 80%;
+    margin-left: 15%;
+}
+#retirada div.row h3{
+    font-size: 15pt;
+}
+#retirada div.row label{
+    font-weight: bold;
+    width: 10%;
+}
+#retirada div.estabelecimento, div.residencia{
+    display: none;
+    width: 100%;
+    height: 300px;
+    margin-top: 40px;
+    border-radius: 20px;
+    background-color: var(--primeira);
+    color: var(--quarta);
+}
+#retirada div.estabelecimento{
+    display: block;
+}
+#retirada div.residencia div.card{
+    background-color: var(--primeira);
+}
+#retirada div.residencia div.card a{
+    text-decoration: none;
+    color: var(--quarta);
+}
+#retirada div.residencia div.card a div.row h4.first{
+    margin-left: -5%;
+}
+#retirada div.residencia div.card a div.row h4{
+    font-size: 13pt;
+}
+#retirada div.estabelecimento h4,  div.residencia h4{
+    margin-top: 20px;
+    padding-top: 20px;
+}
+#retirada div.estabelecimento button, div.residencia button{
+    margin-top: 10%;
+    font-size: 16pt;
+    font-weight: bold;
+    background-color: var(--quarta);
+    color: var(--primeira);
+    border-radius: 20px;
+    padding: 5px 20px;
+}
+#cima.activeLc{
+    margin-top: -250px;
+    border-bottom: 2px solid var(--quarta);
+}
+#voltar.activeLc{
+    position: fixed;
+    margin-top: -180px;
+    z-index: 9999;
+}
+#retirada.activeLc{
+    margin-top: 250px;
+}
+#baixo.activeLc{
+    margin-top: 150px;
+    margin-bottom: 0;
+}
+/* /Tela retirada */
+/* PerfilCliente */
+#cliente{
+    background-color: var(--primeira);
+    color: var(--quarta);
+    border-radius: 20px;
+    width: 60%;
+    height: auto;
+    margin-left: 20%;
+    margin-top: 50px;
+    text-align: center;
+}
+#cliente button{
+    width: 50%;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    border-radius: 20px;
+    background-color: var(--quarta);
+    color: var(--primeira);
+    font-weight: bold;
+    font-size: 14pt;
+}
+/* /PerfilCliente */
+/* MyAddress */
+#address{
+    background-color: var(--primeira);
+    color: var(--quarta);
+    width: 60%;
+    height: auto;
+    margin-left: 20%;
+    margin-top: 50px;
+    border-radius: 20px;
+    padding: 20px;
+}
+#address div{
+    background-color: var(--primeira);
+    width: 90%;
+    margin-left: 5%;
+    border-bottom: 2px solid var(--quarta);
+    padding: 10px;
+}
+#address div h4{
+    font-size: 13pt;
+}
+#cima.activeAdd{
+    margin-top: -250px;
+    border-bottom: 2px solid var(--quarta);
+}
+#voltar.activeAdd{
+    position: fixed;
+    margin-top: -180px;
+    z-index: 9999;
+}
+#address.activeAdd{
+    margin-top: 250px;
+}
+#baixo.activeAdd{
+    margin-top: 150px;
+    margin-bottom: 0;
+}
+/* /MyAddress */
 #baixo{
     display: block;
     background-color: var(--primeira);

@@ -35,32 +35,35 @@
                 <label for="nao" class="col-2">Não</label>
                 <input type="radio" class="col-2" name="btnEsc" id="btnNao" value="Nao" checked>
             </div>
-            <form action="../index.html" method="post" class="cartao" id="cartao">
-                <h2>Adicionar Cartão</h2>
-                <label for="nome">Nome</label>
-                <input type="text">
-                <label for="numeroCartao">Número Cartão</label>
-                <input type="text">
-                <label for="validade" class="mod">Validade</label>
-                <input type="text" class="mod">
-                <label for="cvv" class="mod2">CVV</label>
-                <input type="text" class="mod2">
-                <label for="valorT" class="mod8">Valor Total:</label>
-                <label for="valor" class="mod9">R$ 129,99</label>
-                <input type="submit" class="mod10" value="Confirmar Pagamento">
-            </form>
-            <form action="../index.html" method="post" class="dinheiro" id="dinheiro">
-                <h2>Pagamento em Espécie</h2>
-                <label for="nome" class="mod1">Troco?</label>
+            <form action="../controller/controlePedido.php?acao=atualizar&tipo=cartao" method="post" class="cartao" id="cartao"  onsubmit = "return validaCampoCartao()">
+            <h2>Adicionar Cartão</h2>
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome">
+            <label for="numeroCartao">Número Cartão</label>
+            <input type="text" id="numCartao" name="numCartao">
+            <label for="validade" class="mod">Validade</label>
+            <input type="text" class="mod" id="validade" name="validade">
+            <label for="cvv" class="mod2">CVV</label>
+            <input type="text" class="mod2" id="cvv" name="cvv">
+            <label for="valorT" class="mod8">Valor Total:</label>
+            <label for="valor" class="mod9">R$ 129,99</label>
+            <input type="text" id="troco" name="troco" hidden>
+            <input type="submit" class="mod10" value="Confirmar Pagamento">
+            <input type="text" id="id_endereco" name="id_endereco" value="<?php echo $_GET["id_endereco"]; ?>" hidden>
+        </form>
+        <form action="../controller/controlePedido.php?acao=atualizar&tipo=dinheiro" method="post" class="dinheiro" id="dinheiro">
+        <h2>Pagamento em Espécie</h2>
+        <label for="nome" class="mod1">Troco?</label>
                 <label for="sim" class="mod2">Sim</label>
                 <input type="radio" class="mod3" name="btnTroco" id="btnTrSim">
                 <label for="nao" class="mod4">Não</label>
                 <input type="radio" class="mod5" name="btnTroco" id="btnTrNao">
                 <label for="quanto" class="mod6">Quanto?</label>
-                <input type="text" class="mod7">
+                <input type="text" id="troco" name="troco" class="mod7">
                 <label for="valorT" class="mod8">Valor Total:</label>
                 <label for="valor" class="mod9">R$ 129,99</label>
                 <input type="submit" class="mod10" value="Confirmar Pagamento">
+                <input type="text" id="id_endereco" name="id_endereco" value="<?php echo $_GET["id_endereco"]; ?>" hidden>
             </form>
         </div>
     </div>
@@ -82,6 +85,7 @@
     </div>
     <!-- /baixo -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../script/validacao.js"></script>
     <script src="../script/eventos.js"></script>
     <script src="../script/main.js"></script>
 </body>

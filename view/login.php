@@ -37,7 +37,7 @@
         <button type="submit">Entrar</button>
       </form>
       <h1 class="registro">REGISTRE-SE</h1>
-      <form action="../controller/controleLogin.php?acao=cadastrar"  method="post" onsubmit = "return validaCampo()">
+      <form action="../controller/controleLogin.php?acao=cadastrar"  method="post" onsubmit = "return validaCampoCadastro()">
         <label for="nome">Nome </label>
         <input type="text" id="nome" name="nome">
         <label for="email">Email </label>

@@ -30,7 +30,7 @@ jQuery(document).ready(function ($) {
                 $("#telaCarrinho").addClass("active");
                 $("#voltar").addClass("activeCar");
             }
-            if(window.location.pathname == "/projetofinal/esboco/view/perfilCli.html"){
+            if(window.location.pathname == "/projetofinal/esboco/view/newEndereco.php"){
                 $("#cima").addClass("activeEnd");
                 $("#endereco").addClass("active");
                 $("#voltar").addClass("activeEnd");
@@ -42,6 +42,18 @@ jQuery(document).ready(function ($) {
                 $("#voltar").addClass("activePag");
                 $("#baixo").addClass("activePag");
             }
+            if(window.location.pathname == "/projetofinal/esboco/view/local.php"){
+                $("#cima").addClass("activeLc");
+                $("#retirada").addClass("activeLc");
+                $("#voltar").addClass("activeLc");
+                $("#baixo").addClass("activeLc");
+            }
+            if(window.location.pathname == "/projetofinal/esboco/view/myAddress.php"){
+                $("#cima").addClass("activeAdd");
+                $("#address").addClass("activeAdd");
+                $("#voltar").addClass("activeAdd");
+                $("#baixo").addClass("activeAdd");
+            }
             //alert(window.location.pathname);
         } else {
             $("#cima").removeClass("active");
@@ -50,18 +62,24 @@ jQuery(document).ready(function ($) {
             $("#cima").removeClass("activeCar");
             $("#cima").removeClass("activeEnd");
             $("#cima").removeClass("activePag");
+            $("#cima").removeClass("activeLc");
+            $("#cima").removeClass("activeAdd");
             $("#voltar").removeClass("active");
             $("#voltar").removeClass("activeDif");
             $("#voltar").removeClass("activeCar");
             $("#voltar").removeClass("activeEnd");
+            $("#voltar").removeClass("activeAdd");
             $("#voltar").removeClass("activePag");
+            $("#voltar").removeClass("activeLc");
             $("#detalhes").removeClass("active");
             $("#telaCarrinho").removeClass("active");
             $("#filtro").removeClass("active");
+            $("#address").removeClass("activeAdd");
             $("#cardapio").removeClass("active");
             $("#login").removeClass("active");
             $("#endereco").removeClass("active");
             $("#pagamento").removeClass("active");
+            $("#retirada").removeClass("activeLc");
             var img = document.querySelector("#logo");
             img.setAttribute('src', '../assets/logoG.png');
             if(window.location.pathname == "/projetofinal/esboco/index.php"){
@@ -71,8 +89,11 @@ jQuery(document).ready(function ($) {
         if (window.pageYOffset > x-940) {
             if((window.location.pathname != "/projetofinal/esboco/view/login.php") &&
                 (window.location.pathname != "/projetofinal/esboco/view/carrinho.php") &&
-                (window.location.pathname != "/projetofinal/esboco/view/perfilCli.html") &&
-                (window.location.pathname != "/projetofinal/esboco/view/pagamento.php")){
+                (window.location.pathname != "/projetofinal/esboco/view/newEndereco.php") &&
+                (window.location.pathname != "/projetofinal/esboco/view/pagamento.php") &&
+                (window.location.pathname != "/projetofinal/esboco/view/local.php") &&
+                (window.location.pathname != "/projetofinal/esboco/view/myAddress.php") &&
+                (window.location.pathname != "/projetofinal/esboco/view/perfilCli.html")) {
                 $("#carrinho").addClass("active");
                 $("#baixo").addClass("active");
             }

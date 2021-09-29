@@ -36,6 +36,7 @@ if($acao == "cadastrar"){
             </script>';
     }else{
         $_SESSION["logado"] = $loginDAO->verificar($login);
+        $_SESSION["ID_login"]= $_SESSION["logado"]->getCpf();
         header('Location: ../index.php');
     }
 }else if($acao == "listar"){

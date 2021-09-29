@@ -76,18 +76,41 @@ class EnderecoDAO{
         if(!$r){
             die("Erro ao selecionar");
         }else{
-            $Comidas = array();
+            $Enderecos = array();
             while($row = mysqli_fetch_array($r)){
                 $endereco = new Endereco();
-                $endereco->setId($row["id"]);
+                $endereco->setId($row["id_endereco"]);
                 $endereco->setCep($row["cep"]);
                 $endereco->setRua($row["rua"]);
                 $endereco->setNumero($row["numero"]);
                 $endereco->setBairro($row["bairro"]);
                 $endereco->setIdLogin($row["id_login"]);
-                array_push($Comidas, $endereco);
+                array_push($Enderecos, $endereco);
             }
-            return $Comidas;
+            return $Enderecos;
+        }
+        $this->connection->closeConnection();
+    }
+    public function recuperarTodosCliente($id_login){
+        $conn = $this->getConnection()->connectToDatabase();
+        
+        $query = "SELECT * FROM endereco WHERE id_login = '$id_login'";
+        $r = mysqli_query($conn, $query);
+        if(!$r){
+            die("Erro ao selecionar");
+        }else{
+            $Endrecos = array();
+            while($row = mysqli_fetch_array($r)){
+                $endereco = new Endereco();
+                $endereco->setId($row["id_endereco"]);
+                $endereco->setCep($row["cep"]);
+                $endereco->setRua($row["rua"]);
+                $endereco->setNumero($row["numero"]);
+                $endereco->setBairro($row["bairro"]);
+                $endereco->setIdLogin($row["id_login"]);
+                array_push($Endrecos, $endereco);
+            }
+            return $Endrecos;
         }
         $this->connection->closeConnection();
     }

@@ -9,11 +9,13 @@ $acao = $_GET["acao"];
 $pedidoDAO = new PedidoDAO();
 
 if($acao == "cadastrar"){
-    $cpf = $_POST["cliente_cpf"];
+    $cpf = $_SESSION['ID_login'];
     $forma_pagamento = "Não Decidido";
     $valor = $_POST["valor"];
     $status = "pendente";
     $observacao = $_POST["observacao"];
+    $troco = "0,00";
+    $id_endereco = "0";
     $res = true;
     $pedido = new Pedido();
     $pedido->setIdCliente($cpf);
@@ -21,6 +23,8 @@ if($acao == "cadastrar"){
     $pedido->setValor($valor);
     $pedido->setStatus($status);
     $pedido->setObservacao($observacao);
+    $pedido->setTroco($troco);
+    $pedido->setIdEndereco($id_endereco);
     $pedidoDAO->inserir($pedido);
     header('Location: ./controlePedido.php?acao=recuperarId&cpf='.$cpf);
 }else if($acao == "recuperarId"){
@@ -50,20 +54,18 @@ if($acao == "cadastrar"){
     /* FUTURA PAGINA */
     header('Location: ../view/.php');
 }else if($acao == "atualizar"){
-    $id_pedido = $_GET["id_pedido"];
-    $id_cliente = $_POST["id_cliente"];
-    $forma_pagamento = $_POST["forma_pagamento"];
-    $valor = $_POST["valor"];
-    $status = $_POST["status"];
-    $observacao = $_POST["observacao"];
+    $id_pedido = $_SESSION["idPedido"];
+    $forma_pagamento = $_GET["tipo"];
+    $status = "Pago";
+    $troco = $_POST["troco"];
+    $id_endereco = $_POST["id_endereco"];
     $pedido = new Pedido();
     $pedido->setIdPedido($id_pedido);
-    $pedido->setIdCliente($id_cliente);
     $pedido->setFormaPagamento($forma_pagamento);
-    $pedido->setValor($valor);
     $pedido->setStatus($status);
-    $pedido->setObservacao($observacao);
+    $pedido->setTroco($troco);
+    $pedido->setIdEndereco($id_endereco);
     $pedidoDAO->atualizar($pedido);
-    header('Location: ../controller/controleLogin.php?acao=listar');
+    header('Location: ../redirecionar.php');
 }
 ?>

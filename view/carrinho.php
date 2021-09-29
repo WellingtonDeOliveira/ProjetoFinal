@@ -81,7 +81,6 @@ session_start();
       <div class="button">
         <button type="button" onclick="verificaLogin()" >Comfirmar Pedido</button>
       </div>
-      <input type="text" id="cliente_cpf" name="cliente_cpf" value="<?php echo $_SESSION['logado']->getCpf();?>" hidden>
       <input type="text" id="valor" name="valor" value="<?php echo $valorTotal?>" hidden>
     </form>
   </div>

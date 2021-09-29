@@ -6,6 +6,8 @@ class Pedido{
     private $valor;
     private $status;
     private $observacao;
+    private $troco;
+    private $id_endereco;
 
     // Getter and Setter
     public function getStatus(){
@@ -59,6 +61,24 @@ class Pedido{
 
     public function setObservacao($observacao): self{
         $this->observacao = $observacao;
+        return $this;
+    }
+
+    public function getTroco(){
+        return $this->troco;
+    }
+
+    public function setTroco($troco): self{
+        $this->troco = $troco;
+        return $this;
+    }
+
+    public function getIdEndereco(){
+        return $this->id_endereco;
+    }
+
+    public function setIdEndereco($id_endereco): self{
+        $this->id_endereco = $id_endereco;
         return $this;
     }
 }

@@ -20,9 +20,11 @@ class PedidoDAO{
         $valor = $pedido->getValor();
         $status = $pedido->getStatus();
         $observacao = $pedido->getObservacao();
+        $troco = $pedido->getTroco();
+        $id_endereco = $pedido->getIdEndereco();
 
-        $query = "INSERT INTO pedido(id_cliente, forma_pagamento, valor, status, observacao) 
-        VALUES('$id_cliente', '$forma_pagamento', '$valor', '$status', '$observacao')";
+        $query = "INSERT INTO pedido(id_cliente, forma_pagamento, valor, status, observacao, troco, id_endereco) 
+        VALUES('$id_cliente', '$forma_pagamento', '$valor', '$status', '$observacao', '$troco', '$id_endereco')";
         $r = mysqli_query($conn, $query);
         if(!$r){
             die("Erro ao inserir");
@@ -52,14 +54,13 @@ class PedidoDAO{
     public function atualizar(Pedido $pedido){
         $conn = $this->getConnection()->connectToDatabase();
         $id_pedido = $pedido->getIdPedido();
-        $id_cliente = $pedido->getIdCliente();
         $forma_pagamento = $pedido->getFormaPagamento();
-        $valor = $pedido->getValor();
         $status = $pedido->getStatus();
-        $observacao = $pedido->getObservacao();
+        $troco = $pedido->getTroco();
+        $id_endereco = $pedido->getIdEndereco();
         
-        $query = "UPDATE pedido SET id_cliente = '$id_cliente', forma_pagamento = '$forma_pagamento',
-        valor = '$valor', status = '$status', observacao = '$observacao' WHERE id_pedido = '$id_pedido'";
+        $query = "UPDATE pedido SET forma_pagamento = '$forma_pagamento', 
+        status = '$status', troco = '$troco', id_endereco = '$id_endereco' WHERE id_pedido = '$id_pedido'";
         $r = mysqli_query($conn, $query);
         if(!$r){
             die("Erro ao atualizar");
