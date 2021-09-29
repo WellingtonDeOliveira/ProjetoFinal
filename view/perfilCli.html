@@ -28,8 +28,13 @@
     <div id="cliente">
         <button onclick="window.location.replace('./newEndereco.php')">Cadastrar novo Endereço</button>
         <button onclick="window.location.replace('../controller/controleEndereco.php?acao=listarClientePerfil')">Meus Endereços</button>
-        <button>Historico de Pedidos</button>
+        <button onclick="window.location.replace('../controller/controleArrayComida.php?acao=recuperar')">Historico de Pedidos</button>
         <div class="cores">
+          <div class="row">
+            <button class="azul col-4" onclick="mudarCorAzul();"></button>
+            <button class="vermelha col-4" ></button>
+            <button class="preto col-4" onclick="mudarCorPreto();"></button>
+          </div>
         </div>
     </div>
     <!-- /PerfilCliente -->
@@ -50,6 +55,7 @@
     </div>
     <!-- /baixo -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../script/mudarCor.js"></script>
     <script src="../script/main.js"></script>
 </body>
 

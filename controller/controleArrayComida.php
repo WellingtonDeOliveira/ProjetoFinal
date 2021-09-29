@@ -27,12 +27,9 @@ if($acao == "cadastrar"){
     $arrayComidaDAO->excluir($arrayComida);
     header('Location: ../controller/controleArrayComida.php?acao=recuperar');
 }else if($acao == "recuperar"){
-    $id_pedido = $_GET["id_pedido"];
-    $arrayComida = $arrayComidaDAO->recuperarPorIdPedido($id_pedido);
-    $_SESSION["arrayComida"] = $arrayComida;
-
-    /* FUTURA PAGINA */
-    header('Location: ../view/.php');
+    $arrayComidas = $arrayComidaDAO->recuperar();
+    $_SESSION["arrayComidas"] = $arrayComidas;
+    header('Location: ../controller/controlePedido.php?acao=recuperarIdHistorico');
 }else if($acao == "atualizar"){
     $id_array = $_GET["id_array"];
     $id_comida = $_POST["id_comida"];

@@ -149,7 +149,8 @@ body{
 }
 #carrinho.active{
     position: relative;
-    margin-top: 90px;
+    margin-top: 120px;
+    margin-bottom: 0px;
     border-bottom: 2px solid var(--quarta);
 }
 /* /Index */
@@ -236,7 +237,7 @@ body{
     margin-top: 200px;
 }
 #baixo.activeDel{
-    margin-top: 120px;
+    margin-top: 140px;
     margin-bottom: 0px;
 }
 /* /Detalhe Pedidos */
@@ -703,6 +704,7 @@ body{
     height: auto;
     margin-left: 20%;
     margin-top: 50px;
+    margin-bottom: -100px;
     text-align: center;
 }
 #cliente button{
@@ -714,6 +716,28 @@ body{
     color: var(--primeira);
     font-weight: bold;
     font-size: 14pt;
+}
+#cliente div.cores div.row button{
+    width: 5%;
+    border-radius: 25px;
+    height: 50px;
+    margin-left: 21%;
+    border: 2px solid white;
+    margin-bottom: 40px;
+}
+#cliente div.cores div.row button.azul{
+    background-color: rgb(0, 110, 255);
+}
+#cliente div.cores div.row button.vermelha:hover{
+    transform: scale(0.8);
+    opacity: 0.6;
+    border: 2px solid greenyellow;
+}
+#cliente div.cores div.row button.vermelha{
+    background-color: darkred;
+}
+#cliente div.cores div.row button.preto{
+    background-color: black;
 }
 /* /PerfilCliente */
 /* MyAddress */
@@ -754,6 +778,38 @@ body{
     margin-bottom: 0;
 }
 /* /MyAddress */
+/* HistoricoCli */
+#historicoCli{
+    background-color: var(--primeira);
+    color: var(--quarta);
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 50px;
+    border-radius: 20px;
+    height: auto;
+    text-align: center;
+}
+#historicoCli div.row{
+    width: 110%;
+    border-bottom: 2px solid var(--quarta);
+}
+#historicoCli div.row h3{
+    margin-left: 70%;
+}
+#historicoCli div.row h4{
+    font-size: 14pt;
+    font-weight: bold;
+    text-align: start;
+    margin-left: 20%;
+    margin-right: -30%;
+    padding: 15px;
+}
+#historicoCli div.row div.itens{
+    border-top: 2px dashed var(--quarta);
+    width: 50%;
+    margin-left: 25%;
+}
+/* /HistoricoCli */
 #baixo{
     display: block;
     background-color: var(--primeira);
@@ -761,7 +817,6 @@ body{
     margin-left: 5%;
     height: 150px;
     margin-top: 250px;
-    margin-bottom: 50px;
     color: var(--quarta);
     text-align: center;
 }

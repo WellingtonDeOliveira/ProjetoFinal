@@ -44,6 +44,9 @@ class PedidoDAO{
             while ($row = mysqli_fetch_array($r)){
                 $pedido = new Pedido();
                 $pedido->setIdPedido($row["id_pedido"]);
+                $pedido->setFormaPagamento($row["forma_pagamento"]);
+                $pedido->setValor($row["valor"]);
+                $pedido->setStatus($row["status"]);
                 array_push($Pedidos, $pedido);
             }
             return $Pedidos;

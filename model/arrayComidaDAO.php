@@ -64,9 +64,9 @@ class ArrayComidaDAO{
         $this->connection->closeConnection();
     }
     
-     public function recuperarPorIdPedido($id_pedido){
+     public function recuperar(){
         $conn = $this->getConnection()->connectToDatabase();
-        $query = "SELECT * FROM array_comida WHERE id_pedido = $id_pedido";
+        $query = "SELECT * FROM array_comida";
         $r = mysqli_query($conn, $query);
         if (!$r){
             die("Erro ao efetuar select");

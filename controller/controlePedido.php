@@ -26,15 +26,20 @@ if($acao == "cadastrar"){
     $pedido->setTroco($troco);
     $pedido->setIdEndereco($id_endereco);
     $pedidoDAO->inserir($pedido);
-    header('Location: ./controlePedido.php?acao=recuperarId&cpf='.$cpf);
+    header('Location: ./controlePedido.php?acao=recuperarId');
 }else if($acao == "recuperarId"){
-    $cpf = $_GET['cpf'];
+    $cpf = $_SESSION['ID_login'];
     $pedidos = $pedidoDAO->recuperarParaArray($cpf);
     foreach($pedidos as $pedido){
         $iDpedido = $pedido->getIdPedido();
     }
     $_SESSION["idPedido"] = $iDpedido;
     header('Location: ./controleArrayComida.php?acao=cadastrar');
+}else if($acao == "recuperarIdHistorico"){
+    $cpf = $_SESSION['ID_login'];
+    $pedidos = $pedidoDAO->recuperarParaArray($cpf);
+    $_SESSION["idPedidos"] = $pedidos;
+    header('Location: ../view/historicoCli.php');
 }else if($acao == "listar"){
     $_SESSION["pedidos"] = $pedidoDAO->recuperarTodos();
 
