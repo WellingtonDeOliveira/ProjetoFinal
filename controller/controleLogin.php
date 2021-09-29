@@ -71,5 +71,14 @@ if($acao == "cadastrar"){
     $login->setPerfil($perfil);
     $loginDAO->atualizar($login);
     header('Location: ../controller/controleLogin.php?acao=listar');
+}else if($acao == "deslogar"){
+    unset($_SESSION['logado']);
+    unset($_SESSION['ID_login']);
+    unset($_SESSION['carrinho']);
+    unset($_SESSION['azul']);
+    unset($_SESSION['preto']);
+
+    /* FUTURA PAGINA */
+    header('Location: ../redirecionar.php');
 }
 ?>

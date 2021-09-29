@@ -14,7 +14,7 @@ if (isset($_SESSION['azul'])) {
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style/main.css">
-  <title>Login</title>
+  <title>Perfil</title>
 </head>
 
 <body>
@@ -32,36 +32,21 @@ if (isset($_SESSION['azul'])) {
     </a>
   </div>
   <!-- /Navegação -->
-  <!-- Login/Registro -->
-  <div id="login">
-    <div class="container">
-      <h1>ENTRAR</h1>
-      <form action="../controller/controleLogin.php?acao=logar" method="post">
-        <label for="email">Login </label>
-        <input type="text" id="email" name="email">
-        <label for="senha">Senha </label>
-        <input type="password" id="senha" name="senha">
-        <label></label>
-        <button type="submit">Entrar</button>
-      </form>
-      <h1 class="registro">REGISTRE-SE</h1>
-      <form action="../controller/controleLogin.php?acao=cadastrar"  method="post" onsubmit = "return validaCampoCadastro()">
-        <label for="nome">Nome </label>
-        <input type="text" id="nome" name="nome">
-        <label for="email">Email </label>
-        <input type="text" id="email" name="email">
-        <label for="cpf">CPF </label>
-        <input type="text" id="cpf" name="cpf">
-        <label for="senha">Senha </label>
-        <input type="password" id="senha" name="senha">
-        <label for="conSenha">Confirmar </label>
-        <input type="password">
-        <label></label>
-        <button type="submit">Registrar-se</button>
-      </form>
+  <!-- PerfilCliente -->
+  <div id="cliente">
+    <button onclick="window.location.replace('./newEndereco.php')">Cadastrar novo Endereço</button>
+    <button onclick="window.location.replace('../controller/controleEndereco.php?acao=listarClientePerfil')">Meus Endereços</button>
+    <button onclick="window.location.replace('../controller/controleArrayComida.php?acao=recuperar')">Historico de Pedidos</button>
+    <div class="cores">
+      <div class="row">
+        <button class="azul col-4" onclick="window.location.replace('../script/tema.php?acao=azul');"></button>
+        <button class="vermelha col-4" onclick="window.location.replace('../script/tema.php?acao=padrao');"></button>
+        <button class="preto col-4" onclick="window.location.replace('../script/tema.php?acao=preto');"></button>
+      </div>
     </div>
+    <button onclick="window.location.replace('../controller/controleLogin.php?acao=deslogar')">Deslogar</button>
   </div>
-  <!-- /Login/Registro -->
+  <!-- /PerfilCliente -->
   <!-- baixo -->
   <div id="baixo">
     <div class="fimpag">
@@ -79,7 +64,7 @@ if (isset($_SESSION['azul'])) {
   </div>
   <!-- /baixo -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="../script/validacao.js"></script>
+  <script src="../script/mudarCor.js"></script>
   <script src="../script/main.js"></script>
 </body>
 <script>

@@ -71,6 +71,7 @@ if($acao == "cadastrar"){
     $pedido->setTroco($troco);
     $pedido->setIdEndereco($id_endereco);
     $pedidoDAO->atualizar($pedido);
+    unset( $_SESSION['carrinho'] );
     header('Location: ../redirecionar.php');
 }
 ?>
