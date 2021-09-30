@@ -42,7 +42,7 @@ if (isset($_SESSION['azul'])) {
                     <h4 class="col-3 first">Rua: <?php echo $endereco->getRua(); ?></h4>
                     <h4 class="col-3">N°: <?php echo $endereco->getNumero(); ?></h4>
                     <h4 class="col-3">Bairro: <?php echo $endereco->getBairro(); ?></h4>
-                    <h4 class="col-3">CEP: <?php echo $endereco->getCep(); ?></h4>
+                    <h4 class="col-3 back">CEP: <?php echo $endereco->getCep(); ?></h4>
                 </div>
         <?php }
         } ?>

@@ -51,7 +51,7 @@
         margin-top: -290px;
     }
     #cima.active .navegacao a img.perfil{
-        margin-left: 70%;
+        left: 86%;
     }
     #cima.active .navegacao a img.login{
         left: 86%;
@@ -81,12 +81,11 @@
         font-size: 13pt;
     }
     #carrinho.active{
-        margin-top: 40px;
+        margin-top: 80px;
     }
     #baixo{
         height: 100px;
-        margin-bottom: 51px;
-        padding-top: 8px;
+        margin-top: 100px;
     }
     /* /layout */
     /* Index */
@@ -122,7 +121,6 @@
         margin-top: -130px;
     }
     #detalhes .detalhes{
-        height: 450px;
         width: 70%;
         margin-left: 15%;
     }
@@ -131,19 +129,21 @@
         margin-bottom: -20px;
     }
     #detalhes .detalhes .imagem{
-        width: 60%;
+        width: 50%;
         height: 40%;
-        margin-left: 20%;
+        margin-left: 25%;
         margin-top: 5%;
+        margin-bottom: 10%;
     }
     #detalhes .detalhes .textos{
-        margin-top: -30%;
+        margin-top: 0%;
     }
     #detalhes .detalhes .textos h1{
         font-size: 15pt;
     }
     #detalhes .detalhes .textos h2{
         font-size: 10pt;
+        margin-bottom: 5%;
     }
     #detalhes .detalhes .observacao form label{
         font-weight: bold;
@@ -203,6 +203,7 @@
     #login div form button{
         width: 40%;
         font-size: 10pt;
+        margin-bottom: 0px;
         font-weight: bold;
     }
     /* /Tela Login */
@@ -278,7 +279,7 @@
         margin-top: 220px;
     }
     #baixo.activeEnd{
-        margin-top: 120px;
+        margin-top: 100px;
     }
     /* /Tela endereço */
     /* Tela Pagamento */
@@ -304,7 +305,8 @@
         margin-left: -2%;
     }
     #pagamento .pagamento form.cartao h2{
-        font-size: 16pt;
+        padding-top: 15px;
+        font-size: 14pt;
     }
     #pagamento .pagamento form.cartao label{
         font-size: 12pt;
@@ -348,14 +350,17 @@
         margin-left: 0%;
     }
     #pagamento .pagamento form.dinheiro h2{
-        font-size: 16pt;
+        padding-top: 15px;
+        font-size: 14pt;
     }
     #pagamento .pagamento form.dinheiro label.mod1{
         margin-left: 15%;
+        font-size: 12pt;
     }
     #pagamento .pagamento form.dinheiro label.mod2{
         text-align: start;
         margin-left: 10%;
+        font-size: 12pt;
     }
     #pagamento .pagamento form.dinheiro input.mod3{
         margin-left: -10%;
@@ -363,6 +368,7 @@
     #pagamento .pagamento form.dinheiro label.mod4{
         text-align: start;
         margin-left: 4%;
+        font-size: 12pt;
     }
     #pagamento .pagamento form.dinheiro input.mod5{
         margin-left: -8%;
@@ -370,6 +376,7 @@
     #pagamento .pagamento form.dinheiro label.mod6{
         width: 15%;
         margin-left: 15%;
+        font-size: 12pt;
     }
     #pagamento .pagamento form.dinheiro input.mod7{
         width: 35%;
@@ -377,6 +384,12 @@
     }
     #pagamento .pagamento form.dinheiro label.mod8{
         margin-left: 0%;
+        font-size: 12pt;
+    }
+    #pagamento .pagamento form.dinheiro input.mod10{
+        font-size: bold;
+        width: 80%;
+        margin-left: 10%;
     }
     #cima.activePag{
         position: fixed;
@@ -391,4 +404,158 @@
         margin-top: 210px;
     }
     /* /Tela Pagamento */
+    /* Tela retirada */
+    #cima.activeLc{
+        margin-top: -250px;
+        border-bottom: 2px solid var(--quarta);
+    }
+    #voltar.activeLc{
+        position: fixed;
+        margin-top: -180px;
+        margin-left: 2%;
+        z-index: 9999;
+    }
+    #retirada{
+        width: 80%;
+        margin-left: 10%;
+    }
+    #retirada h1{
+        font-size: 16pt;
+    }
+    #retirada div.row{
+        width: 100%;
+        margin-left: 5%;
+    }
+    #retirada div.row h3{
+        font-size: 12pt;
+    }
+    #retirada div.row label{
+        font-size: 12pt;
+        width: 8%;
+    }
+    #retirada div.estabelecimento{
+        height: auto;
+        padding: 20px;
+    }
+    #retirada div.estabelecimento h4{
+        padding-top: 0px;
+    }
+    #retirada div.residencia h4{
+        font-size: 14pt;
+        margin-bottom: 15px;
+    }
+    #retirada div.residencia div.card a div.row h4{
+        font-size: 10pt;
+        margin-top: -10px;
+    }
+    #retirada div.residencia button{
+        width: 80%;
+        font-size: 11pt;
+        margin-top: 20px;
+    }
+    /* /Tela retirada */
+    /* PerfilCli */
+    #cliente{
+        width: 80%;
+        margin-left: 10%;
+        padding-bottom: 20px;
+    }
+    #cliente button{
+        width: 70%;
+        font-size: 12pt;
+        margin-top: 40px;
+    }
+    #cliente div.cores div.row button{
+        width: 30px;
+        height: 30px;
+        border-radius: 15px;
+        margin-left: 18%;
+    }
+    #cima.activePf{
+        margin-top: -250px;
+        border-bottom: 2px solid var(--quarta);
+    }
+    #voltar.activePf{
+        position: fixed;
+        margin-left: 2%;
+        margin-top: -180px;
+        z-index: 9999;
+    }
+    #cliente.activePf{
+        margin-top: 250px;
+    }
+    /* /PerfilCli */
+    /* MyAddress */
+    #address{
+        width: 80%;
+        margin-left: 10%;
+        padding: 0;
+        padding-top: 35px;
+        padding-bottom: 35px;
+    }
+    #address div h4{
+        font-size: 10pt;
+    }
+    #cima.activeAdd{
+        margin-top: -310px;
+        border-bottom: 2px solid var(--quarta);
+    }
+    #voltar.activeAdd{
+        margin-left: 2%;
+        position: fixed;
+        margin-top: -240px;
+        z-index: 9999;
+    }
+    #address.activeAdd{
+        margin-top: 310px;
+    }
+    #baixo.activeAdd{
+        margin-top: 100px;
+    }
+    /* /MyAddress */
+    /* HistoricoCli */
+    #historicoCli{
+        width: 80%;
+        margin-left: 10%;
+    }
+    #historicoCli div.row{
+        width: 100%;
+        margin-left: 0%;
+    }
+    #historicoCli div.row h4{
+        width: 50%;
+        font-size: 12pt;
+        margin-left: 5%;
+        margin-right: -5%;
+    }
+    #historicoCli div.row div.itens{
+        width: 70%;
+        margin-left: 15%;
+        padding: 20px;
+    }
+    #historicoCli div.row div.itens h5{
+        font-size: 11pt;
+    }
+    #historicoCli div.row h3{
+        font-size: 15pt;
+        margin-bottom: 15px;
+        margin-top: 15px;
+    }
+    #cima.activeHi{
+        margin-top: -250px;
+        border-bottom: 2px solid var(--quarta);
+    }
+    #voltar.activeHi{
+        position: fixed;
+        margin-left: 2%;
+        margin-top: -180px;
+        z-index: 9999;
+    }
+    #historicoCli.activeHi{
+        margin-top: 250px;
+    }
+    #baixo.activeHi{
+        margin-top: 100px;
+    }
+    /* /HistoricoCli */
 }

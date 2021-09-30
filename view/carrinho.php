@@ -81,6 +81,7 @@ if (isset($_SESSION['azul'])) {
           <p class="col-3 space"></p>
           <p class="col-4 txt">Total: </p>
           <p class="col-5 valor"> <label for="valor"> R$ <?php echo $valorTotal ?></label></p>
+          <?php $_SESSION['valorTotal'] = $valorTotal;?>
         </div>
       </div>
       <div class="button">

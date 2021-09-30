@@ -1,10 +1,5 @@
 <?php
 session_start();
-if (isset($_SESSION['azul'])) {
-  $cor = $_SESSION['azul'];
-} else if (isset($_SESSION['preto'])) {
-  $cor = $_SESSION['preto'];
-}
 ?>
 <!DOCTYPE html>
 <html lang="pt br">
@@ -38,9 +33,9 @@ if (isset($_SESSION['azul'])) {
       <h1>ENTRAR</h1>
       <form action="../controller/controleLogin.php?acao=logar" method="post">
         <label for="email">Login </label>
-        <input type="text" id="email" name="email">
+        <input type="text" id="login_email" name="login_email">
         <label for="senha">Senha </label>
-        <input type="password" id="senha" name="senha">
+        <input type="password" id="login_senha" name="login_senha">
         <label></label>
         <button type="submit">Entrar</button>
       </form>
@@ -82,24 +77,4 @@ if (isset($_SESSION['azul'])) {
   <script src="../script/validacao.js"></script>
   <script src="../script/main.js"></script>
 </body>
-<script>
-  var cor = "<?php echo $cor ?>";
-  if(cor == "azul"){
-    document.documentElement.style.setProperty('--primeira', '#483D8B');
-    document.documentElement.style.setProperty('--segunda', '#000080');
-    document.documentElement.style.setProperty('--terceira', '#4169E1');
-    document.documentElement.style.setProperty('--quarta', '#87CEFA');
-    document.documentElement.style.setProperty('--quinta', '#00BFFF');
-    document.documentElement.style.setProperty('--sexta', '#E0E5E6');
-    document.documentElement.style.setProperty('--setima', '#BEC9CA');
-  }else if(cor == "preto"){
-    document.documentElement.style.setProperty('--primeira', '#1C1C1C');
-    document.documentElement.style.setProperty('--segunda', '##000000');
-    document.documentElement.style.setProperty('--terceira', '#363636');
-    document.documentElement.style.setProperty('--quarta', '#A9A9A9');
-    document.documentElement.style.setProperty('--quinta', '#808080');
-    document.documentElement.style.setProperty('--sexta', '#E0E5E6');
-    document.documentElement.style.setProperty('--setima', '#BEC9CA');
-  }
-</script>
 </html>

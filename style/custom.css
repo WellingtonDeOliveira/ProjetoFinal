@@ -403,6 +403,8 @@ body{
     z-index: 9999;
 }
 #baixo.activeEnd{
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
     margin-top: 200px;
     margin-bottom: 0;
 }
@@ -678,6 +680,13 @@ body{
     border-radius: 20px;
     padding: 5px 20px;
 }
+#retirada div.residencia{
+    height: auto;
+}
+#retirada div.residencia button{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
 #cima.activeLc{
     margin-top: -250px;
     border-bottom: 2px solid var(--quarta);
@@ -704,7 +713,7 @@ body{
     height: auto;
     margin-left: 20%;
     margin-top: 50px;
-    margin-bottom: -100px;
+    margin-bottom: 20px;
     text-align: center;
 }
 #cliente button{
@@ -741,6 +750,24 @@ body{
 #cliente div.cores div.row button.preto{
     background-color: black;
 }
+#cima.activePf{
+    margin-top: -250px;
+    border-bottom: 2px solid var(--quarta);
+}
+#voltar.activePf{
+    position: fixed;
+    margin-top: -180px;
+    z-index: 9999;
+}
+#cliente.activePf{
+    margin-top: 250px;
+}
+#baixo.activePf{
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    margin-top: 100px;
+    margin-bottom: 0;
+}
 /* /PerfilCliente */
 /* MyAddress */
 #address{
@@ -749,9 +776,11 @@ body{
     width: 60%;
     height: auto;
     margin-left: 20%;
-    margin-top: 50px;
+    margin-top: 100px;
     border-radius: 20px;
     padding: 20px;
+    padding-top: 35px;
+    padding-bottom: 35px;
 }
 #address div{
     background-color: var(--primeira);
@@ -763,20 +792,28 @@ body{
 #address div h4{
     font-size: 13pt;
 }
+#address div h4.first{
+    margin-left: -5%;
+}
+#address div h4.back{
+    margin-left: 4%;
+}
 #cima.activeAdd{
-    margin-top: -250px;
+    margin-top: -310px;
     border-bottom: 2px solid var(--quarta);
 }
 #voltar.activeAdd{
     position: fixed;
-    margin-top: -180px;
+    margin-top: -240px;
     z-index: 9999;
 }
 #address.activeAdd{
-    margin-top: 250px;
+    margin-top: 310px;
 }
 #baixo.activeAdd{
-    margin-top: 150px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    margin-top: 180px;
     margin-bottom: 0;
 }
 /* /MyAddress */
@@ -810,6 +847,24 @@ body{
     border-top: 2px dashed var(--quarta);
     width: 50%;
     margin-left: 25%;
+}
+#cima.activeHi{
+    margin-top: -250px;
+    border-bottom: 2px solid var(--quarta);
+}
+#voltar.activeHi{
+    position: fixed;
+    margin-top: -180px;
+    z-index: 9999;
+}
+#historicoCli.activeHi{
+    margin-top: 250px;
+}
+#baixo.activeHi{
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    margin-top: 180px;
+    margin-bottom: 0;
 }
 /* /HistoricoCli */
 #baixo{

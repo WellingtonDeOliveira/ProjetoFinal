@@ -5,6 +5,7 @@ if (isset($_SESSION['azul'])) {
 } else if (isset($_SESSION['preto'])) {
   $cor = $_SESSION['preto'];
 }
+$valorTotal = $_SESSION['valorTotal'];
 ?>
 <!DOCTYPE html>
 <html lang="pt br">
@@ -54,7 +55,7 @@ if (isset($_SESSION['azul'])) {
             <label for="cvv" class="mod2">CVV</label>
             <input type="text" class="mod2" id="cvv" name="cvv">
             <label for="valorT" class="mod8">Valor Total:</label>
-            <label for="valor" class="mod9">R$ 129,99</label>
+            <label for="valor" class="mod9"><?php echo $valorTotal?></label>
             <input type="text" id="troco" name="troco" hidden>
             <input type="submit" class="mod10" value="Confirmar Pagamento">
             <input type="text" id="id_endereco" name="id_endereco" value="<?php echo $_GET["id_endereco"]; ?>" hidden>
@@ -69,7 +70,7 @@ if (isset($_SESSION['azul'])) {
                 <label for="quanto" class="mod6">Quanto?</label>
                 <input type="text" id="troco" name="troco" class="mod7">
                 <label for="valorT" class="mod8">Valor Total:</label>
-                <label for="valor" class="mod9">R$ 129,99</label>
+                <label for="valor" class="mod9"><?php echo $valorTotal?></label>
                 <input type="submit" class="mod10" value="Confirmar Pagamento">
                 <input type="text" id="id_endereco" name="id_endereco" value="<?php echo $_GET["id_endereco"]; ?>" hidden>
             </form>

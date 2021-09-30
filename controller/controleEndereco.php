@@ -21,7 +21,7 @@ if($acao == "cadastrar"){
     $endereco->setBairro($bairro);
     $endereco->setIdLogin($id_login);
     $enderecoDAO->inserir($endereco);
-    header('Location: ../view/perfilCLi.html');
+    header('Location: ../view/perfilCLi.php');
 }else if($acao == "listar"){
     $_SESSION["enderecos"] = $enderecoDAO->recuperarTodos();
 

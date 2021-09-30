@@ -21,10 +21,10 @@ if($acao == "cadastrar"){
     $login->setSenha($senha);
     $login->setPerfil($perfil);
     $loginDAO->inserir($login);
-    header('Location: ../index.html');
+    header('Location: ../index.php');
 }else if($acao == "logar"){
-    $email = $_POST["email"];
-    $senha = $_POST["senha"];
+    $email = $_POST["login_email"];
+    $senha = $_POST["login_senha"];
     $login = new Login();
     $login->setEmail($email);
     $login->setSenha($senha);

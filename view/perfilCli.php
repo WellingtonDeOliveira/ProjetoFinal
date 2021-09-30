@@ -64,7 +64,6 @@ if (isset($_SESSION['azul'])) {
   </div>
   <!-- /baixo -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="../script/mudarCor.js"></script>
   <script src="../script/main.js"></script>
 </body>
 <script>
