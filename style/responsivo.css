@@ -558,4 +558,236 @@
         margin-top: 100px;
     }
     /* /HistoricoCli */
+    /* Gerencia */
+    #gerencia{
+        width: 80%;
+        height: 400px;
+        margin-left: 10%;
+    }
+    #gerencia button{
+        width: 80%;
+        margin-top: 17%;
+        margin-bottom: 17%;
+        font-size: 12pt;
+    }
+    #cima.activeGer{
+        margin-top: -250px;
+        border-bottom: 2px solid var(--quarta);
+    }
+    #voltar.activeGer{
+        margin-left: 1%;
+        position: fixed;
+        margin-top: -180px;
+        z-index: 9999;
+    }
+    #gerencia.activeGer{
+        margin-top: 250px;
+    }
+    #baixo.activeGer{
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        margin-top: 100px;
+        margin-bottom: 0;
+    }
+    /* /Gerencia */
+    /* ControleProdutos */  
+    #controleComida button{
+        width: 60%;
+        margin-left: 20%;
+        font-size: 14pt;
+    }
+    #controleComida .comidas .card{
+        width: 80%;
+        margin-left: 10%;
+    }
+    #controleComida .comidas .card div .textos{
+        padding-left: 35px;
+        padding-top: 5px;
+    }
+    #controleComida .comidas .card div .textos p{
+        font-size: 10pt;
+    }
+    #controleComida .comidas .card div .textos h3{
+        font-size: 12pt;
+    }
+    #controleComida .comidas .card div .imagem{
+        display: none;
+        padding: 15px;
+        padding-right: 35px;
+    }
+    #controleComida .comidas .card div a{
+        margin-top: 10%;
+        font-size: 11pt;
+        font-weight: bold;
+        text-decoration: none;
+    }
+    #cima.activeCC{
+        margin-top: -250px;
+        border-bottom: 2px solid var(--quarta);
+    }
+    #voltar.activeCC{
+        margin-left: 1%;
+        position: fixed;
+        margin-top: -180px;
+        z-index: 9999;
+    }
+    #controleComida.activeCC{
+        margin-top: 250px;
+    }
+    #baixo.activeCC{
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        margin-top: 100px;
+        margin-bottom: 0;
+    }
+    /* /ControleProdutos */
+    /* Adicionar */
+    #adicionar{
+        width: 80%;
+        height: 400px;
+        margin-left: 10%;
+    }
+    #adicionar form{
+        font-size: 10pt;
+    }
+    #adicionar form label.arq{
+        font-size: 9pt;
+        width: 90%;
+        margin-top: 15%;
+    }
+    #adicionar form label{
+        font-size: 9pt;
+        width: 30%;
+        margin-top: 10%;
+    }
+    #adicionar form input.arq{
+        width: 90%;
+    }
+    #adicionar form input{
+        width: 50%;
+    }
+    #adicionar form button{
+        width: 60%;
+        margin-top: 10%;
+    }
+    #cima.activeADC{
+        margin-top: -250px;
+        border-bottom: 2px solid var(--quarta);
+    }
+    #voltar.activeADC{
+        position: fixed;
+        margin-left: 1%;
+        margin-top: -180px;
+        z-index: 9999;
+    }
+    #adicionar.activeADC{
+        margin-top: 250px;
+    }
+    #baixo.activeADC{
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        margin-top: 100px;
+        margin-bottom: 0;
+    }
+    /* /Adicionar */
+    /* Editar Comida */
+    #editarComida{
+        width: 80%;
+        height: 400px;
+        margin-left: 10%;
+    }
+    #editarComida form{
+        font-size: 10pt;
+    }
+    #editarComida form label.arq{
+        font-size: 9pt;
+        width: 90%;
+        margin-top: 15%;
+    }
+    #editarComida form label{
+        font-size: 9pt;
+        width: 30%;
+        margin-top: 10%;
+    }
+    #editarComida form input.arq{
+        width: 90%;
+    }
+    #editarComida form input{
+        width: 50%;
+    }
+    #editarComida form button{
+        width: 60%;
+        margin-top: 10%;
+    }
+    #cima.activeEC{
+        margin-top: -250px;
+        border-bottom: 2px solid var(--quarta);
+    }
+    #voltar.activeEC{
+        position: fixed;
+        margin-left: 1%;
+        margin-top: -180px;
+        z-index: 9999;
+    }
+    #editarComida.activeEC{
+        margin-top: 250px;
+    }
+    #baixo.activeEC{
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        margin-top: 100px;
+        margin-bottom: 0;
+    }
+    /* /Editar Comida */
+    /* Controle Usuario */
+    #controleUsuario .usuarios .card{
+        display: flex;
+        flex-direction: column;
+        border-radius: 20px;
+        background-color: var(--primeira);
+        margin-top: 20px;
+        margin-left: 10%;
+        width: 80%;
+        height: auto;
+        text-align: center;
+    }
+    #controleUsuario .usuarios .card div{
+        color: var(--quarta);
+        padding-top: 5px;
+    }
+    #controleUsuario .usuarios .card div h3{
+        font-size: 9pt;
+        margin-left: 5px;
+        font-weight: bold;
+    }
+    #controleUsuario .usuarios .card div p{
+        font-size: 8pt;
+    }
+    #controleUsuario .usuarios .card div a{
+        font-size: 9pt;
+        font-weight: bold;
+        text-align: end;
+        margin-left: -5%;
+        text-decoration: none;
+    }
+    #cima.activeCU{
+        margin-top: -250px;
+        border-bottom: 2px solid var(--quarta);
+    }
+    #voltar.activeCU{
+        position: fixed;
+        margin-top: -180px;
+        margin-left: 1%;
+        z-index: 9999;
+    }
+    #controleUsuario.activeCU{
+        margin-top: 250px;
+    }
+    #baixo.activeCU{
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        margin-top: 100px;
+        margin-bottom: 0;
+    }
+    /* /Controle Usuario */
 }

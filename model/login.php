@@ -39,7 +39,6 @@ class Login{
         return $this->perfil;
     }
     public function setPerfil($perfil): self{
-        $perfil = "Cliente";
         $this->perfil = $perfil;
         return $this;
     }

@@ -1,5 +1,7 @@
 <?php
+require_once '../model/login.php';
 session_start();
+$login = $_SESSION['logado'];
 if (isset($_SESSION['azul'])) {
   $cor = $_SESSION['azul'];
 } else if (isset($_SESSION['preto'])) {
@@ -34,6 +36,9 @@ if (isset($_SESSION['azul'])) {
   <!-- /Navegação -->
   <!-- PerfilCliente -->
   <div id="cliente">
+    <?php if($login->getPerfil() == "ADM"){?>
+      <button onclick="window.location.replace('./gerenciamento.php')">ADM</button>
+    <?php }?>
     <button onclick="window.location.replace('./newEndereco.php')">Cadastrar novo Endereço</button>
     <button onclick="window.location.replace('../controller/controleEndereco.php?acao=listarClientePerfil')">Meus Endereços</button>
     <button onclick="window.location.replace('../controller/controleArrayComida.php?acao=recuperar')">Historico de Pedidos</button>

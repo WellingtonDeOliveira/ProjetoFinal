@@ -12,7 +12,7 @@ if($acao == "cadastrar"){
     $nome = $_POST["nome"];
     $email = $_POST["email"];
     $senha = $_POST["senha"];
-    $perfil = $_POST["perfil"];
+    $perfil = "Cliente";
     $res = true;
     $login = new Login();
     $login->setCpf($cpf);
@@ -41,15 +41,13 @@ if($acao == "cadastrar"){
     }
 }else if($acao == "listar"){
     $_SESSION["logins"] = $loginDAO->recuperarTodos();
-
-    /* FUTURA PAGINA */
-    header('Location: ../view/.php');
+    header('Location: ../view/controleUsuario.php');
 }else if($acao == "excluir"){
-    $cpf = $_GET["cpf"];
+    $cpf = $_GET["cpf_cliente"];
     $login = new Login();
     $login->setCpf($cpf);
     $loginDAO->excluir($login);
-    header('Location: ../controller/controleLogin.php?acao=listar');
+    header('Location: ../view/gerenciamento.php');
 }else if($acao == "recuperar"){
     $cpf = $_GET["cpf"];
     $login = $loginDAO->recuperarPorCpf($cpf);
@@ -77,8 +75,6 @@ if($acao == "cadastrar"){
     unset($_SESSION['carrinho']);
     unset($_SESSION['azul']);
     unset($_SESSION['preto']);
-
-    /* FUTURA PAGINA */
     header('Location: ../redirecionar.php');
 }
 ?>

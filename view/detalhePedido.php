@@ -44,7 +44,7 @@ if (isset($_SESSION['azul'])) {
   <div id="detalhes">
     <div class="detalhes container">
       <div class="imagem">
-        <img src=".<?php echo $comida->getImagem(); ?>" alt="Prato" class="pratoPedido">
+        <img src="../assets/comidas/<?php echo $comida->getImagem(); ?>" alt="Prato" class="pratoPedido">
       </div>
       <div class="textos">
         <h1 class="titulo"><?php echo $comida->getNome(); ?></h1>
@@ -93,11 +93,11 @@ if (isset($_SESSION['azul'])) {
       if($idComida == $comida->getIdComida()){
         if(isset($_SESSION['carrinho'][$idComida])){
           $_SESSION['carrinho'][$idComida]['quantidade']++;
-          header('location: http://192.168.15.105/projetofinal/esboco/controller/controleComida.php?acao=listar');
+          header('location: http://localhost/projetofinal/esboco/controller/controleComida.php?acao=listar');
         }else{
           $_SESSION['carrinho'][$idComida] = array('quantidade'=>1,'nome'=>$comida->getNome(),
            'valor'=>$comida->getValor(), 'id'=>$comida->getIdComida());
-           header('location: http://192.168.15.105/projetofinal/esboco/controller/controleComida.php?acao=listar');
+           header('location: http://localhost/projetofinal/esboco/controller/controleComida.php?acao=listar');
         }
       }else{
         die('Você não pode adicionar uma comida que não existe dentro desta página');
