@@ -40,11 +40,10 @@ if($acao == "cadastrar"){
     $pedidos = $pedidoDAO->recuperarParaArray($cpf);
     $_SESSION["idPedidos"] = $pedidos;
     header('Location: ../view/historicoCli.php');
-}else if($acao == "listar"){
-    $_SESSION["pedidos"] = $pedidoDAO->recuperarTodos();
-
-    /* FUTURA PAGINA */
-    header('Location: ../view/.php');
+}else if($acao == "listarOrca"){
+    $pedidos = $pedidoDAO->recuperarTodos();
+    $_SESSION["pedidosOrca"] = $pedidos;
+    header('Location: ./controleArrayComida.php?acao=listarOrca');
 }else if($acao == "excluir"){
     $id_pedido = $_GET["id_pedido"];
     $pedido = new Pedido();

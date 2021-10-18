@@ -60,6 +60,12 @@ jQuery(document).ready(function ($) {
                 $("#voltar").addClass("activePf");
                 $("#baixo").addClass("activePf");
             }
+            if(window.location.pathname == "/projetofinal/esboco/view/historicoCli.php"){
+                $("#cima").addClass("activeHi");
+                $("#historicoCli ").addClass("activeHi");
+                $("#voltar").addClass("activeHi");
+                $("#baixo").addClass("activeHi");
+            }
             if(window.location.pathname == "/projetofinal/esboco/view/gerenciamento.php"){
                 $("#cima").addClass("activeGer");
                 $("#gerencia").addClass("activeGer");
@@ -90,6 +96,12 @@ jQuery(document).ready(function ($) {
                 $("#voltar").addClass("activeCU");
                 $("#baixo").addClass("activeCU");
             }
+            if(window.location.pathname == "/projetofinal/esboco/view/orcamento.php"){
+                $("#cima").addClass("activeOrc");
+                $("#orcamentos").addClass("activeOrc");
+                $("#voltar").addClass("activeOrc");
+                $("#baixo").addClass("activeOrc");
+            }
             //alert(window.location.pathname);
         } else {
             $("#cima").removeClass("active");
@@ -103,9 +115,11 @@ jQuery(document).ready(function ($) {
             $("#cima").removeClass("activePf");
             $("#cima").removeClass("activeGer");
             $("#cima").removeClass("activeCC");
+            $("#cima").removeClass("activeHi");
             $("#cima").removeClass("activeADC");
             $("#cima").removeClass("activeEC");
             $("#cima").removeClass("activeCU");
+            $("#cima").removeClass("activeOrc");
             $("#voltar").removeClass("active");
             $("#voltar").removeClass("activeDif");
             $("#voltar").removeClass("activeCar");
@@ -115,15 +129,18 @@ jQuery(document).ready(function ($) {
             $("#voltar").removeClass("activeLc");
             $("#voltar").removeClass("activePf");
             $("#voltar").removeClass("activeGer");
+            $("#voltar").removeClass("activeHi");
             $("#voltar").removeClass("activeCC");
             $("#voltar").removeClass("activeADC");
             $("#voltar").removeClass("activeEC");
             $("#voltar").removeClass("activeCU");
+            $("#voltar").removeClass("activeOrc");
             $("#detalhes").removeClass("active");
             $("#telaCarrinho").removeClass("active");
             $("#controleUsuario").removeClass("activeCU");
             $("#filtro").removeClass("active");
             $("#address").removeClass("activeAdd");
+            $("#historicoCli ").removeClass("activeHi");
             $("#cardapio").removeClass("active");
             $("#login").removeClass("active");
             $("#endereco").removeClass("active");
@@ -134,6 +151,7 @@ jQuery(document).ready(function ($) {
             $("#controleComida").removeClass("activeCC");
             $("#adicionar").removeClass("activeADC");
             $("#editarComida").removeClass("activeEC");
+            $("#orcamentos").removeClass("activeOrc");
             var img = document.querySelector("#logo");
             img.setAttribute('src', '../assets/logoG.png');
             if(window.location.pathname == "/projetofinal/esboco/index.php"){

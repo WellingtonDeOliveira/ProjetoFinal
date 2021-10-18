@@ -1,8 +1,8 @@
 <?php
 
-session_start();
 require_once("../model/arrayComida.php");
 require_once("../model/arrayComidaDAO.php");
+session_start();
 
 $acao = $_GET["acao"];
 $arrayComidaDAO = new ArrayComidaDAO();
@@ -30,6 +30,10 @@ if($acao == "cadastrar"){
     $arrayComidas = $arrayComidaDAO->recuperar();
     $_SESSION["arrayComidas"] = $arrayComidas;
     header('Location: ../controller/controlePedido.php?acao=recuperarIdHistorico');
+}else if($acao == "listarOrca"){
+    $arrayComidas = $arrayComidaDAO->recuperar();
+    $_SESSION["arrayComidasOrca"] = $arrayComidas;
+    header('Location: ../view/orcamento.php');
 }else if($acao == "atualizar"){
     $id_array = $_GET["id_array"];
     $id_comida = $_POST["id_comida"];

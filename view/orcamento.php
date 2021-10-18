@@ -1,5 +1,6 @@
 <?php
 require_once '../model/pedido.php';
+require_once '../model/login.php';
 require_once '../model/arrayComida.php';
 require_once '../model/comida.php';
 session_start();
@@ -17,7 +18,7 @@ if (isset($_SESSION['azul'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style/main.css">
-    <title>Historico Cliente</title>
+    <title>Orçamentos</title>
 </head>
 
 <body>
@@ -35,43 +36,66 @@ if (isset($_SESSION['azul'])) {
         </a>
     </div>
     <!-- /Navegação -->
-    <!-- HistoricoCliente -->
-    <div id="historicoCli">
-        <?php if (isset($_SESSION["idPedidos"]) && isset($_SESSION["arrayComidas"])) {
-            $pedidos = $_SESSION["idPedidos"];
-            $arrayComidas = $_SESSION["arrayComidas"];
-            $comidas = $_SESSION["comidas"]; ?>
-            <div class="separaCard row">
+    <!-- Orcamentos -->
+    <div id="orcamentos">
+        <div class="detalhes">
+            <div class="row">
+                <?php if (isset($_SESSION["loginsOrca"]) && isset($_SESSION["pedidosOrca"]) && isset($_SESSION["arrayComidasOrca"])) {
+                    $logins = $_SESSION["loginsOrca"];
+                    $pedidos = $_SESSION["pedidosOrca"];
+                    $arrayComidas = $_SESSION["arrayComidasOrca"];
+                    $comidas = $_SESSION["comidas"];
+                    $resposta = "";
+                    $total = 0;
+                    $liberado = 0; ?>
+                    <?php foreach ($logins as $login) {
+                        foreach ($pedidos as $pedido) {
+                            if ($login->getCpf() == $pedido->getIdCliente()) {
+                                if ($pedido->getStatus() == "Pago") {
+                                    $liberado = $liberado + $pedido->getValor();
+                                }
+                                $total = $total + $pedido->getValor();
+                            }
+                        }
+                    } ?>
+                    <h3 class="col-4">Liberado: </h3>
+                    <h3 class="col-7 valor">R$ <?php echo $liberado; ?></h3>
+                    <h5 class="col-4">Total: </h5>
+                    <h5 class="col-7 valor">R$ <?php echo $total; ?></h5>
+            </div>
+        </div>
+
+        <?php foreach ($logins as $login) { 
+            $resposta = 0;?>
+            <div class="cliente">
+                <h3><?php echo $login->getNome(); ?></h3>
+            </div>
+            <div class="separa row">
                 <?php foreach ($pedidos as $pedido) { ?>
-                    <?php if($pedido->getStatus() == "Pago"){
+                    <?php if ($login->getCpf() == $pedido->getIdCliente()) {
+                                $resposta = 1; 
+                                if($pedido->getStatus() == "Pago"){
                                     $status = "pago";
                                 }else{
                                     $status = "pendente";
                                 }?>
-                    <div class="card col-lg-3 col-5 <?php echo $status;?>">
-                        <h4 class="first">Forma de pagamento:</h4>
-                        <h4 class="first"><?php echo $pedido->getFormaPagamento(); ?></h4>
-                        <div class="itens">
-                            <h5 class="itens">Itens:</h5>
-                            <?php foreach ($arrayComidas as $itens) {
-                                if ($pedido->getIdPedido() == $itens->getIdPedido()) { ?>
-                                    <?php foreach ($comidas as $comida) {
-                                        if ($comida->getIdComida() == $itens->getIdComida()) { ?>
-                                            <h5><?php echo $comida->getNome(); ?> X
-                                                <?php echo $itens->getQuantidade(); ?> =
-                                                <?php echo $comida->getValor() * $itens->getQuantidade(); ?></h5>
-                            <?php }
-                                    }
-                                }
-                            } ?>
-                            <h3 class="valor">Total: <?php echo $pedido->getValor(); ?></h3>
+                        <div class="card col-lg-3 col-5 <?php echo $status;?>">
+                            <h4 class="first">Forma: <?php echo $pedido->getFormaPagamento(); ?></h4>
+                            <h3 class="terceiro">Total: <?php echo $pedido->getValor(); ?></h3>
                         </div>
-                    </div>
-                <?php } ?>
+                <?php }
+                        }
+                        if (!$resposta) {
+                            $resposta = "cliente ainda não efetuou nenhum pedido!";
+                        } else {
+                            $resposta = "";
+                        } ?>
+                <h3 class="resposta"><?php echo $resposta; ?></h3>
             </div>
-        <?php } ?>
+    <?php   }
+                } ?>
     </div>
-    <!-- /HistoricoCliente -->
+    <!-- /Orcamentos -->
     <!-- baixo -->
     <div id="baixo">
         <div class="fimpag">

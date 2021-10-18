@@ -21,7 +21,7 @@ if($acao == "cadastrar"){
     $login->setSenha($senha);
     $login->setPerfil($perfil);
     $loginDAO->inserir($login);
-    header('Location: ../index.php');
+    header('Location: ../controller/controleLogin.php?acao=logarCad&email='.$email.'&senha='.$senha);
 }else if($acao == "logar"){
     $email = $_POST["login_email"];
     $senha = $_POST["login_senha"];
@@ -39,9 +39,29 @@ if($acao == "cadastrar"){
         $_SESSION["ID_login"]= $_SESSION["logado"]->getCpf();
         header('Location: ../index.php');
     }
+}else if($acao == "logarCad"){
+    $email = $_GET["email"];
+    $senha = $_GET["senha"];
+    $login = new Login();
+    $login->setEmail($email);
+    $login->setSenha($senha);
+    $resposta = $loginDAO->verificar($login);
+    if($resposta->getCpf() == null){
+        echo '<script>
+                window.location.replace("../view/login.php");
+                alert("Usuario não cadastrado!!");
+            </script>';
+    }else{
+        $_SESSION["logado"] = $loginDAO->verificar($login);
+        $_SESSION["ID_login"]= $_SESSION["logado"]->getCpf();
+        header('Location: ../index.php');
+    }
 }else if($acao == "listar"){
     $_SESSION["logins"] = $loginDAO->recuperarTodos();
     header('Location: ../view/controleUsuario.php');
+}else if($acao == "listarOrca"){
+    $_SESSION["loginsOrca"] = $loginDAO->recuperarTodos();
+    header('Location: ./controlePedido.php?acao=listarOrca');
 }else if($acao == "excluir"){
     $cpf = $_GET["cpf_cliente"];
     $login = new Login();

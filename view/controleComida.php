@@ -39,16 +39,16 @@ if (isset($_SESSION['azul'])) {
       <?php foreach ($comidas as $comida) { ?>
           <div class="card">
               <div class="row">
-                <div class="textos col-4">
+                <div class="textos col-lg-4 col-6">
                   <h3 class="titulo"><?php echo $comida->getNome(); ?></h3>
                   <p class="descricao"><?php echo $comida->getDescricao(); ?></p>
                   <p class="valor">R$ <?php echo $comida->getValor(); ?></p>
                 </div>
-                <div class="imagem col-4">
+                <div class="imagem col-lg-4 col-0">
                   <img src="../assets/comidas/<?php echo $comida->getImagem(); ?>" alt="Prato" class="prato">
                 </div>
-                <a class="editar col-2" href="../controller/controleComida.php?acao=recuperarEditar&id_comida=<?php echo $comida->getIdComida(); ?>"> Editar </a>
-                <a class="excluir col-2" href="../controller/controleComida.php?acao=excluir&id_comida=<?php echo $comida->getIdComida(); ?>"> Excluir </a>
+                <a class="editar col-lg-2 col-3" href="../controller/controleComida.php?acao=recuperarEditar&id_comida=<?php echo $comida->getIdComida(); ?>"> Editar </a>
+                <a class="excluir col-lg-2 col-3" href="../controller/controleComida.php?acao=excluir&id_comida=<?php echo $comida->getIdComida(); ?>"> Excluir </a>
             </div>
           </div>
       <?php }?>

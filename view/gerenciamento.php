@@ -36,7 +36,7 @@ if (isset($_SESSION['azul'])) {
     <div id="gerencia">
         <button onclick="window.location.replace('../controller/controleComida.php?acao=listarADM')">Controle de Produtos</button>
         <button onclick="window.location.replace('../controller/controleLogin.php?acao=listar')">Controle Usuarios</button>
-        <button onclick="window.location.replace('../controller/controleArrayComida.php?acao=recuperar')">Orçamentos</button>
+        <button onclick="window.location.replace('../controller/controleLogin.php?acao=listarOrca')">Orçamentos</button>
     </div>
     <!-- /Gerenciamento -->
     <!-- baixo -->

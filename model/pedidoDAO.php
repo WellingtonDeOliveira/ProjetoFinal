@@ -106,6 +106,8 @@ class PedidoDAO{
                 $pedido->setValor($row["valor"]);
                 $pedido->setStatus($row["status"]);
                 $pedido->setObservacao($row["observacao"]);
+                $pedido->setTroco($row["troco"]);
+                $pedido->setIdEndereco($row["id_endereco"]);
                 array_push($Pedidos, $pedido);
             }
             return $Pedidos;

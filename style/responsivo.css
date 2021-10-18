@@ -518,28 +518,26 @@
         width: 80%;
         margin-left: 10%;
     }
-    #historicoCli div.row{
-        width: 100%;
-        margin-left: 0%;
+    #historicoCli .separaCard .card{
+        width: 46%;
+        margin-left: 4%;
+        height: 270px;
     }
-    #historicoCli div.row h4{
-        width: 50%;
-        font-size: 12pt;
-        margin-left: 5%;
-        margin-right: -5%;
+    #historicoCli .separaCard .card h4{
+        font-size: 9pt;
     }
-    #historicoCli div.row div.itens{
-        width: 70%;
-        margin-left: 15%;
-        padding: 20px;
+    #historicoCli .separaCard .card div.itens h5.itens{
+        font-size: 9pt;
     }
-    #historicoCli div.row div.itens h5{
-        font-size: 11pt;
+    #historicoCli .separaCard .card div.itens h5{
+        font-size: 7pt;
     }
-    #historicoCli div.row h3{
-        font-size: 15pt;
-        margin-bottom: 15px;
-        margin-top: 15px;
+    #historicoCli .separaCard .card h3{
+        font-size: 8pt;
+    }
+    #historicoCli .separaCard .card h3.valor{
+        font-size: 10pt;
+        left: 28%;
     }
     #cima.activeHi{
         margin-top: -250px;
@@ -790,4 +788,57 @@
         margin-bottom: 0;
     }
     /* /Controle Usuario */
+    /* Orçamentos */
+    #orcamentos .detalhes .row{
+        width: 80%;
+        margin-left: 10%;
+    }
+    #orcamentos .cliente{
+        width: 80%;
+        margin-left: 10%;
+    }
+    #orcamentos .cliente h3{
+        font-size: 15pt;
+    }
+    #orcamentos .separa{
+        width: 80%;
+        margin-left: 9%;
+        margin-top: 20px;
+    }
+    #orcamentos .separa h3.resposta{
+        font-size: 15pt;
+    }
+    #orcamentos .separa .card{
+        width: 40%;
+        height: 150px;
+        margin-left: 8%;
+    }
+    #orcamentos .separa .card h4{
+        font-size: 8pt;
+        margin-top: 10px;
+    }
+    #orcamentos .separa .card h3{
+        margin-top: 40px;
+        font-size: 10pt;
+    }
+    #cima.activeOrc{
+        margin-top: -250px;
+        border-bottom: 2px solid var(--quarta);
+    }
+    #voltar.activeOrc{
+        margin-left: 1%;
+        position: fixed;
+        margin-top: -180px;
+        z-index: 9999;
+    }
+    #orcamentos.activeOrc{
+        margin-top: 250px;
+    }
+    #baixo.activeOrc{
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        margin-top: 180px;
+        margin-bottom: 0;
+    }
+    /* /Orçamentos */
 }
