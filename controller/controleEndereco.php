@@ -22,11 +22,6 @@ if($acao == "cadastrar"){
     $endereco->setIdLogin($id_login);
     $enderecoDAO->inserir($endereco);
     header('Location: ../view/perfilCLi.php');
-}else if($acao == "listar"){
-    $_SESSION["enderecos"] = $enderecoDAO->recuperarTodos();
-
-    /* FUTURA PAGINA */
-    header('Location: ../view/');
 }else if($acao == "listarCliente"){
     $id_login = $_SESSION["ID_login"];
     $_SESSION["enderecosCliente"] = $enderecoDAO->recuperarTodosCliente($id_login);

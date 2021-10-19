@@ -16,13 +16,13 @@ session_start();
   <!-- Navegação -->
   <div id="cima">
     <div class="navegacao">
-      <a href="../index.php">
+      <a href="../cardapio.php">
         <img src="../assets/logoG.png" alt="Logo" class="logo" id="logo">
       </a>
     </div>
   </div>
   <div class="voltar" id="voltar">
-    <a href="../index.php">
+    <a href="../cardapio.php">
       <img src="../assets/voltar.png" alt="voltar" class="voltar">
     </a>
   </div>
@@ -40,7 +40,7 @@ session_start();
         <button type="submit">Entrar</button>
       </form>
       <h1 class="registro">REGISTRE-SE</h1>
-      <form action="../controller/controleLogin.php?acao=cadastrar"  method="post" onsubmit = "return validaCampoCadastro()">
+      <form action="../controller/controleLogin.php?acao=cadastrar" method="post" onsubmit="return validaCampoCadastro()">
         <label for="nome">Nome </label>
         <input type="text" id="nome" name="nome">
         <label for="email">Email </label>
@@ -77,4 +77,5 @@ session_start();
   <script src="../script/validacao.js"></script>
   <script src="../script/main.js"></script>
 </body>
+
 </html>

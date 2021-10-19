@@ -6,6 +6,7 @@ function validaCampoCadastro(){
     if((cpf == null) || (cpf== "") || (/^\s+$/.test(cpf))){
         alert("Preencha o campo CPF");
         return false;
+        
     } else if((nome == null) || (nome== "") || (/^\s+$/.test(nome))){
         alert("Preencha o campo Nome");
         return false;
@@ -14,6 +15,9 @@ function validaCampoCadastro(){
         return false;
     } else if((senha == null) || (senha== "") || (/^\s+$/.test(senha))){
         alert("Preencha o campo Senha");
+        return false;
+    }else if(!TestaCPF(cpf)){
+        alert("Cpf Inválido!");
         return false;
     }
     return true;
@@ -36,5 +40,25 @@ function validaCampoCartao(){
         alert("Preencha o campo CVV");
         return false;
     }
+    return true;
+}
+function TestaCPF(strCPF) {
+    var Soma;
+    var Resto;
+    Soma = 0;
+    if (strCPF == "00000000000") return false;
+
+    for (i = 1; i <= 9; i++) Soma = Soma + parseInt(strCPF.substring(i - 1, i)) * (11 - i);
+    Resto = (Soma * 10) % 11;
+
+    if ((Resto == 10) || (Resto == 11)) Resto = 0;
+    if (Resto != parseInt(strCPF.substring(9, 10))) return false;
+
+    Soma = 0;
+    for (i = 1; i <= 10; i++) Soma = Soma + parseInt(strCPF.substring(i - 1, i)) * (12 - i);
+    Resto = (Soma * 10) % 11;
+
+    if ((Resto == 10) || (Resto == 11)) Resto = 0;
+    if (Resto != parseInt(strCPF.substring(10, 11))) return false;
     return true;
 }

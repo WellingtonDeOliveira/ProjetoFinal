@@ -30,7 +30,7 @@ if($acao == "cadastrar"){
     header('Location: ../view/gerenciamento.php');
 }else if($acao == "listar"){
     $_SESSION["comidas"] = $comidaDAO->recuperarTodos();
-    header('Location: ../index.php');
+    header('Location: ../cardapio.php');
 }else if($acao == "listarADM"){
     $_SESSION["comidas"] = $comidaDAO->recuperarTodos();
     header('Location: ../view/controleComida.php');
@@ -44,9 +44,9 @@ if($acao == "cadastrar"){
     $nome = $_GET["nome"];
     $comida = $comidaDAO->recuperarPorNome($nome);
     $_SESSION["comida"] = $comida;
-
-    /* FUTURA PAGINA */
-    header('Location: ../view/.php');
+    header('Location: ../cardapio.php');
+}else if($acao == "redirecionar"){
+    header('Location: ../view/carrinho.php?acao=sucesso');
 }else if($acao == "recuperarPorId"){
     $id_comida = $_GET["id_comida"];
     $comida = $comidaDAO->recuperarPorId($id_comida);

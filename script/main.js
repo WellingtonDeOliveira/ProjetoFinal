@@ -1,13 +1,14 @@
 jQuery(document).ready(function ($) {
     
     var x = document.documentElement.scrollHeight;
+    var y = document.documentElement.scrollWidth;
     window.onscroll = function () {
         if (window.pageYOffset > 130) {
             $("#cima").addClass("active");
             $("#filtro").addClass("active");
             $("#cardapio").addClass("active");
             var img = document.querySelector("#logo");
-            if(window.location.pathname == "/projetofinal/esboco/index.php"){
+            if(window.location.pathname == "/projetofinal/esboco/cardapio.php"){
                 img.setAttribute('src', './assets/logoS.png');
             }else{
                 img.setAttribute('src', '../assets/logoS.png');
@@ -17,6 +18,7 @@ jQuery(document).ready(function ($) {
                 $("#detalhes").addClass("active");
                 $("#voltar").addClass("activeDif");
                 $("#baixo").addClass("activeDel");
+                $("#carrinho").addClass("activeDel");
             }
             if(window.location.pathname == "/projetofinal/esboco/view/login.php"){
                 $("#cima").addClass("activeLog");
@@ -102,7 +104,7 @@ jQuery(document).ready(function ($) {
                 $("#voltar").addClass("activeOrc");
                 $("#baixo").addClass("activeOrc");
             }
-            //alert(window.location.pathname);
+            //alert($('#filtroComidas').val());
         } else {
             $("#cima").removeClass("active");
             $("#cima").removeClass("activeDif");
@@ -142,6 +144,7 @@ jQuery(document).ready(function ($) {
             $("#address").removeClass("activeAdd");
             $("#historicoCli ").removeClass("activeHi");
             $("#cardapio").removeClass("active");
+            $("#carrinho").removeClass("activeDel");
             $("#login").removeClass("active");
             $("#endereco").removeClass("active");
             $("#pagamento").removeClass("active");
@@ -152,20 +155,57 @@ jQuery(document).ready(function ($) {
             $("#adicionar").removeClass("activeADC");
             $("#editarComida").removeClass("activeEC");
             $("#orcamentos").removeClass("activeOrc");
+            $("#baixo").removeClass("activeDel");
             var img = document.querySelector("#logo");
             img.setAttribute('src', '../assets/logoG.png');
-            if(window.location.pathname == "/projetofinal/esboco/index.php"){
+            if(window.location.pathname == "/projetofinal/esboco/cardapio.php"){
                 img.setAttribute('src', './assets/logoG.png');
             }
         }
-        if (window.pageYOffset > x-1000) {
-            if((window.location.pathname == "/projetofinal/esboco/index.php")) {
-                $("#carrinho").addClass("active");
-                $("#baixo").addClass("active");
+        if( $('#filtroComidas').val() == '0'){
+            if(y < 550){
+                if (window.pageYOffset > x-700) {
+                    if((window.location.pathname == "/projetofinal/esboco/cardapio.php")) {
+                        $("#carrinho").addClass("active");
+                        $("#baixo").addClass("active");
+                    }
+                } else {
+                    $("#carrinho").removeClass("active");
+                    $("#baixo").removeClass("active");
+                }
+            }else{
+                if (window.pageYOffset > x-1000) {
+                    if((window.location.pathname == "/projetofinal/esboco/cardapio.php")) {
+                        $("#carrinho").addClass("active");
+                        $("#baixo").addClass("active");
+                    }
+                } else {
+                    $("#carrinho").removeClass("active");
+                    $("#baixo").removeClass("active");
+                }
             }
-        } else {
-            $("#carrinho").removeClass("active");
-            $("#baixo").removeClass("active");
+        }else{
+            if(y < 550){
+                if (window.pageYOffset > x-2350) {
+                    if((window.location.pathname == "/projetofinal/esboco/cardapio.php")) {
+                        $("#carrinho").addClass("active");
+                        $("#baixo").addClass("active");
+                    }
+                } else {
+                    $("#carrinho").removeClass("active");
+                    $("#baixo").removeClass("active");
+                }
+            }else{
+                if (window.pageYOffset > x-2700) {
+                    if((window.location.pathname == "/projetofinal/esboco/cardapio.php")) {
+                        $("#carrinho").addClass("active");
+                        $("#baixo").addClass("active");
+                    }
+                } else {
+                    $("#carrinho").removeClass("active");
+                    $("#baixo").removeClass("active");
+                }
+            }
         }
     }
 });

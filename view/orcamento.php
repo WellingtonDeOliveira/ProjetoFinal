@@ -18,6 +18,26 @@ if (isset($_SESSION['azul'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style/main.css">
+    <script>
+        var cor = "<?php echo $cor ?>";
+        if (cor == "azul") {
+            document.documentElement.style.setProperty('--primeira', '#483D8B');
+            document.documentElement.style.setProperty('--segunda', '#000080');
+            document.documentElement.style.setProperty('--terceira', '#4169E1');
+            document.documentElement.style.setProperty('--quarta', '#87CEFA');
+            document.documentElement.style.setProperty('--quinta', '#00BFFF');
+            document.documentElement.style.setProperty('--sexta', '#E0E5E6');
+            document.documentElement.style.setProperty('--setima', '#BEC9CA');
+        } else if (cor == "preto") {
+            document.documentElement.style.setProperty('--primeira', '#1C1C1C');
+            document.documentElement.style.setProperty('--segunda', '##000000');
+            document.documentElement.style.setProperty('--terceira', '#363636');
+            document.documentElement.style.setProperty('--quarta', '#A9A9A9');
+            document.documentElement.style.setProperty('--quinta', '#808080');
+            document.documentElement.style.setProperty('--sexta', '#E0E5E6');
+            document.documentElement.style.setProperty('--setima', '#BEC9CA');
+        }
+    </script>
     <title>Orçamentos</title>
 </head>
 
@@ -25,13 +45,13 @@ if (isset($_SESSION['azul'])) {
     <!-- Navegação -->
     <div id="cima">
         <div class="navegacao">
-            <a href="../index.php">
+            <a href="../cardapio.php">
                 <img src="../assets/logoG.png" alt="Logo" class="logo" id="logo">
             </a>
         </div>
     </div>
     <div class="voltar" id="voltar">
-        <a href="../index.php">
+        <a href="./gerenciamento.php">
             <img src="../assets/voltar.png" alt="voltar" class="voltar">
         </a>
     </div>
@@ -65,21 +85,21 @@ if (isset($_SESSION['azul'])) {
             </div>
         </div>
 
-        <?php foreach ($logins as $login) { 
-            $resposta = 0;?>
+        <?php foreach ($logins as $login) {
+                        $resposta = 0; ?>
             <div class="cliente">
                 <h3><?php echo $login->getNome(); ?></h3>
             </div>
             <div class="separa row">
                 <?php foreach ($pedidos as $pedido) { ?>
                     <?php if ($login->getCpf() == $pedido->getIdCliente()) {
-                                $resposta = 1; 
-                                if($pedido->getStatus() == "Pago"){
+                                $resposta = 1;
+                                if ($pedido->getStatus() == "Pago") {
                                     $status = "pago";
-                                }else{
+                                } else {
                                     $status = "pendente";
-                                }?>
-                        <div class="card col-lg-3 col-5 <?php echo $status;?>">
+                                } ?>
+                        <div class="card col-lg-3 col-5 <?php echo $status; ?>">
                             <h4 class="first">Forma: <?php echo $pedido->getFormaPagamento(); ?></h4>
                             <h3 class="terceiro">Total: <?php echo $pedido->getValor(); ?></h3>
                         </div>
@@ -115,25 +135,5 @@ if (isset($_SESSION['azul'])) {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="../script/main.js"></script>
 </body>
-<script>
-    var cor = "<?php echo $cor ?>";
-    if (cor == "azul") {
-        document.documentElement.style.setProperty('--primeira', '#483D8B');
-        document.documentElement.style.setProperty('--segunda', '#000080');
-        document.documentElement.style.setProperty('--terceira', '#4169E1');
-        document.documentElement.style.setProperty('--quarta', '#87CEFA');
-        document.documentElement.style.setProperty('--quinta', '#00BFFF');
-        document.documentElement.style.setProperty('--sexta', '#E0E5E6');
-        document.documentElement.style.setProperty('--setima', '#BEC9CA');
-    } else if (cor == "preto") {
-        document.documentElement.style.setProperty('--primeira', '#1C1C1C');
-        document.documentElement.style.setProperty('--segunda', '##000000');
-        document.documentElement.style.setProperty('--terceira', '#363636');
-        document.documentElement.style.setProperty('--quarta', '#A9A9A9');
-        document.documentElement.style.setProperty('--quinta', '#808080');
-        document.documentElement.style.setProperty('--sexta', '#E0E5E6');
-        document.documentElement.style.setProperty('--setima', '#BEC9CA');
-    }
-</script>
 
 </html>

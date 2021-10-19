@@ -54,8 +54,8 @@ body{
 #filtro{
     display: flex;
     flex-direction: column;
-    width: 84%;
-    margin-left: 8%;
+    width: 86%;
+    margin-left: 7%;
     border-radius: 0px 0px 20px 20px;
     height: 50px;
     background-color: var(--primeira);
@@ -68,17 +68,28 @@ body{
 #filtro div form{
     font-size: 18pt;
     font-weight: bold;
+    text-align: start;
 }
 #filtro div form select{
     border: 0;
     border-radius: 4px;
-    margin-top: 4px;
-    background-color: var(--primeira);
+    margin-top: 6px;
+    background-color: var(--segunda);
+    color: var(--quarta);
+}
+#filtro div{
+    text-align: end;
+}
+#filtro div input{
+    height: 80%;
+    margin-top: 6px;
+    font-size: 14pt;
+    background-color: var(--segunda);
     color: var(--quarta);
 }
 #filtro div a{
     margin-top: 2px;
-    text-align: end;
+    text-align: start;
 }
 #filtro.active{
     position: fixed;
@@ -86,7 +97,7 @@ body{
     margin-top: -200px;
 }
 /* /Filtro */
-/* Index */
+/* Cardapio */
 #cardapio{
     display: block;
     width: 100%;
@@ -153,7 +164,7 @@ body{
     margin-bottom: 0px;
     border-bottom: 2px solid var(--quarta);
 }
-/* /Index */
+/* /Cardapio */
 /* Detalhe Pedidos */
 #cima.activeDif{
     margin-top: -200px;
@@ -236,8 +247,14 @@ body{
 #detalhes.active{
     margin-top: 200px;
 }
+#carrinho.activeDel{
+    position: relative;
+    margin-top: 60px;
+    margin-bottom: 0px;
+    border-bottom: 2px solid var(--quarta);
+}
 #baixo.activeDel{
-    margin-top: 140px;
+    margin-top: 0px;
     margin-bottom: 0px;
 }
 /* /Detalhe Pedidos */

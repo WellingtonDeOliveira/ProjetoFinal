@@ -4,9 +4,9 @@ session_start();
 $enderecos = $_SESSION["enderecosCliente"];
 if (isset($_SESSION['azul'])) {
     $cor = $_SESSION['azul'];
-  } else if (isset($_SESSION['preto'])) {
+} else if (isset($_SESSION['preto'])) {
     $cor = $_SESSION['preto'];
-  }
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -16,6 +16,26 @@ if (isset($_SESSION['azul'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style/main.css">
+    <script>
+        var cor = "<?php echo $cor ?>";
+        if (cor == "azul") {
+            document.documentElement.style.setProperty('--primeira', '#483D8B');
+            document.documentElement.style.setProperty('--segunda', '#000080');
+            document.documentElement.style.setProperty('--terceira', '#4169E1');
+            document.documentElement.style.setProperty('--quarta', '#87CEFA');
+            document.documentElement.style.setProperty('--quinta', '#00BFFF');
+            document.documentElement.style.setProperty('--sexta', '#E0E5E6');
+            document.documentElement.style.setProperty('--setima', '#BEC9CA');
+        } else if (cor == "preto") {
+            document.documentElement.style.setProperty('--primeira', '#1C1C1C');
+            document.documentElement.style.setProperty('--segunda', '##000000');
+            document.documentElement.style.setProperty('--terceira', '#363636');
+            document.documentElement.style.setProperty('--quarta', '#A9A9A9');
+            document.documentElement.style.setProperty('--quinta', '#808080');
+            document.documentElement.style.setProperty('--sexta', '#E0E5E6');
+            document.documentElement.style.setProperty('--setima', '#BEC9CA');
+        }
+    </script>
     <title>Confirmar Endereço</title>
 </head>
 
@@ -23,7 +43,7 @@ if (isset($_SESSION['azul'])) {
     <!-- Navegação -->
     <div id="cima">
         <div class="navegacao">
-            <a href="../index.php">
+            <a href="../cardapio.php">
                 <img src="../assets/logoG.png" alt="Logo" class="logo" id="logo">
             </a>
         </div>
@@ -64,7 +84,7 @@ if (isset($_SESSION['azul'])) {
                     </div>
             <?php }
             } ?>
-            <button onclick="window.location.replace('./perfilCli.html')">cadastrar novo endereço</button>
+            <button onclick="window.location.replace('./newEndereco.php')">cadastrar novo endereço</button>
         </div>
     </div>
     <!-- /retirada -->
@@ -88,24 +108,5 @@ if (isset($_SESSION['azul'])) {
     <script src="../script/eventos.js"></script>
     <script src="../script/main.js"></script>
 </body>
-<script>
-  var cor = "<?php echo $cor ?>";
-  if(cor == "azul"){
-    document.documentElement.style.setProperty('--primeira', '#483D8B');
-    document.documentElement.style.setProperty('--segunda', '#000080');
-    document.documentElement.style.setProperty('--terceira', '#4169E1');
-    document.documentElement.style.setProperty('--quarta', '#87CEFA');
-    document.documentElement.style.setProperty('--quinta', '#00BFFF');
-    document.documentElement.style.setProperty('--sexta', '#E0E5E6');
-    document.documentElement.style.setProperty('--setima', '#BEC9CA');
-  }else if(cor == "preto"){
-    document.documentElement.style.setProperty('--primeira', '#1C1C1C');
-    document.documentElement.style.setProperty('--segunda', '##000000');
-    document.documentElement.style.setProperty('--terceira', '#363636');
-    document.documentElement.style.setProperty('--quarta', '#A9A9A9');
-    document.documentElement.style.setProperty('--quinta', '#808080');
-    document.documentElement.style.setProperty('--sexta', '#E0E5E6');
-    document.documentElement.style.setProperty('--setima', '#BEC9CA');
-  }
-</script>
+
 </html>

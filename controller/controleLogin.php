@@ -12,19 +12,21 @@ if($acao == "cadastrar"){
     $nome = $_POST["nome"];
     $email = $_POST["email"];
     $senha = $_POST["senha"];
+    $senhaSegura = password_hash($senha, PASSWORD_DEFAULT);
     $perfil = "Cliente";
     $res = true;
     $login = new Login();
     $login->setCpf($cpf);
     $login->setNome($nome);
     $login->setEmail($email);
-    $login->setSenha($senha);
+    $login->setSenha($senhaSegura);
     $login->setPerfil($perfil);
     $loginDAO->inserir($login);
     header('Location: ../controller/controleLogin.php?acao=logarCad&email='.$email.'&senha='.$senha);
 }else if($acao == "logar"){
     $email = $_POST["login_email"];
     $senha = $_POST["login_senha"];
+    
     $login = new Login();
     $login->setEmail($email);
     $login->setSenha($senha);
@@ -37,7 +39,7 @@ if($acao == "cadastrar"){
     }else{
         $_SESSION["logado"] = $loginDAO->verificar($login);
         $_SESSION["ID_login"]= $_SESSION["logado"]->getCpf();
-        header('Location: ../index.php');
+        header('Location: ../cardapio.php');
     }
 }else if($acao == "logarCad"){
     $email = $_GET["email"];
@@ -54,7 +56,7 @@ if($acao == "cadastrar"){
     }else{
         $_SESSION["logado"] = $loginDAO->verificar($login);
         $_SESSION["ID_login"]= $_SESSION["logado"]->getCpf();
-        header('Location: ../index.php');
+        header('Location: ../cardapio.php');
     }
 }else if($acao == "listar"){
     $_SESSION["logins"] = $loginDAO->recuperarTodos();
@@ -95,6 +97,6 @@ if($acao == "cadastrar"){
     unset($_SESSION['carrinho']);
     unset($_SESSION['azul']);
     unset($_SESSION['preto']);
-    header('Location: ../redirecionar.php');
+    header('Location: ../index.php');
 }
 ?>
