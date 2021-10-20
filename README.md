@@ -19,31 +19,31 @@
 <h1 align="center">
   <h1>Sistema de carrinho</h1>
   <center>
-  <img alt="Lechef" title="Carrinho" src="./github/carrinho.gif" height="452" />
+  <img alt="Lechef" title="Carrinho" src="./github/carrinho.gif" />
   </center>
   <h1>Sistema de Adaptação</h1>
   <center>
-  <img alt="Lechef" title="Sistema de Adaptação" src="./github/adaptacao.gif" height="452" />
+  <img alt="Lechef" title="Sistema de Adaptação" src="./github/adaptacao.gif" />
   </center>
   <h1>Sistema Login</h1>
   <center>
-  <img alt="Lechef" title="Sistema de Login" src="./github/login.gif" height="452" />
+  <img alt="Lechef" title="Sistema de Login" src="./github/login.gif"/>
   </center>
   <h1>Sistema de Pagamento</h1>
   <center>
-  <img alt="Lechef" title="Sistema de Pagamento" src="./github/compra.gif" height="452" />
+  <img alt="Lechef" title="Sistema de Pagamento" src="./github/compra.gif" />
   </center>
   <h1>Sistema de Temas</h1>
   <center>
-  <img alt="Lechef" title="Sistema de temas" src="./github/temas.gif" height="452" />
+  <img alt="Lechef" title="Sistema de temas" src="./github/temas.gif" />
   </center>
   <h1>Sistema de histórico de Pedidos</h1>
   <center>
-  <img alt="Lechef" title="Sistema de Histórico" src="./github/historico.gif" height="452" />
+  <img alt="Lechef" title="Sistema de Histórico" src="./github/historico.gif" />
   </center>
   <h1>Sistema de Gerenciamento</h1>
   <center>
-  <img alt="Lechef" title="Sistema de Gerencia" src="./github/gerencia.gif" height="452" />
+  <img alt="Lechef" title="Sistema de Gerencia" src="./github/gerencia.gif" />
   </center>
 
 </h1>
