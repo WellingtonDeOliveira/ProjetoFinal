@@ -71,6 +71,16 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 ---
 
+
+### Observação
+
+Antes de entrar na hospedagem para testar o resultado final do projeto, caso o carrinho fique bugado, eu fiz com jquery, mas não estava com muito tempo, para fazer em todas as resoluções de telas, logo, pode aparecer algumas pequenas diferenças.
+
+
+### Hospedagem em:
+
+https://restaurantelechef.000webhostapp.com/
+
 ### Autor
 
 <img alt="ARTHUR PC" title="ARTHUR PC" src="https://avatars.githubusercontent.com/u/85302795?s=96&v=4" height="100" width="100" />
