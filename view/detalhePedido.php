@@ -71,7 +71,7 @@ if (isset($_SESSION['azul'])) {
         <h2 class="subtitulo"><?php echo $comida->getDescricao(); ?></h2>
         <h2 class="valor">R$ <?php echo $comida->getValor(); ?></h2>
       </div>
-      <a href="?adicionar=<?php echo $comida->getIdComida(); ?>">Adicionar ao carrinho</a>
+      <a href="../script/carrinhoLogica.php?adicionarPlus=<?php echo $comida->getIdComida(); ?>">Adicionar ao carrinho</a>
     </div>
   </div>
   <!-- /Detalhes Pedido -->
@@ -106,23 +106,7 @@ if (isset($_SESSION['azul'])) {
   </div>
   <!-- /baixo -->
   <!-- Logica Carrinho -->
-  <?php 
-    if(isset($_GET['adicionar'])){
-      // Adicionando ao carrinho
-      $idComida = (int) $_GET['adicionar'];
-      if($idComida == $comida->getIdComida()){
-        if(isset($_SESSION['carrinho'][$idComida])){
-          $_SESSION['carrinho'][$idComida]['quantidade']++;
-          header('location: ../index.php');
-        }else{
-          $_SESSION['carrinho'][$idComida] = array('quantidade'=>1,'nome'=>$comida->getNome(),
-           'valor'=>$comida->getValor(), 'id'=>$comida->getIdComida());
-           header('location: ../index.php');
-        }
-      }else{
-        die('Você não pode adicionar uma comida que não existe dentro desta página');
-      }
-    }
+  <?php
     //Verifica Login 
     if(isset($_SESSION['logado'])){
       echo '<script>
